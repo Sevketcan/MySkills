@@ -40,12 +40,46 @@ jobs:
           ./install.sh | tee "$RUNNER_TEMP/second.log"
           grep -q "${expected_packages} installed" "$RUNNER_TEMP/first.log"
           grep -q "${expected_packages} unchanged" "$RUNNER_TEMP/second.log"
+      - name: Test idempotent Claude Code installation
+        run: |
+          export CLAUDE_CONFIG_DIR="$RUNNER_TEMP/claude-test"
+          total_packages="$(find skills -mindepth 2 -maxdepth 2 -type f -name SKILL.md | wc -l | tr -d ' ')"
+          ./install.sh --target claude | tee "$RUNNER_TEMP/claude-first.log"
+          ./install.sh --target claude | tee "$RUNNER_TEMP/claude-second.log"
+          skipped="$(grep -c '^skipped' "$RUNNER_TEMP/claude-first.log" || true)"
+          expected_packages="$((total_packages - skipped))"
+          grep -q "${expected_packages} installed" "$RUNNER_TEMP/claude-first.log"
+          grep -q "${expected_packages} unchanged" "$RUNNER_TEMP/claude-second.log"
+      - name: Check Claude Code compatibility of the installed tree
+        run: |
+          claude_skills="$RUNNER_TEMP/claude-test/skills"
+          # YAML list frontmatter is rewritten into the comma-separated form.
+          grep -qx 'allowed-tools: Bash' "$claude_skills/unity-cli/SKILL.md"
+          grep -qx 'allowed-tools: Bash, Read, Write, Edit' "$claude_skills/unity-package-management/SKILL.md"
+          # Codex-only leftovers must not reach the Claude skills directory.
+          test ! -e "$claude_skills/unity-skills~"
+          test -z "$(find "$claude_skills" -type d -name agents)"
+          test -z "$(grep -rl 'CODEX_HOME' "$claude_skills" || true)"
+          # Every installed package must still carry a readable entry point.
+          test "$(find "$claude_skills" -mindepth 2 -maxdepth 2 -type f -name SKILL.md | wc -l | tr -d ' ')" -gt 0
+      - name: Test --all override for skipped packages
+        run: |
+          export CLAUDE_CONFIG_DIR="$RUNNER_TEMP/claude-all"
+          total_packages="$(find skills -mindepth 2 -maxdepth 2 -type f -name SKILL.md | wc -l | tr -d ' ')"
+          ./install.sh --target claude --all | tee "$RUNNER_TEMP/claude-all.log"
+          grep -q "${total_packages} installed" "$RUNNER_TEMP/claude-all.log"
+          test -f "$CLAUDE_CONFIG_DIR/skills/unity-skills/SKILL.md"
+          test -f "$CLAUDE_CONFIG_DIR/skills/fullstack-dev/SKILL.md"
+      # auto-sync.sh refuses to run unless the checkout is on main, and the
+      # pull_request event checks out a detached merge commit, so this test can
+      # only be meaningful on a push to main.
       - name: Test automatic export, commit, and push
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: |
           git config user.name "MySkills CI"
           git config user.email "myskills-ci@users.noreply.github.com"
           git init --bare "$RUNNER_TEMP/remote.git"
-          git push "$RUNNER_TEMP/remote.git" HEAD:main
+          git push "$RUNNER_TEMP/remote.git" HEAD:refs/heads/main
           git remote set-url origin "$RUNNER_TEMP/remote.git"
           export CODEX_HOME="$RUNNER_TEMP/autosync-codex"
           ./install.sh >/dev/null
@@ -69,3 +103,20 @@ jobs:
           ./install.ps1 | Tee-Object -FilePath (Join-Path $env:RUNNER_TEMP "second.log")
           if (-not (Select-String -Quiet -Path (Join-Path $env:RUNNER_TEMP "first.log") -Pattern "$expectedPackages installed")) { throw "First install count mismatch" }
           if (-not (Select-String -Quiet -Path (Join-Path $env:RUNNER_TEMP "second.log") -Pattern "$expectedPackages unchanged")) { throw "Second install was not idempotent" }
+      - name: Test idempotent PowerShell installation for Claude Code
+        shell: pwsh
+        run: |
+          $env:CLAUDE_CONFIG_DIR = Join-Path $env:RUNNER_TEMP "claude-test"
+          $totalPackages = (Get-ChildItem -Path skills -Directory | Where-Object { Test-Path (Join-Path $_.FullName "SKILL.md") }).Count
+          $firstLog = Join-Path $env:RUNNER_TEMP "claude-first.log"
+          $secondLog = Join-Path $env:RUNNER_TEMP "claude-second.log"
+          ./install.ps1 -Target claude | Tee-Object -FilePath $firstLog
+          ./install.ps1 -Target claude | Tee-Object -FilePath $secondLog
+          $skipped = (Select-String -Path $firstLog -Pattern "^skipped").Count
+          $expectedPackages = $totalPackages - $skipped
+          if (-not (Select-String -Quiet -Path $firstLog -Pattern "$expectedPackages installed")) { throw "Claude install count mismatch" }
+          if (-not (Select-String -Quiet -Path $secondLog -Pattern "$expectedPackages unchanged")) { throw "Claude install was not idempotent" }
+          $claudeSkills = Join-Path $env:CLAUDE_CONFIG_DIR "skills"
+          if (-not (Select-String -Quiet -Path (Join-Path $claudeSkills "unity-cli/SKILL.md") -Pattern "^allowed-tools: Bash$")) { throw "allowed-tools was not converted" }
+          if (Test-Path (Join-Path $claudeSkills "unity-skills~")) { throw "Codex-only directory name reached the Claude skills directory" }
+          if (Get-ChildItem -Path $claudeSkills -Directory -Recurse -Filter "agents") { throw "Codex agent manifests reached the Claude skills directory" }

@@ -1,6 +1,6 @@
 # MySkills
 
-Portable Codex skill collection maintained for the `Sevketcan` setup. The repository contains only user-installed skills; Codex system skills and plugin caches are intentionally excluded.
+Portable skill collection maintained for the `Sevketcan` setup, installable into both Codex and Claude Code. The repository contains only user-installed skills; Codex system skills and plugin caches are intentionally excluded.
 
 ## Install everything
 
@@ -16,9 +16,37 @@ Windows PowerShell:
 irm https://raw.githubusercontent.com/Sevketcan/MySkills/main/install.ps1 | iex
 ```
 
-Both installers place packages under `$CODEX_HOME/skills` or, when `CODEX_HOME` is unset, the standard `~/.codex/skills` directory. Existing packages with the same name are moved to a timestamped `skill-backups` directory before replacement. Skills that are not part of this repository are left untouched.
+Both installers default to Codex and place packages under `$CODEX_HOME/skills` or, when `CODEX_HOME` is unset, the standard `~/.codex/skills` directory. Existing packages with the same name are moved to a timestamped `skill-backups` directory before replacement. Skills that are not part of this repository are left untouched.
 
 Restart Codex after installation so the new skill catalog is loaded.
+
+## Install into Claude Code
+
+The same packages install as Claude Code personal skills:
+
+```bash
+./install.sh --target claude          # ~/.claude/skills (or $CLAUDE_CONFIG_DIR/skills)
+./install.sh --target both            # Codex and Claude Code in one run
+```
+
+```powershell
+.\install.ps1 -Target claude
+.\install.ps1 -Target both
+```
+
+Codex and Claude Code read the same `SKILL.md` format, so the packages are copied verbatim except for three adjustments the installer makes on the way into the Claude skills directory:
+
+| Adjustment | Reason |
+| --- | --- |
+| `allowed-tools` YAML lists are rewritten as `allowed-tools: Bash, Read` | Claude Code expects a comma-separated string |
+| `unity-skills~` is installed as `unity-skills` | Claude Code skill directories may not contain a tilde |
+| `$CODEX_HOME`/`~/.codex/skills` references become `$CLAUDE_CONFIG_DIR`/`~/.claude/skills`, and Codex-only `agents/` manifests are dropped | the paths must resolve inside the Claude installation |
+
+The repository files themselves stay in their Codex form; the rewrite happens in a staging copy, so `--target both` keeps each installation correct.
+
+`fullstack-dev` and `unity-skills` are skipped for the Claude target because Claude Code already provides them from another source. Pass `--all` (PowerShell: `-All`) to install them anyway; the existing copies are moved into `~/.claude/skill-backups/<timestamp>` first.
+
+Restart Claude Code, or run `/doctor` in an interactive session, to reload the skill catalog.
 
 ## Inspect before installing
 
@@ -44,7 +72,7 @@ Set-Location MySkills
 
 The deterministic [manifest.json](manifest.json) records every top-level package and every nested skill entry point.
 
-Every push is checked by GitHub Actions for valid Codex frontmatter, unique skill names, a current manifest, script syntax, and repeatable installation into a clean Codex directory.
+Every push is checked by GitHub Actions for valid frontmatter, unique skill names, descriptions within the Claude Code length limit, package names that are installable under both agents, a current manifest, script syntax, and repeatable installation into clean Codex and Claude directories.
 
 ## Maintain the collection
 
