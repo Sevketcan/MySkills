@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "package_count": 30,
-  "skill_count": 113,
+  "package_count": 44,
+  "skill_count": 127,
   "packages": [
     {
       "directory": "2d-pixel-perfect",
@@ -59,6 +59,28 @@
       ]
     },
     {
+      "directory": "game-feel",
+      "entrypoint": "skills/game-feel/SKILL.md",
+      "skill_count": 1,
+      "skills": [
+        {
+          "name": "game-feel",
+          "path": "skills/game-feel/SKILL.md"
+        }
+      ]
+    },
+    {
+      "directory": "game-ui-ux",
+      "entrypoint": "skills/game-ui-ux/SKILL.md",
+      "skill_count": 1,
+      "skills": [
+        {
+          "name": "game-ui-ux",
+          "path": "skills/game-ui-ux/SKILL.md"
+        }
+      ]
+    },
+    {
       "directory": "gdd-studio",
       "entrypoint": "skills/gdd-studio/SKILL.md",
       "skill_count": 1,
@@ -88,6 +110,17 @@
         {
           "name": "implement-in-app-purchases",
           "path": "skills/implement-in-app-purchases/SKILL.md"
+        }
+      ]
+    },
+    {
+      "directory": "input-systems",
+      "entrypoint": "skills/input-systems/SKILL.md",
+      "skill_count": 1,
+      "skills": [
+        {
+          "name": "input-systems",
+          "path": "skills/input-systems/SKILL.md"
         }
       ]
     },
@@ -202,6 +235,28 @@
       ]
     },
     {
+      "directory": "procedural-gen",
+      "entrypoint": "skills/procedural-gen/SKILL.md",
+      "skill_count": 1,
+      "skills": [
+        {
+          "name": "procedural-gen",
+          "path": "skills/procedural-gen/SKILL.md"
+        }
+      ]
+    },
+    {
+      "directory": "save-systems",
+      "entrypoint": "skills/save-systems/SKILL.md",
+      "skill_count": 1,
+      "skills": [
+        {
+          "name": "save-systems",
+          "path": "skills/save-systems/SKILL.md"
+        }
+      ]
+    },
+    {
       "directory": "setup-multiplayer-services",
       "entrypoint": "skills/setup-multiplayer-services/SKILL.md",
       "skill_count": 1,
@@ -253,6 +308,105 @@
         {
           "name": "sprite-segment-3x3grid",
           "path": "skills/sprite-segment-3x3grid/SKILL.md"
+        }
+      ]
+    },
+    {
+      "directory": "threejs-3d-generator",
+      "entrypoint": "skills/threejs-3d-generator/SKILL.md",
+      "skill_count": 1,
+      "skills": [
+        {
+          "name": "threejs-3d-generator",
+          "path": "skills/threejs-3d-generator/SKILL.md"
+        }
+      ]
+    },
+    {
+      "directory": "threejs-aaa-graphics-builder",
+      "entrypoint": "skills/threejs-aaa-graphics-builder/SKILL.md",
+      "skill_count": 1,
+      "skills": [
+        {
+          "name": "threejs-aaa-graphics-builder",
+          "path": "skills/threejs-aaa-graphics-builder/SKILL.md"
+        }
+      ]
+    },
+    {
+      "directory": "threejs-audio-generator",
+      "entrypoint": "skills/threejs-audio-generator/SKILL.md",
+      "skill_count": 1,
+      "skills": [
+        {
+          "name": "threejs-audio-generator",
+          "path": "skills/threejs-audio-generator/SKILL.md"
+        }
+      ]
+    },
+    {
+      "directory": "threejs-debug-profiler",
+      "entrypoint": "skills/threejs-debug-profiler/SKILL.md",
+      "skill_count": 1,
+      "skills": [
+        {
+          "name": "threejs-debug-profiler",
+          "path": "skills/threejs-debug-profiler/SKILL.md"
+        }
+      ]
+    },
+    {
+      "directory": "threejs-game-director",
+      "entrypoint": "skills/threejs-game-director/SKILL.md",
+      "skill_count": 1,
+      "skills": [
+        {
+          "name": "threejs-game-director",
+          "path": "skills/threejs-game-director/SKILL.md"
+        }
+      ]
+    },
+    {
+      "directory": "threejs-game-ui-designer",
+      "entrypoint": "skills/threejs-game-ui-designer/SKILL.md",
+      "skill_count": 1,
+      "skills": [
+        {
+          "name": "threejs-game-ui-designer",
+          "path": "skills/threejs-game-ui-designer/SKILL.md"
+        }
+      ]
+    },
+    {
+      "directory": "threejs-gameplay-systems",
+      "entrypoint": "skills/threejs-gameplay-systems/SKILL.md",
+      "skill_count": 1,
+      "skills": [
+        {
+          "name": "threejs-gameplay-systems",
+          "path": "skills/threejs-gameplay-systems/SKILL.md"
+        }
+      ]
+    },
+    {
+      "directory": "threejs-image-generator",
+      "entrypoint": "skills/threejs-image-generator/SKILL.md",
+      "skill_count": 1,
+      "skills": [
+        {
+          "name": "threejs-image-generator",
+          "path": "skills/threejs-image-generator/SKILL.md"
+        }
+      ]
+    },
+    {
+      "directory": "threejs-qa-release",
+      "entrypoint": "skills/threejs-qa-release/SKILL.md",
+      "skill_count": 1,
+      "skills": [
+        {
+          "name": "threejs-qa-release",
+          "path": "skills/threejs-qa-release/SKILL.md"
         }
       ]
     },
