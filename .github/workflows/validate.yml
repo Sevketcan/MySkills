@@ -26,6 +26,9 @@ jobs:
         run: |
           bash -n install.sh
           bash -n scripts/export-local.sh
+          bash -n scripts/auto-sync.sh
+          bash -n scripts/install-macos-autosync.sh
+          bash -n scripts/uninstall-macos-autosync.sh
           python -m py_compile scripts/build_manifest.py scripts/validate_collection.py skills/game-balance-lab/scripts/balance_lab.py
       - name: Test idempotent installation
         run: |
@@ -34,6 +37,21 @@ jobs:
           ./install.sh | tee "$RUNNER_TEMP/second.log"
           grep -q '30 installed' "$RUNNER_TEMP/first.log"
           grep -q '30 unchanged' "$RUNNER_TEMP/second.log"
+      - name: Test automatic export, commit, and push
+        run: |
+          git config user.name "MySkills CI"
+          git config user.email "myskills-ci@users.noreply.github.com"
+          git init --bare "$RUNNER_TEMP/remote.git"
+          git push "$RUNNER_TEMP/remote.git" HEAD:main
+          git remote set-url origin "$RUNNER_TEMP/remote.git"
+          export CODEX_HOME="$RUNNER_TEMP/autosync-codex"
+          ./install.sh >/dev/null
+          touch "$CODEX_HOME/skills/gdd-studio/autosync-ci.test"
+          MYSKILLS_STATE_ROOT="$RUNNER_TEMP/autosync-state" \
+          MYSKILLS_VALIDATOR_PYTHON="$(command -v python)" \
+          ./scripts/auto-sync.sh | tee "$RUNNER_TEMP/autosync.log"
+          grep -q 'pushed 1 commit' "$RUNNER_TEMP/autosync.log"
+          git --git-dir="$RUNNER_TEMP/remote.git" show main:skills/gdd-studio/autosync-ci.test >/dev/null
 
   windows-install:
     runs-on: windows-latest

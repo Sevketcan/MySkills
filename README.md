@@ -56,7 +56,30 @@ python3 ./scripts/build_manifest.py
 git diff --stat
 ```
 
-`export-local.sh` skips `.system`, evaluation fixtures, caches, and editor files. It does not remove repository packages that disappeared locally unless `--prune` is supplied. Review the diff and source/license implications before committing.
+`export-local.sh` skips `.system`, evaluation fixtures, caches, local environment files, credentials, and private-key files. It does not remove repository packages that disappeared locally unless `--prune` is supplied. Review the diff and source/license implications before committing.
+
+### Automatic sync on macOS
+
+Install the background sync once:
+
+```bash
+./scripts/install-macos-autosync.sh
+```
+
+The launch agent reacts to changes under `~/.codex/skills` and also checks every five minutes. When exported content changes, it validates all skills, rebuilds the manifest, scans for common credential formats, commits only `skills/` and `manifest.json`, and pushes to `origin/main`.
+
+It never force-pushes or pulls through a conflict. A staged change, failed validation, detected secret, non-`main` branch, or remote-ahead state stops the run and is recorded in:
+
+```text
+~/Library/Logs/MySkills-autosync.log
+~/Library/Logs/MySkills-autosync-error.log
+```
+
+Disable it with:
+
+```bash
+./scripts/uninstall-macos-autosync.sh
+```
 
 ## Sources and licenses
 

@@ -32,7 +32,20 @@ command -v rsync >/dev/null 2>&1 || {
 }
 
 mkdir -p "$TARGET_SKILLS"
-rsync_args=(-a --exclude '.system/' --exclude '.git/' --exclude 'evals/' --exclude '__pycache__/' --exclude '*.pyc' --exclude '.DS_Store')
+rsync_args=(
+  -a
+  --exclude '.system/'
+  --exclude '.git/'
+  --exclude 'evals/'
+  --exclude '__pycache__/'
+  --exclude '*.pyc'
+  --exclude '.DS_Store'
+  --exclude '.env'
+  --exclude '.env.local'
+  --exclude '*.pem'
+  --exclude '*.key'
+  --exclude '*credentials*'
+)
 if [ "$DRY_RUN" -eq 1 ]; then
   rsync_args+=(--dry-run --itemize-changes)
 fi
