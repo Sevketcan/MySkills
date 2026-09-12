@@ -35,7 +35,7 @@ jobs:
       - name: Test idempotent installation
         run: |
           export CODEX_HOME="$RUNNER_TEMP/codex-test"
-          expected_packages="$(find skills -mindepth 1 -maxdepth 1 -type f -name SKILL.md | wc -l | tr -d ' ')"
+          expected_packages="$(find skills -mindepth 2 -maxdepth 2 -type f -name SKILL.md | wc -l | tr -d ' ')"
           ./install.sh | tee "$RUNNER_TEMP/first.log"
           ./install.sh | tee "$RUNNER_TEMP/second.log"
           grep -q "${expected_packages} installed" "$RUNNER_TEMP/first.log"
