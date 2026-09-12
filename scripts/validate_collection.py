@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate every Codex skill entry point in the collection."""
+"""Validate every skill entry point in the collection for Codex and Claude Code."""
 
 from __future__ import annotations
 
@@ -14,6 +14,9 @@ ROOT = Path(__file__).resolve().parents[1]
 SKILLS_ROOT = ROOT / "skills"
 ALLOWED_KEYS = {"name", "description", "license", "allowed-tools", "metadata"}
 NAME_PATTERN = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
+# Claude Code truncates skill metadata beyond this length, so a longer
+# description would be silently cut when the collection is installed there.
+DESCRIPTION_LIMIT = 1024
 
 
 def frontmatter(path: Path) -> dict:
@@ -51,12 +54,28 @@ def main() -> int:
                 names[name] = relative
             if not isinstance(description, str) or not description.strip():
                 errors.append(f"{relative}: description must be a non-empty string")
+            elif len(" ".join(description.split())) > DESCRIPTION_LIMIT:
+                errors.append(
+                    f"{relative}: description is "
+                    f"{len(' '.join(description.split()))} characters; "
+                    f"Claude Code allows at most {DESCRIPTION_LIMIT}"
+                )
         except (OSError, UnicodeError, yaml.YAMLError, ValueError) as exc:
             errors.append(f"{relative}: {exc}")
 
-    package_count = sum(
-        1 for path in SKILLS_ROOT.iterdir() if path.is_dir() and (path / "SKILL.md").is_file()
-    )
+    package_count = 0
+    for path in sorted(SKILLS_ROOT.iterdir()):
+        if not path.is_dir() or not (path / "SKILL.md").is_file():
+            continue
+        package_count += 1
+        # install.sh --target claude strips one trailing tilde; whatever remains
+        # has to be a directory name Claude Code accepts.
+        claude_name = path.name.rstrip("~")
+        if not NAME_PATTERN.fullmatch(claude_name) or len(claude_name) > 64:
+            errors.append(
+                f"skills/{path.name}: directory name is not installable into "
+                f"Claude Code as {claude_name!r}"
+            )
     if errors:
         print("\n".join(errors), file=sys.stderr)
         return 1
