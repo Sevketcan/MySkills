@@ -53,7 +53,9 @@ function Convert-PackageForClaude([string]$PackageDir) {
 
     Get-ChildItem -Path $PackageDir -File -Recurse -Filter "SKILL.md" | ForEach-Object {
         $Text = [IO.File]::ReadAllText($_.FullName)
-        if ($Text -notmatch '(?m)^allowed-tools:[ \t]*$') { return }
+        # Windows checkouts use CRLF, where `$` in multiline mode matches after
+        # the carriage return, so the guard has to allow for it explicitly.
+        if ($Text -notmatch '(?m)^allowed-tools:[ \t]*\r?$') { return }
         $Newline = if ($Text -match "`r`n") { "`r`n" } else { "`n" }
         $Lines = $Text -split "`r?`n"
         $Output = New-Object System.Collections.Generic.List[string]

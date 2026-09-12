@@ -70,12 +70,16 @@ jobs:
           grep -q "${total_packages} installed" "$RUNNER_TEMP/claude-all.log"
           test -f "$CLAUDE_CONFIG_DIR/skills/unity-skills/SKILL.md"
           test -f "$CLAUDE_CONFIG_DIR/skills/fullstack-dev/SKILL.md"
+      # auto-sync.sh refuses to run unless the checkout is on main, and the
+      # pull_request event checks out a detached merge commit, so this test can
+      # only be meaningful on a push to main.
       - name: Test automatic export, commit, and push
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: |
           git config user.name "MySkills CI"
           git config user.email "myskills-ci@users.noreply.github.com"
           git init --bare "$RUNNER_TEMP/remote.git"
-          git push "$RUNNER_TEMP/remote.git" HEAD:main
+          git push "$RUNNER_TEMP/remote.git" HEAD:refs/heads/main
           git remote set-url origin "$RUNNER_TEMP/remote.git"
           export CODEX_HOME="$RUNNER_TEMP/autosync-codex"
           ./install.sh >/dev/null
