@@ -89,6 +89,8 @@ This is a mixed-license collection. Each upstream package remains subject to its
 - `unity-skills~` originated from [Besty0728/Unity-Skills](https://github.com/Besty0728/Unity-Skills), MIT licensed, with local integration changes documented in its files.
 - `gdd-studio` adapts MIT-licensed ideas from [Donchitos/Claude-Code-Game-Studios](https://github.com/Donchitos/Claude-Code-Game-Studios).
 - `game-balance-lab` records its source acknowledgements in `skills/game-balance-lab/references/source-and-license.md`.
+- `threejs-game-director`, its eight sibling `threejs-*` skills, and their templates originated from [majidmanzarpour/threejs-game-skills](https://github.com/majidmanzarpour/threejs-game-skills) at commit `e5f301d548bb18c530afbece78cd25082f4cda9c`, MIT licensed. The image, 3D, and audio generators use their respective third-party APIs only when explicitly requested and configured with a user-provided key.
+- `game-ui-ux`, `game-feel`, `input-systems`, `save-systems`, and `procedural-gen` originated from [gamedev-skills/awesome-gamedev-agent-skills](https://github.com/gamedev-skills/awesome-gamedev-agent-skills) at commit `b105e1cf617adf0b68ed98790a716bbb60993179`, Apache-2.0 licensed.
 - `playwright` ships its own `LICENSE.txt` and `NOTICE.txt`.
 - `fullstack-dev` is a personal package maintained in this repository.
 
