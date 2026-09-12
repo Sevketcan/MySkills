@@ -35,3 +35,15 @@ jobs:
           grep -q '30 installed' "$RUNNER_TEMP/first.log"
           grep -q '30 unchanged' "$RUNNER_TEMP/second.log"
 
+  windows-install:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test idempotent PowerShell installation
+        shell: pwsh
+        run: |
+          $env:CODEX_HOME = Join-Path $env:RUNNER_TEMP "codex-test"
+          ./install.ps1 | Tee-Object -FilePath (Join-Path $env:RUNNER_TEMP "first.log")
+          ./install.ps1 | Tee-Object -FilePath (Join-Path $env:RUNNER_TEMP "second.log")
+          if (-not (Select-String -Quiet -Path (Join-Path $env:RUNNER_TEMP "first.log") -Pattern "30 installed")) { throw "First install count mismatch" }
+          if (-not (Select-String -Quiet -Path (Join-Path $env:RUNNER_TEMP "second.log") -Pattern "30 unchanged")) { throw "Second install was not idempotent" }
