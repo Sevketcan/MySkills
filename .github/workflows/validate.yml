@@ -1,0 +1,37 @@
+name: Validate skill collection
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install validator dependency
+        run: python -m pip install --disable-pip-version-check PyYAML==6.0.2
+      - name: Validate skills and manifest
+        run: |
+          python scripts/validate_collection.py
+          python scripts/build_manifest.py
+          git diff --exit-code -- manifest.json
+      - name: Check scripts
+        run: |
+          bash -n install.sh
+          bash -n scripts/export-local.sh
+          python -m py_compile scripts/build_manifest.py scripts/validate_collection.py skills/game-balance-lab/scripts/balance_lab.py
+      - name: Test idempotent installation
+        run: |
+          export CODEX_HOME="$RUNNER_TEMP/codex-test"
+          ./install.sh | tee "$RUNNER_TEMP/first.log"
+          ./install.sh | tee "$RUNNER_TEMP/second.log"
+          grep -q '30 installed' "$RUNNER_TEMP/first.log"
+          grep -q '30 unchanged' "$RUNNER_TEMP/second.log"
+

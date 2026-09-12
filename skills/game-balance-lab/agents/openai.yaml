@@ -1,0 +1,4 @@
+interface:
+  display_name: "Game Balance Lab"
+  short_description: "Game economy and balance simulations"
+  default_prompt: "Use $game-balance-lab to model and test my game economy."

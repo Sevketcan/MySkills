@@ -1,0 +1,4 @@
+interface:
+  display_name: "GDD Studio"
+  short_description: "Collaborative game design and GDD planning"
+  default_prompt: "Use $gdd-studio to develop my game concept into a reviewed GDD."

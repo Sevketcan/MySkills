@@ -1,0 +1,669 @@
+{
+  "schema_version": 1,
+  "package_count": 30,
+  "skill_count": 113,
+  "packages": [
+    {
+      "directory": "2d-pixel-perfect",
+      "entrypoint": "skills/2d-pixel-perfect/SKILL.md",
+      "skill_count": 1,
+      "skills": [
+        {
+          "name": "2d-pixel-perfect",
+          "path": "skills/2d-pixel-perfect/SKILL.md"
+        }
+      ]
+    },
+    {
+      "directory": "audio-setup-mixers",
+      "entrypoint": "skills/audio-setup-mixers/SKILL.md",
+      "skill_count": 1,
+      "skills": [
+        {
+          "name": "audio-setup-mixers",
+          "path": "skills/audio-setup-mixers/SKILL.md"
+        }
+      ]
+    },
+    {
+      "directory": "build-live-game",
+      "entrypoint": "skills/build-live-game/SKILL.md",
+      "skill_count": 1,
+      "skills": [
+        {
+          "name": "build-live-game",
+          "path": "skills/build-live-game/SKILL.md"
+        }
+      ]
+    },
+    {
+      "directory": "fullstack-dev",
+      "entrypoint": "skills/fullstack-dev/SKILL.md",
+      "skill_count": 1,
+      "skills": [
+        {
+          "name": "fullstack-dev",
+          "path": "skills/fullstack-dev/SKILL.md"
+        }
+      ]
+    },
+    {
+      "directory": "game-balance-lab",
+      "entrypoint": "skills/game-balance-lab/SKILL.md",
+      "skill_count": 1,
+      "skills": [
+        {
+          "name": "game-balance-lab",
+          "path": "skills/game-balance-lab/SKILL.md"
+        }
+      ]
+    },
+    {
+      "directory": "gdd-studio",
+      "entrypoint": "skills/gdd-studio/SKILL.md",
+      "skill_count": 1,
+      "skills": [
+        {
+          "name": "gdd-studio",
+          "path": "skills/gdd-studio/SKILL.md"
+        }
+      ]
+    },
+    {
+      "directory": "generate-editor-search-query",
+      "entrypoint": "skills/generate-editor-search-query/SKILL.md",
+      "skill_count": 1,
+      "skills": [
+        {
+          "name": "generate-editor-search-query",
+          "path": "skills/generate-editor-search-query/SKILL.md"
+        }
+      ]
+    },
+    {
+      "directory": "implement-in-app-purchases",
+      "entrypoint": "skills/implement-in-app-purchases/SKILL.md",
+      "skill_count": 1,
+      "skills": [
+        {
+          "name": "implement-in-app-purchases",
+          "path": "skills/implement-in-app-purchases/SKILL.md"
+        }
+      ]
+    },
+    {
+      "directory": "levelplay-unity-integration",
+      "entrypoint": "skills/levelplay-unity-integration/SKILL.md",
+      "skill_count": 1,
+      "skills": [
+        {
+          "name": "levelplay-unity-integration",
+          "path": "skills/levelplay-unity-integration/SKILL.md"
+        }
+      ]
+    },
+    {
+      "directory": "localization",
+      "entrypoint": "skills/localization/SKILL.md",
+      "skill_count": 1,
+      "skills": [
+        {
+          "name": "localization",
+          "path": "skills/localization/SKILL.md"
+        }
+      ]
+    },
+    {
+      "directory": "manage-sprite-atlas",
+      "entrypoint": "skills/manage-sprite-atlas/SKILL.md",
+      "skill_count": 1,
+      "skills": [
+        {
+          "name": "manage-sprite-atlas",
+          "path": "skills/manage-sprite-atlas/SKILL.md"
+        }
+      ]
+    },
+    {
+      "directory": "migrate-birp-to-urp",
+      "entrypoint": "skills/migrate-birp-to-urp/SKILL.md",
+      "skill_count": 1,
+      "skills": [
+        {
+          "name": "migrate-birp-to-urp",
+          "path": "skills/migrate-birp-to-urp/SKILL.md"
+        }
+      ]
+    },
+    {
+      "directory": "new-unity-project",
+      "entrypoint": "skills/new-unity-project/SKILL.md",
+      "skill_count": 1,
+      "skills": [
+        {
+          "name": "new-unity-project",
+          "path": "skills/new-unity-project/SKILL.md"
+        }
+      ]
+    },
+    {
+      "directory": "optimize-audio",
+      "entrypoint": "skills/optimize-audio/SKILL.md",
+      "skill_count": 1,
+      "skills": [
+        {
+          "name": "optimize-audio",
+          "path": "skills/optimize-audio/SKILL.md"
+        }
+      ]
+    },
+    {
+      "directory": "optimize-text-mesh-pro",
+      "entrypoint": "skills/optimize-text-mesh-pro/SKILL.md",
+      "skill_count": 1,
+      "skills": [
+        {
+          "name": "optimize-text-mesh-pro",
+          "path": "skills/optimize-text-mesh-pro/SKILL.md"
+        }
+      ]
+    },
+    {
+      "directory": "optimize-web",
+      "entrypoint": "skills/optimize-web/SKILL.md",
+      "skill_count": 1,
+      "skills": [
+        {
+          "name": "optimize-web",
+          "path": "skills/optimize-web/SKILL.md"
+        }
+      ]
+    },
+    {
+      "directory": "physics-3d-collision",
+      "entrypoint": "skills/physics-3d-collision/SKILL.md",
+      "skill_count": 1,
+      "skills": [
+        {
+          "name": "physics-3d-collision",
+          "path": "skills/physics-3d-collision/SKILL.md"
+        }
+      ]
+    },
+    {
+      "directory": "playwright",
+      "entrypoint": "skills/playwright/SKILL.md",
+      "skill_count": 1,
+      "skills": [
+        {
+          "name": "playwright",
+          "path": "skills/playwright/SKILL.md"
+        }
+      ]
+    },
+    {
+      "directory": "setup-multiplayer-services",
+      "entrypoint": "skills/setup-multiplayer-services/SKILL.md",
+      "skill_count": 1,
+      "skills": [
+        {
+          "name": "setup-multiplayer-services",
+          "path": "skills/setup-multiplayer-services/SKILL.md"
+        }
+      ]
+    },
+    {
+      "directory": "setup-vivox-voice-chat",
+      "entrypoint": "skills/setup-vivox-voice-chat/SKILL.md",
+      "skill_count": 1,
+      "skills": [
+        {
+          "name": "setup-vivox-voice-chat",
+          "path": "skills/setup-vivox-voice-chat/SKILL.md"
+        }
+      ]
+    },
+    {
+      "directory": "shader-graph-create-custom-node",
+      "entrypoint": "skills/shader-graph-create-custom-node/SKILL.md",
+      "skill_count": 1,
+      "skills": [
+        {
+          "name": "shader-graph-create-custom-node",
+          "path": "skills/shader-graph-create-custom-node/SKILL.md"
+        }
+      ]
+    },
+    {
+      "directory": "sprite-editor",
+      "entrypoint": "skills/sprite-editor/SKILL.md",
+      "skill_count": 1,
+      "skills": [
+        {
+          "name": "sprite-editor",
+          "path": "skills/sprite-editor/SKILL.md"
+        }
+      ]
+    },
+    {
+      "directory": "sprite-segment-3x3grid",
+      "entrypoint": "skills/sprite-segment-3x3grid/SKILL.md",
+      "skill_count": 1,
+      "skills": [
+        {
+          "name": "sprite-segment-3x3grid",
+          "path": "skills/sprite-segment-3x3grid/SKILL.md"
+        }
+      ]
+    },
+    {
+      "directory": "tilemap-palette-create",
+      "entrypoint": "skills/tilemap-palette-create/SKILL.md",
+      "skill_count": 1,
+      "skills": [
+        {
+          "name": "tilemap-palette-create",
+          "path": "skills/tilemap-palette-create/SKILL.md"
+        }
+      ]
+    },
+    {
+      "directory": "tilemap-ruletile-createempty",
+      "entrypoint": "skills/tilemap-ruletile-createempty/SKILL.md",
+      "skill_count": 1,
+      "skills": [
+        {
+          "name": "tilemap-ruletile-createempty",
+          "path": "skills/tilemap-ruletile-createempty/SKILL.md"
+        }
+      ]
+    },
+    {
+      "directory": "tilemap-ruletile-createfromsegment",
+      "entrypoint": "skills/tilemap-ruletile-createfromsegment/SKILL.md",
+      "skill_count": 1,
+      "skills": [
+        {
+          "name": "tilemap-ruletile-createfromsegment",
+          "path": "skills/tilemap-ruletile-createfromsegment/SKILL.md"
+        }
+      ]
+    },
+    {
+      "directory": "unity-cli",
+      "entrypoint": "skills/unity-cli/SKILL.md",
+      "skill_count": 1,
+      "skills": [
+        {
+          "name": "unity-cli",
+          "path": "skills/unity-cli/SKILL.md"
+        }
+      ]
+    },
+    {
+      "directory": "unity-package-management",
+      "entrypoint": "skills/unity-package-management/SKILL.md",
+      "skill_count": 1,
+      "skills": [
+        {
+          "name": "unity-package-management",
+          "path": "skills/unity-package-management/SKILL.md"
+        }
+      ]
+    },
+    {
+      "directory": "unity-skills~",
+      "entrypoint": "skills/unity-skills~/SKILL.md",
+      "skill_count": 84,
+      "skills": [
+        {
+          "name": "unity-skills",
+          "path": "skills/unity-skills~/SKILL.md"
+        },
+        {
+          "name": "unity-skills-index",
+          "path": "skills/unity-skills~/skills/SKILL.md"
+        },
+        {
+          "name": "unity-addressables",
+          "path": "skills/unity-skills~/skills/addressables/SKILL.md"
+        },
+        {
+          "name": "unity-addressables-design",
+          "path": "skills/unity-skills~/skills/addressables-design/SKILL.md"
+        },
+        {
+          "name": "unity-adr",
+          "path": "skills/unity-skills~/skills/adr/SKILL.md"
+        },
+        {
+          "name": "unity-animator",
+          "path": "skills/unity-skills~/skills/animator/SKILL.md"
+        },
+        {
+          "name": "unity-architecture",
+          "path": "skills/unity-skills~/skills/architecture/SKILL.md"
+        },
+        {
+          "name": "unity-asmdef",
+          "path": "skills/unity-skills~/skills/asmdef/SKILL.md"
+        },
+        {
+          "name": "unity-asset",
+          "path": "skills/unity-skills~/skills/asset/SKILL.md"
+        },
+        {
+          "name": "unity-async",
+          "path": "skills/unity-skills~/skills/async/SKILL.md"
+        },
+        {
+          "name": "unity-batch",
+          "path": "skills/unity-skills~/skills/batch/SKILL.md"
+        },
+        {
+          "name": "unity-behavior",
+          "path": "skills/unity-skills~/skills/behavior/SKILL.md"
+        },
+        {
+          "name": "unity-blueprints",
+          "path": "skills/unity-skills~/skills/blueprints/SKILL.md"
+        },
+        {
+          "name": "unity-bookmark",
+          "path": "skills/unity-skills~/skills/bookmark/SKILL.md"
+        },
+        {
+          "name": "unity-camera",
+          "path": "skills/unity-skills~/skills/camera/SKILL.md"
+        },
+        {
+          "name": "unity-cinemachine",
+          "path": "skills/unity-skills~/skills/cinemachine/SKILL.md"
+        },
+        {
+          "name": "unity-cleaner",
+          "path": "skills/unity-skills~/skills/cleaner/SKILL.md"
+        },
+        {
+          "name": "unity-component",
+          "path": "skills/unity-skills~/skills/component/SKILL.md"
+        },
+        {
+          "name": "unity-console",
+          "path": "skills/unity-skills~/skills/console/SKILL.md"
+        },
+        {
+          "name": "unity-debug",
+          "path": "skills/unity-skills~/skills/debug/SKILL.md"
+        },
+        {
+          "name": "unity-decal",
+          "path": "skills/unity-skills~/skills/decal/SKILL.md"
+        },
+        {
+          "name": "unity-dotween",
+          "path": "skills/unity-skills~/skills/dotween/SKILL.md"
+        },
+        {
+          "name": "unity-dotween-design",
+          "path": "skills/unity-skills~/skills/dotween-design/SKILL.md"
+        },
+        {
+          "name": "unity-editor",
+          "path": "skills/unity-skills~/skills/editor/SKILL.md"
+        },
+        {
+          "name": "unity-event",
+          "path": "skills/unity-skills~/skills/event/SKILL.md"
+        },
+        {
+          "name": "unity-gameobject",
+          "path": "skills/unity-skills~/skills/gameobject/SKILL.md"
+        },
+        {
+          "name": "unity-graphics",
+          "path": "skills/unity-skills~/skills/graphics/SKILL.md"
+        },
+        {
+          "name": "unity-history",
+          "path": "skills/unity-skills~/skills/history/SKILL.md"
+        },
+        {
+          "name": "unity-hybridclr",
+          "path": "skills/unity-skills~/skills/hybridclr/SKILL.md"
+        },
+        {
+          "name": "unity-importer",
+          "path": "skills/unity-skills~/skills/importer/SKILL.md"
+        },
+        {
+          "name": "unity-inspector",
+          "path": "skills/unity-skills~/skills/inspector/SKILL.md"
+        },
+        {
+          "name": "unity-light",
+          "path": "skills/unity-skills~/skills/light/SKILL.md"
+        },
+        {
+          "name": "unity-manual-component",
+          "path": "skills/unity-skills~/skills/manual-component/SKILL.md"
+        },
+        {
+          "name": "unity-manual-gameobject",
+          "path": "skills/unity-skills~/skills/manual-gameobject/SKILL.md"
+        },
+        {
+          "name": "unity-manual-material",
+          "path": "skills/unity-skills~/skills/manual-material/SKILL.md"
+        },
+        {
+          "name": "unity-manual-scene",
+          "path": "skills/unity-skills~/skills/manual-scene/SKILL.md"
+        },
+        {
+          "name": "unity-material",
+          "path": "skills/unity-skills~/skills/material/SKILL.md"
+        },
+        {
+          "name": "unity-navmesh",
+          "path": "skills/unity-skills~/skills/navmesh/SKILL.md"
+        },
+        {
+          "name": "unity-netcode",
+          "path": "skills/unity-skills~/skills/netcode/SKILL.md"
+        },
+        {
+          "name": "unity-netcode-design",
+          "path": "skills/unity-skills~/skills/netcode-design/SKILL.md"
+        },
+        {
+          "name": "unity-optimization",
+          "path": "skills/unity-skills~/skills/optimization/SKILL.md"
+        },
+        {
+          "name": "unity-package",
+          "path": "skills/unity-skills~/skills/package/SKILL.md"
+        },
+        {
+          "name": "unity-patterns",
+          "path": "skills/unity-skills~/skills/patterns/SKILL.md"
+        },
+        {
+          "name": "unity-perception",
+          "path": "skills/unity-skills~/skills/perception/SKILL.md"
+        },
+        {
+          "name": "unity-performance",
+          "path": "skills/unity-skills~/skills/performance/SKILL.md"
+        },
+        {
+          "name": "unity-physics",
+          "path": "skills/unity-skills~/skills/physics/SKILL.md"
+        },
+        {
+          "name": "unity-pico-design",
+          "path": "skills/unity-skills~/skills/pico-design/SKILL.md"
+        },
+        {
+          "name": "unity-postprocess",
+          "path": "skills/unity-skills~/skills/postprocess/SKILL.md"
+        },
+        {
+          "name": "unity-prefab",
+          "path": "skills/unity-skills~/skills/prefab/SKILL.md"
+        },
+        {
+          "name": "unity-primetween",
+          "path": "skills/unity-skills~/skills/primetween/SKILL.md"
+        },
+        {
+          "name": "unity-primetween-design",
+          "path": "skills/unity-skills~/skills/primetween-design/SKILL.md"
+        },
+        {
+          "name": "unity-probuilder",
+          "path": "skills/unity-skills~/skills/probuilder/SKILL.md"
+        },
+        {
+          "name": "unity-profiler",
+          "path": "skills/unity-skills~/skills/profiler/SKILL.md"
+        },
+        {
+          "name": "unity-project",
+          "path": "skills/unity-skills~/skills/project/SKILL.md"
+        },
+        {
+          "name": "unity-project-scout",
+          "path": "skills/unity-skills~/skills/project-scout/SKILL.md"
+        },
+        {
+          "name": "unity-qframework",
+          "path": "skills/unity-skills~/skills/qframework/SKILL.md"
+        },
+        {
+          "name": "unity-qframework-design",
+          "path": "skills/unity-skills~/skills/qframework-design/SKILL.md"
+        },
+        {
+          "name": "unity-sample",
+          "path": "skills/unity-skills~/skills/sample/SKILL.md"
+        },
+        {
+          "name": "unity-scene",
+          "path": "skills/unity-skills~/skills/scene/SKILL.md"
+        },
+        {
+          "name": "unity-scene-contracts",
+          "path": "skills/unity-skills~/skills/scene-contracts/SKILL.md"
+        },
+        {
+          "name": "unity-script",
+          "path": "skills/unity-skills~/skills/script/SKILL.md"
+        },
+        {
+          "name": "unity-script-roles",
+          "path": "skills/unity-skills~/skills/script-roles/SKILL.md"
+        },
+        {
+          "name": "unity-scriptableobject",
+          "path": "skills/unity-skills~/skills/scriptableobject/SKILL.md"
+        },
+        {
+          "name": "unity-scriptdesign",
+          "path": "skills/unity-skills~/skills/scriptdesign/SKILL.md"
+        },
+        {
+          "name": "unity-shader",
+          "path": "skills/unity-skills~/skills/shader/SKILL.md"
+        },
+        {
+          "name": "unity-shadergraph",
+          "path": "skills/unity-skills~/skills/shadergraph/SKILL.md"
+        },
+        {
+          "name": "unity-shadergraph-design",
+          "path": "skills/unity-skills~/skills/shadergraph-design/SKILL.md"
+        },
+        {
+          "name": "unity-smart",
+          "path": "skills/unity-skills~/skills/smart/SKILL.md"
+        },
+        {
+          "name": "unity-terrain",
+          "path": "skills/unity-skills~/skills/terrain/SKILL.md"
+        },
+        {
+          "name": "unity-test",
+          "path": "skills/unity-skills~/skills/test/SKILL.md"
+        },
+        {
+          "name": "unity-testability",
+          "path": "skills/unity-skills~/skills/testability/SKILL.md"
+        },
+        {
+          "name": "unity-timeline",
+          "path": "skills/unity-skills~/skills/timeline/SKILL.md"
+        },
+        {
+          "name": "unity-ui",
+          "path": "skills/unity-skills~/skills/ui/SKILL.md"
+        },
+        {
+          "name": "unity-uitoolkit",
+          "path": "skills/unity-skills~/skills/uitoolkit/SKILL.md"
+        },
+        {
+          "name": "unity-unitask-design",
+          "path": "skills/unity-skills~/skills/unitask-design/SKILL.md"
+        },
+        {
+          "name": "unity-skills-cli-bridge",
+          "path": "skills/unity-skills~/skills/unity-skills-cli-bridge/SKILL.md"
+        },
+        {
+          "name": "unity-urp",
+          "path": "skills/unity-skills~/skills/urp/SKILL.md"
+        },
+        {
+          "name": "unity-validation",
+          "path": "skills/unity-skills~/skills/validation/SKILL.md"
+        },
+        {
+          "name": "unity-volume",
+          "path": "skills/unity-skills~/skills/volume/SKILL.md"
+        },
+        {
+          "name": "unity-workflow",
+          "path": "skills/unity-skills~/skills/workflow/SKILL.md"
+        },
+        {
+          "name": "unity-xr",
+          "path": "skills/unity-skills~/skills/xr/SKILL.md"
+        },
+        {
+          "name": "unity-yaml-editing",
+          "path": "skills/unity-skills~/skills/yaml-editing/SKILL.md"
+        },
+        {
+          "name": "unity-yooasset",
+          "path": "skills/unity-skills~/skills/yooasset/SKILL.md"
+        },
+        {
+          "name": "unity-yooasset-design",
+          "path": "skills/unity-skills~/skills/yooasset-design/SKILL.md"
+        }
+      ]
+    },
+    {
+      "directory": "validate-urp-render-graph-renderer-feature",
+      "entrypoint": "skills/validate-urp-render-graph-renderer-feature/SKILL.md",
+      "skill_count": 1,
+      "skills": [
+        {
+          "name": "validate-urp-render-graph-renderer-feature",
+          "path": "skills/validate-urp-render-graph-renderer-feature/SKILL.md"
+        }
+      ]
+    }
+  ]
+}
