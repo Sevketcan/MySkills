@@ -36,12 +36,12 @@ fi
 "$STATE_ROOT/venv/bin/python" -m pip install --quiet --disable-pip-version-check PyYAML==6.0.2
 
 # Establish a conflict baseline before enabling the background job.
-sync_args=()
+set --
 if [ ! -f "$STATE_ROOT/local-sync.json" ]; then
-  sync_args+=(--bootstrap)
+  set -- --bootstrap
 fi
 CODEX_HOME="$CODEX_ROOT" CLAUDE_CONFIG_DIR="$CLAUDE_ROOT" MYSKILLS_STATE_ROOT="$STATE_ROOT" \
-  "$STATE_ROOT/venv/bin/python" "$SCRIPT_DIR/sync-local.py" "${sync_args[@]}"
+  "$STATE_ROOT/venv/bin/python" "$SCRIPT_DIR/sync-local.py" "$@"
 python3 "$SCRIPT_DIR/build_manifest.py" >/dev/null
 
 REPOSITORY_ROOT="$REPOSITORY_ROOT" \
