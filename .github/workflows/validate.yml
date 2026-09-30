@@ -92,6 +92,14 @@ jobs:
           ./scripts/auto-sync.sh | tee "$RUNNER_TEMP/autosync.log"
           grep -q 'pushed 1 commit' "$RUNNER_TEMP/autosync.log"
           git --git-dir="$RUNNER_TEMP/remote.git" show main:skills/gdd-studio/autosync-ci.test >/dev/null
+          # A change created in Claude must also reach Codex and GitHub.
+          touch "$CLAUDE_CONFIG_DIR/skills/gdd-studio/claude-autosync-ci.test"
+          MYSKILLS_STATE_ROOT="$RUNNER_TEMP/autosync-state" \
+          MYSKILLS_VALIDATOR_PYTHON="$(command -v python)" \
+          ./scripts/auto-sync.sh | tee "$RUNNER_TEMP/claude-autosync.log"
+          grep -q 'pushed 1 commit' "$RUNNER_TEMP/claude-autosync.log"
+          test -f "$CODEX_HOME/skills/gdd-studio/claude-autosync-ci.test"
+          git --git-dir="$RUNNER_TEMP/remote.git" show main:skills/gdd-studio/claude-autosync-ci.test >/dev/null
 
   windows-install:
     runs-on: windows-latest
