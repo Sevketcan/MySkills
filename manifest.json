@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "package_count": 44,
-  "skill_count": 127,
+  "package_count": 48,
+  "skill_count": 137,
   "packages": [
     {
       "directory": "2d-pixel-perfect",
@@ -26,6 +26,52 @@
       ]
     },
     {
+      "directory": "blender",
+      "entrypoint": "skills/blender/SKILL.md",
+      "skill_count": 7,
+      "skills": [
+        {
+          "name": "blender",
+          "path": "skills/blender/SKILL.md"
+        },
+        {
+          "name": "actions-fcurves",
+          "path": "skills/blender/actions-fcurves/SKILL.md"
+        },
+        {
+          "name": "addons-panels",
+          "path": "skills/blender/addons-panels/SKILL.md"
+        },
+        {
+          "name": "cameras-lights",
+          "path": "skills/blender/cameras-lights/SKILL.md"
+        },
+        {
+          "name": "linked-libraries",
+          "path": "skills/blender/linked-libraries/SKILL.md"
+        },
+        {
+          "name": "material-nodes",
+          "path": "skills/blender/material-nodes/SKILL.md"
+        },
+        {
+          "name": "python-api",
+          "path": "skills/blender/python-api/SKILL.md"
+        }
+      ]
+    },
+    {
+      "directory": "blender-mcp",
+      "entrypoint": "skills/blender-mcp/SKILL.md",
+      "skill_count": 1,
+      "skills": [
+        {
+          "name": "blender-mcp",
+          "path": "skills/blender-mcp/SKILL.md"
+        }
+      ]
+    },
+    {
       "directory": "build-live-game",
       "entrypoint": "skills/build-live-game/SKILL.md",
       "skill_count": 1,
@@ -33,6 +79,17 @@
         {
           "name": "build-live-game",
           "path": "skills/build-live-game/SKILL.md"
+        }
+      ]
+    },
+    {
+      "directory": "dream-loop",
+      "entrypoint": "skills/dream-loop/SKILL.md",
+      "skill_count": 1,
+      "skills": [
+        {
+          "name": "dream-loop",
+          "path": "skills/dream-loop/SKILL.md"
         }
       ]
     },
@@ -451,6 +508,17 @@
         {
           "name": "unity-cli",
           "path": "skills/unity-cli/SKILL.md"
+        }
+      ]
+    },
+    {
+      "directory": "unity-mcp-skill",
+      "entrypoint": "skills/unity-mcp-skill/SKILL.md",
+      "skill_count": 1,
+      "skills": [
+        {
+          "name": "unity-mcp-orchestrator",
+          "path": "skills/unity-mcp-skill/SKILL.md"
         }
       ]
     },

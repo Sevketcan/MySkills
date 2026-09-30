@@ -43,13 +43,14 @@ if [ "$behind" -gt 0 ]; then
   exit 1
 fi
 
-"$SCRIPT_DIR/export-local.sh" >/dev/null
+"$VALIDATOR_PYTHON" "$SCRIPT_DIR/sync-local.py"
+
 "$VALIDATOR_PYTHON" "$SCRIPT_DIR/validate_collection.py" >/dev/null
 python3 "$SCRIPT_DIR/build_manifest.py" >/dev/null
 
 git add -- skills manifest.json
 
-SECRET_PATTERN='(gh[opusr]_[A-Za-z0-9_]{20,}|github_pat_[A-Za-z0-9_]{20,}|sk-[A-Za-z0-9_-]{20,}|AKIA[0-9A-Z]{16}|BEGIN (RSA|OPENSSH|EC|DSA) PRIVATE KEY)'
+SECRET_PATTERN='(^|[^A-Za-z0-9_-])(gh[opusr]_[A-Za-z0-9_]{20,}|github_pat_[A-Za-z0-9_]{20,}|sk-[A-Za-z0-9_-]{20,}|AKIA[0-9A-Z]{16}|BEGIN (RSA|OPENSSH|EC|DSA) PRIVATE KEY)'
 if git grep --cached -I -E -q "$SECRET_PATTERN" -- skills; then
   git restore --staged -- skills manifest.json
   log "stopped: a possible credential or private key was detected"
@@ -58,7 +59,7 @@ fi
 
 if ! git diff --cached --quiet; then
   timestamp=$(date -u +%Y-%m-%dT%H:%M:%SZ)
-  git commit --quiet -m "Sync Codex skills $timestamp"
+  git commit --quiet -m "Sync Codex and Claude skills $timestamp"
   ahead=$((ahead + 1))
   log "committed skill changes"
 fi

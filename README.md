@@ -94,9 +94,43 @@ Install the background sync once:
 ./scripts/install-macos-autosync.sh
 ```
 
-The launch agent reacts to changes under `~/.codex/skills` and also checks every five minutes. When exported content changes, it validates all skills, rebuilds the manifest, scans for common credential formats, commits only `skills/` and `manifest.json`, and pushes to `origin/main`.
+The launch agent now synchronizes personal skills in **both directions** between
+`~/.codex/skills`, `~/.claude/skills`, and this repository, then validates, commits,
+and pushes changes to `origin/main`. It watches both directories and checks every
+five minutes (including edits inside existing packages).
 
-It never force-pushes or pulls through a conflict. A staged change, failed validation, detected secret, non-`main` branch, or remote-ahead state stops the run and is recorded in:
+On first setup the installer bootstraps from the repository/Codex copies, imports
+Claude-only packages and files, and backs up any overwritten Claude files. If the
+repository and Codex disagree, setup stops for manual reconciliation. Later runs
+remember the last synchronized content and detect which side changed each file.
+Different files can change on different sides; divergent edits to the same file
+stop the entire run without writing files. Resolve by making the conflicting
+copies identical, then run the sync again.
+
+Claude path references and `allowed-tools` formatting are converted automatically.
+Codex-only `agents/` files stay in Codex and the repository. Claude's separately
+provided `fullstack-dev` and `unity-skills` remain excluded from sharing. System
+skills, plugin caches, evaluation artifacts, environment files and private keys
+are excluded. Removing a file from one side restores it from another; automatic
+sync does not propagate deletions. To retire a package, stop the agent and remove
+it from all three locations before restarting.
+
+Local synchronization can also be run without Git operations (requires PyYAML):
+
+```bash
+"$HOME/Library/Application Support/MySkills/venv/bin/python" scripts/sync-local.py --dry-run
+"$HOME/Library/Application Support/MySkills/venv/bin/python" scripts/sync-local.py
+```
+
+The baseline and backups live under
+`~/Library/Application Support/MySkills/` (`local-sync.json` and `backups/`).
+`CODEX_HOME` and `CLAUDE_CONFIG_DIR` support custom locations; the installer saves
+both for the background agent. `MYSKILLS_STATE_ROOT` can isolate a manual test's
+baseline and backups. Never reuse a baseline with different roots.
+
+A staged change, invalid skill, credential match, conflict, non-`main` branch, or
+remote-ahead state stops the background run. It never force-pushes or pulls through
+a conflict. Logs are recorded in:
 
 ```text
 ~/Library/Logs/MySkills-autosync.log

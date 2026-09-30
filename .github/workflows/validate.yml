@@ -32,6 +32,8 @@ jobs:
           bash -n scripts/install-macos-autosync.sh
           bash -n scripts/uninstall-macos-autosync.sh
           python -m py_compile scripts/build_manifest.py scripts/validate_collection.py skills/game-balance-lab/scripts/balance_lab.py
+      - name: Test bidirectional synchronization
+        run: python -m unittest discover -s tests -v
       - name: Test idempotent installation
         run: |
           export CODEX_HOME="$RUNNER_TEMP/codex-test"
@@ -82,6 +84,7 @@ jobs:
           git push "$RUNNER_TEMP/remote.git" HEAD:refs/heads/main
           git remote set-url origin "$RUNNER_TEMP/remote.git"
           export CODEX_HOME="$RUNNER_TEMP/autosync-codex"
+          export CLAUDE_CONFIG_DIR="$RUNNER_TEMP/autosync-claude"
           ./install.sh >/dev/null
           touch "$CODEX_HOME/skills/gdd-studio/autosync-ci.test"
           MYSKILLS_STATE_ROOT="$RUNNER_TEMP/autosync-state" \

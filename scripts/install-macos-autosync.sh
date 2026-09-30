@@ -13,6 +13,7 @@ STATE_ROOT="${HOME}/Library/Application Support/MySkills"
 LOG_ROOT="${HOME}/Library/Logs"
 PLIST_PATH="${HOME}/Library/LaunchAgents/$LABEL.plist"
 CODEX_ROOT="${CODEX_HOME:-${HOME}/.codex}"
+CLAUDE_ROOT="${CLAUDE_CONFIG_DIR:-${HOME}/.claude}"
 INTERVAL="${MYSKILLS_INTERVAL:-300}"
 
 case "$INTERVAL" in
@@ -34,10 +35,22 @@ if [ ! -x "$STATE_ROOT/venv/bin/python" ]; then
 fi
 "$STATE_ROOT/venv/bin/python" -m pip install --quiet --disable-pip-version-check PyYAML==6.0.2
 
+# Establish a conflict baseline before enabling the background job.
+sync_args=()
+if [ ! -f "$STATE_ROOT/local-sync.json" ]; then
+  sync_args+=(--bootstrap)
+fi
+CODEX_HOME="$CODEX_ROOT" CLAUDE_CONFIG_DIR="$CLAUDE_ROOT" MYSKILLS_STATE_ROOT="$STATE_ROOT" \
+  "$STATE_ROOT/venv/bin/python" "$SCRIPT_DIR/sync-local.py" "${sync_args[@]}"
+python3 "$SCRIPT_DIR/build_manifest.py" >/dev/null
+
 REPOSITORY_ROOT="$REPOSITORY_ROOT" \
 LABEL="$LABEL" \
 PLIST_PATH="$PLIST_PATH" \
 CODEX_SKILLS="$CODEX_ROOT/skills" \
+CLAUDE_SKILLS="$CLAUDE_ROOT/skills" \
+CODEX_ROOT="$CODEX_ROOT" \
+CLAUDE_ROOT="$CLAUDE_ROOT" \
 INTERVAL="$INTERVAL" \
 LOG_ROOT="$LOG_ROOT" \
 python3 - <<'PY'
@@ -54,7 +67,8 @@ payload = {
     "WorkingDirectory": os.environ["REPOSITORY_ROOT"],
     "RunAtLoad": True,
     "StartInterval": int(os.environ["INTERVAL"]),
-    "WatchPaths": [os.environ["CODEX_SKILLS"]],
+    "WatchPaths": [os.environ["CODEX_SKILLS"], os.environ["CLAUDE_SKILLS"]],
+    "EnvironmentVariables": {"CODEX_HOME": os.environ["CODEX_ROOT"], "CLAUDE_CONFIG_DIR": os.environ["CLAUDE_ROOT"]},
     "ProcessType": "Background",
     "StandardOutPath": str(Path(os.environ["LOG_ROOT"]) / "MySkills-autosync.log"),
     "StandardErrorPath": str(Path(os.environ["LOG_ROOT"]) / "MySkills-autosync-error.log"),
