@@ -132,6 +132,20 @@ function Install-Target {
         New-Item -ItemType Directory -Force -Path $TargetSkills | Out-Null
     }
 
+    # Former standalone packages now live as optional gdd-studio references.
+    foreach ($RetiredName in @("game-feel", "game-ui-ux", "input-systems", "procedural-gen", "save-systems")) {
+        $RetiredPath = Join-Path $TargetSkills $RetiredName
+        if (-not (Test-Path $RetiredPath)) { continue }
+        if ($DryRun) {
+            Write-Output ("would archive {0} (now a reference)" -f $RetiredName)
+        }
+        else {
+            New-Item -ItemType Directory -Force -Path $BackupRoot | Out-Null
+            Move-Item -Path $RetiredPath -Destination (Join-Path $BackupRoot $RetiredName)
+            Write-Output ("archived   {0} (now a reference)" -f $RetiredName)
+        }
+    }
+
     foreach ($Package in $Packages) {
         $PackageName = $Package.Name
         if ($Name -eq "claude") {

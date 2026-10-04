@@ -1,0 +1,23 @@
+[
+  {
+    "id": "small-python-fix",
+    "skill": "fullstack-dev",
+    "kind": "code",
+    "prompt": "Fix only this Python function. normalize_coupon(value) must return an empty string for None, otherwise remove surrounding whitespace and return uppercase. Current code: def normalize_coupon(value): return value.upper(). Return only the corrected function in the code field. Keep dependencies, stack and questions empty. No framework setup.",
+    "positive": false
+  },
+  {
+    "id": "existing-flask-project",
+    "skill": "fullstack-dev",
+    "kind": "scope",
+    "prompt": "Our existing service uses Flask, Python and SQLite. Add pagination to the existing GET /items endpoint. Parameters page and page_size must be positive integers; cap page_size at 100. Describe the smallest implementation plan in explanation. Return the retained stack in stack. We do not want a migration or new dependencies. Context contains all choices needed; ask no questions.",
+    "positive": false
+  },
+  {
+    "id": "blender-connector-contract",
+    "skill": "blender-mcp",
+    "kind": "connector",
+    "prompt": "A Blender MCP interactive render timed out after 60 seconds, but Blender still reports busy. Should we submit the same render again now? Separately, provide a minimal interactive blender_execute_python snippet that returns object names in the scene. State the expected dictionary variable name in result_variable. A headless CLI export job must persist its modified .blend state to an explicitly requested destination: should that script explicitly save the modified state to that destination (save_mainfile with a path or save_as_mainfile are both acceptable)? Set rerun_timed_out to whether to resubmit now and headless_saved to whether the state should be saved; this field is not about choosing one specific save operator. Explain the reasoning without asking questions.",
+    "positive": true
+  }
+]

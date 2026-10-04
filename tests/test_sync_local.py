@@ -27,6 +27,26 @@ class SyncTests(unittest.TestCase):
     def run_sync(self, **kwargs):
         return sync.synchronize(*self.roots, self.state, **kwargs)
 
+    def test_retired_package_is_not_imported_from_old_installation(self):
+        self.put(1, 'game-feel/SKILL.md', SKILL.replace(b'name: demo', b'name: game-feel'))
+        self.run_sync()
+        self.assertFalse((self.roots[0] / 'game-feel').exists())
+        self.assertFalse((self.roots[2] / 'game-feel').exists())
+        # Excluding legacy copies is not permission to delete their contents.
+        self.assertTrue((self.roots[1] / 'game-feel/SKILL.md').exists())
+        self.assertEqual(self.run_sync(), 0)
+
+    def test_retired_nested_entrypoint_is_not_restored_but_guide_is_shared(self):
+        self.put(0, 'unity-skills~/SKILL.md', SKILL.replace(b'name: demo', b'name: unity-skills'))
+        old = 'unity-skills~/skills/animator/SKILL.md'
+        self.put(1, old, SKILL.replace(b'name: demo', b'name: unity-animator'))
+        guide = 'unity-skills~/skills/animator/GUIDE.md'
+        self.put(0, guide, b'# Animator API guide\n')
+        self.run_sync()
+        self.assertFalse((self.roots[0] / old).exists())
+        self.assertEqual((self.roots[1] / guide).read_bytes(), b'# Animator API guide\n')
+        self.assertEqual(self.run_sync(), 0)
+
     def test_creation_both_directions_and_idempotency(self):
         self.run_sync()
         self.assertIn(b'CLAUDE_CONFIG_DIR', (self.roots[2] / 'demo/SKILL.md').read_bytes())

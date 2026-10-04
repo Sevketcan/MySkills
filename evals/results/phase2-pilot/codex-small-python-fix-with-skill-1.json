@@ -1,0 +1,48 @@
+{
+  "provider": "codex",
+  "case": "small-python-fix",
+  "arm": "with-skill",
+  "trial": 1,
+  "model": "gpt-6.1-sol",
+  "status": "completed",
+  "elapsed_seconds": 9.129,
+  "usage": {
+    "input_tokens": 14821,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 66,
+    "reasoning_output_tokens": 0
+  },
+  "answer": {
+    "code": "def normalize_coupon(value):\n    return \"\" if value is None else value.strip().upper()",
+    "explanation": "",
+    "questions": [],
+    "dependencies": [],
+    "stack": [],
+    "rerun_timed_out": false,
+    "headless_saved": false,
+    "result_variable": ""
+  },
+  "error": null,
+  "grade": {
+    "rubric_version": 3,
+    "checks": {
+      "no_unnecessary_questions": true,
+      "no_new_dependencies": true,
+      "correct_behavior": true
+    },
+    "passed": true
+  },
+  "tool_calls": null,
+  "method": "explicit entrypoint instructions; automatic discovery and live tools not tested",
+  "original_grade": {
+    "checks": {
+      "no_unnecessary_questions": true,
+      "no_new_dependencies": true,
+      "correct_behavior": true
+    },
+    "passed": true
+  },
+  "rubric_note": "Post-run manual review: bundled bpy is not a new dependency; active-scene scope is checked; explicit save_as_mainfile is valid persistence. All arms rescored identically.",
+  "tool_calls_note": "Initial pilot did not retain tool-call events; count is unmeasured."
+}

@@ -1,0 +1,72 @@
+{
+  "provider": "claude",
+  "case": "blender-connector-contract",
+  "arm": "with-skill",
+  "trial": 1,
+  "model": "claude-opus-4-6[1m]",
+  "status": "completed",
+  "elapsed_seconds": 80.197,
+  "usage": {
+    "input_tokens": 4222,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 1088,
+    "output_tokens": 3220,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 0,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "answer": {
+    "code": "import bpy\nresult = {\"objects\": [obj.name for obj in bpy.data.objects]}",
+    "dependencies": [
+      "bpy (bundled with Blender's Python, no install needed)"
+    ],
+    "explanation": "1) Timed-out render: do NOT resubmit now (rerun_timed_out = false). A 60s timeout only means the MCP call gave up waiting \u2014 it does not cancel the render. Blender still reporting busy confirms the original render is likely still running inside the session. Submitting the same render again would queue a duplicate operation, contend for CPU/GPU, and produce misleading or corrupted results. Per the connector contract (\"A render or bake timeout may leave the operation running. Re-inspect before submitting it again\"), first poll with a lightweight interactive call until Blender reports idle/render finished, and only then decide whether to resubmit.\n\n2) Snippet: the interactive contract requires assigning a JSON-serializable dictionary to `result`, and namespaces do not persist between calls, so `bpy` is imported inside the snippet. Object names are plain strings, so `result = {\"objects\": [...]}` is directly serializable. Expected dictionary variable: `result`.\n\n3) Headless persistence: YES, the script must save (headless_saved = true). In `--background` mode the process exits after the script runs, so any unsaved .blend modification is lost. However, a bare `save_mainfile()` writes back to the path the file was opened from (the SOURCE .blend), which is only correct if that path is itself the explicitly requested destination. Since the destination is explicitly requested, the script should target it explicitly, e.g. `bpy.ops.wm.save_mainfile(filepath=DESTINATION)` (or `save_as_mainfile`), confirming the target path from task context \u2014 this persists the state to the requested file without clobbering the source and without touching the separately open interactive session. This is exactly why the skill's export helper \"does not save the source .blend\": saving is a deliberate, destination-directed step, not an incidental one.",
+    "headless_saved": true,
+    "questions": [],
+    "rerun_timed_out": false,
+    "result_variable": "result",
+    "stack": [
+      "Blender",
+      "blender-mcp connector addon"
+    ]
+  },
+  "error": null,
+  "grade": {
+    "rubric_version": 3,
+    "checks": {
+      "no_unnecessary_questions": true,
+      "no_new_dependencies": true,
+      "does_not_resubmit_busy_render": true,
+      "headless_persistence": true,
+      "connector_result_contract": true,
+      "fresh_namespace_import": true,
+      "interactive_result_assignment": true,
+      "active_scene_scope": false
+    },
+    "passed": false
+  },
+  "tool_calls": 0,
+  "method": "explicit entrypoint instructions; automatic discovery and live tools not tested",
+  "original_grade": {
+    "checks": {
+      "no_unnecessary_questions": true,
+      "no_new_dependencies": false,
+      "does_not_resubmit_busy_render": true,
+      "headless_persistence": true,
+      "connector_result_contract": true,
+      "fresh_namespace_import": true,
+      "interactive_result_assignment": true
+    },
+    "passed": false
+  },
+  "rubric_note": "Post-run manual review: bundled bpy is not a new dependency; active-scene scope is checked; explicit save_as_mainfile is valid persistence. All arms rescored identically."
+}

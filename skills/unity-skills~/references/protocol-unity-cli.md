@@ -2,7 +2,7 @@
 
 > Unity CLI cold start is opt-in (v2.3+). Most sessions do not need it. This protocol was verified against Unity CLI `1.0.0-beta.5`.
 
-If the REST server is unreachable at session start, check `<projectRoot>/Library/UnitySkills/cli_config.json` (helper: `unity_skills.get_cli_config()`). **Only if** it exists with `enabled: true` has the user bound the experimental Unity CLI in the panel — then read `skills/unity-skills-cli-bridge/SKILL.md` and you may:
+If the REST server is unreachable at session start, check `<projectRoot>/Library/UnitySkills/cli_config.json` (helper: `unity_skills.get_cli_config()`). **Only if** it exists with `enabled: true` has the user bound the experimental Unity CLI in the panel — then read `skills/unity-skills-cli-bridge/GUIDE.md` and you may:
 
 1. Triage liveness via the UnitySkills registry (`~/.unity_skills/registry.json` → is the project entry's `pid` alive? alive → it's a Domain Reload window, keep waiting; not alive → continue checking).
 2. Cross-check with `<cliPath> editors running --format json --non-interactive`.
@@ -20,4 +20,4 @@ When scripting CLI calls, set these environment variables (advisory):
 - `UNITY_NO_PAGER=1` — disable the interactive pager on long output.
 - `UNITY_NO_CRASH_REPORT=1` — opt out of anonymous crash reporting.
 
-For build/test/run exit codes, signal diagnostics (`SIGSEGV/SIGILL/SIGTRAP/SIGFPE/SIGBUS`), and NDJSON terminal-frame handling, see `skills/unity-skills-cli-bridge/SKILL.md`. The binary's own `--help` is always the final authority.
+For build/test/run exit codes, signal diagnostics (`SIGSEGV/SIGILL/SIGTRAP/SIGFPE/SIGBUS`), and NDJSON terminal-frame handling, see `skills/unity-skills-cli-bridge/GUIDE.md`. The binary's own `--help` is always the final authority.

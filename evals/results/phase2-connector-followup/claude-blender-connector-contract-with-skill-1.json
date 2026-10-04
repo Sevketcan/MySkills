@@ -1,0 +1,75 @@
+{
+  "provider": "claude",
+  "case": "blender-connector-contract",
+  "arm": "with-skill",
+  "trial": 1,
+  "model": "claude-opus-4-6[1m]",
+  "status": "completed",
+  "elapsed_seconds": 37.267,
+  "usage": {
+    "input_tokens": 2620,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 1152,
+    "output_tokens": 1491,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 0,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "answer": {
+    "code": "import bpy\nresult = {\"objects\": [obj.name for obj in bpy.context.scene.objects]}",
+    "dependencies": [],
+    "explanation": "Timed-out render: Do NOT resubmit now. The 60s timeout only ended the connector's wait, not Blender's render; \"still busy\" means the original render operation is still running. Submitting the same render again would stack a second render on top of the in-flight one (failing, queueing, or corrupting state). Per the connector contract, a render/bake timeout may leave the operation running \u2014 re-inspect first: poll status until Blender is no longer busy, then verify whether the render actually completed (e.g., check render result/image or the expected output file) before deciding to rerun. Hence rerun_timed_out = false.\n\nSnippet: Interactive calls must import their own modules (namespaces do not persist between calls) and assign a JSON-serializable dictionary to `result`. It uses bpy.context.scene.objects (active scene only) rather than bpy.data.objects, which would incorrectly include objects from other scenes. Plain string names need no Vector/Euler/Matrix conversion. The expected dictionary variable is `result`.\n\nHeadless persistence: Yes, call save_mainfile (with the explicitly requested destination as filepath, e.g., bpy.ops.wm.save_mainfile(filepath=DESTINATION)). Headless CLI changes live only in the transient session and are lost when Blender exits \u2014 nothing autosaves. Note the distinction: the deterministic export helper intentionally does NOT save the source .blend; persisting modified .blend state is a separate, explicit step, so the script must save to the requested path itself (not silently over the source) and must not touch any open interactive session's file. Hence headless_saved = true. No open questions; all answers follow from the task context and skill instructions.",
+    "headless_saved": true,
+    "questions": [],
+    "rerun_timed_out": false,
+    "result_variable": "result",
+    "stack": [
+      "Blender",
+      "Python (bpy)"
+    ]
+  },
+  "error": null,
+  "grade": {
+    "rubric_version": 3,
+    "checks": {
+      "no_unnecessary_questions": true,
+      "no_new_dependencies": true,
+      "does_not_resubmit_busy_render": true,
+      "headless_persistence": true,
+      "connector_result_contract": true,
+      "fresh_namespace_import": true,
+      "interactive_result_assignment": true,
+      "active_scene_scope": true
+    },
+    "passed": true
+  },
+  "tool_calls": 0,
+  "cost_usd": 0.050951,
+  "prompt_sha256": "0632806c5cd357a43634eb4bfacb9fc28ce8b8cd8a888fcd2965b21af8e5f692",
+  "skill_sha256": "5ba2505fa8e6076f3d38c02cc0b3300593ddbb6d68539c4e57275b20b9cd0580",
+  "method": "explicit entrypoint instructions; automatic discovery and live tools not tested",
+  "original_grade": {
+    "rubric_version": 2,
+    "checks": {
+      "no_unnecessary_questions": true,
+      "no_new_dependencies": true,
+      "does_not_resubmit_busy_render": true,
+      "headless_persistence": true,
+      "connector_result_contract": true,
+      "fresh_namespace_import": true,
+      "interactive_result_assignment": true,
+      "active_scene_scope": true
+    },
+    "passed": true
+  },
+  "rubric_note": "Post-run manual review: bundled bpy is not a new dependency; active-scene scope is checked; explicit save_as_mainfile is valid persistence. All arms rescored identically."
+}

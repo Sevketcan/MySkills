@@ -6,7 +6,7 @@ type: reference
 
 # Version Matrix
 
-Sub-doc of [shadergraph-design](./SKILL.md). This file exists to stop version hallucination.
+Sub-doc of [shadergraph-design](./GUIDE.md). This file exists to stop version hallucination.
 
 ## Validated Versions
 

@@ -1,0 +1,58 @@
+{
+  "provider": "claude",
+  "case": "small-python-fix",
+  "arm": "with-skill",
+  "trial": 1,
+  "model": "claude-opus-4-6[1m]",
+  "status": "completed",
+  "elapsed_seconds": 15.612,
+  "usage": {
+    "input_tokens": 1181,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 896,
+    "output_tokens": 306,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 0,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "answer": {
+    "code": "def normalize_coupon(value):\n    if value is None:\n        return \"\"\n    return value.strip().upper()",
+    "dependencies": [],
+    "explanation": "Added a None guard that returns an empty string, and applied .strip() before .upper() so surrounding whitespace is removed and the result is uppercase. No other code was changed.",
+    "headless_saved": false,
+    "questions": [],
+    "rerun_timed_out": false,
+    "result_variable": "",
+    "stack": []
+  },
+  "error": null,
+  "grade": {
+    "rubric_version": 3,
+    "checks": {
+      "no_unnecessary_questions": true,
+      "no_new_dependencies": true,
+      "correct_behavior": true
+    },
+    "passed": true
+  },
+  "tool_calls": 0,
+  "method": "explicit entrypoint instructions; automatic discovery and live tools not tested",
+  "original_grade": {
+    "checks": {
+      "no_unnecessary_questions": true,
+      "no_new_dependencies": true,
+      "correct_behavior": true
+    },
+    "passed": true
+  },
+  "rubric_note": "Post-run manual review: bundled bpy is not a new dependency; active-scene scope is checked; explicit save_as_mainfile is valid persistence. All arms rescored identically."
+}

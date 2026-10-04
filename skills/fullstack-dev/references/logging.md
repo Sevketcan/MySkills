@@ -1,6 +1,6 @@
 # Logging Strategy
 
-NestJS built-in Logger for application-level logging. No external logging library by default — PM2 handles log persistence on EC2.
+NestJS built-in Logger for application-level logging. No external logging library by default — PM2 handles log persistence on the platform server.
 
 ---
 
@@ -168,7 +168,7 @@ providers: [{ provide: APP_INTERCEPTOR, useClass: LoggingInterceptor }]
 
 ## PM2 Log Management (Production)
 
-PM2 handles log file rotation on EC2. Configure in `ecosystem.config.js`:
+PM2 handles log file rotation on the platform server. Configure in `ecosystem.config.js`:
 
 ```javascript
 module.exports = {

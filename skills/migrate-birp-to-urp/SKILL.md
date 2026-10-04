@@ -1,6 +1,6 @@
 ---
 name: migrate-birp-to-urp
-description: Plans, executes, and troubleshoots Unity projects moving from the Built-in Render Pipeline (BiRP/BIRP/Built-in RP) to the Universal Render Pipeline (URP). Use when the user asks to upgrade, convert, switch, or migrate a project, scene, material, or shader to URP/Universal Render Pipeline; fix pink or magenta materials after URP; convert Built-in materials/shaders; move a 2D project to URP 2D; review lighting, quality, post-processing, baked lightmaps, or reflection probes after URP; or diagnose visual problems after a render-pipeline migration.
+description: "Migrate a Unity project from Built-in Render Pipeline to URP using the bundled material, renderer and compatibility workflow."
 ---
 Classify the request, inspect the current project state, choose the correct migration path, and validate the Built-in to URP migration outcome carefully.
 

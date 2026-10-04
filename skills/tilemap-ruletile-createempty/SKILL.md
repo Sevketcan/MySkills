@@ -1,6 +1,6 @@
 ---
 name: tilemap-ruletile-createempty
-description: Creates an empty RuleTile asset without Sprite or Spritesheet inputs. Use ONLY when the user wants a blank RuleTile, HexagonalRuleTile, or IsometricRuleTile for custom rule configuration AND has not provided or referenced any sprites. If the user mentions existing sprites, terrain art, edge tiles, or a tiles folder, use tilemap-ruletile-createfromsegment instead, never this skill.
+description: "Create a blank Unity RuleTile, HexagonalRuleTile or IsometricRuleTile when no sprites are supplied. For existing sprite inputs use tilemap-ruletile-createfromsegment."
 ---
 
 # Tilemap RuleTile Create Empty

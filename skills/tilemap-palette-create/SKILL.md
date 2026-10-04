@@ -1,6 +1,6 @@
 ---
 name: tilemap-palette-create
-description: Creates a Tile Palette asset. Use when the user wants to organize tiles for 2D level design or create a new Tile Palette from scratch. The user can specify the Grid layout, eg. Rectangular, Hexagonal, Isometric.
+description: "Create a Unity Tile Palette using the bundled Tilemap Editor authoring and serialization examples."
 ---
 
 # Tilemap Palette Creation

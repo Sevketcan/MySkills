@@ -1,169 +1,43 @@
-# Infrastructure Reference
+# Platform: hosting and deploy
 
-## AWS Architecture
+Sevketcan's projects run on one shared server, **platform-1** (Hetzner, Germany), behind Cloudflare. The infra repository is the source of truth: `Sevketcan/infra` (locally `~/Development/infra`).
 
-```
-Internet → Route 53 → CloudFront (static) / ALB (dynamic)
-                              ↓
-                         EC2 (NestJS via PM2 + Nginx)
-                              ↓
-                    RDS (PostgreSQL) + S3 (files)
-```
+**To put a project on the platform, follow `infra/docs/NEW-PROJECT.md` step by step.** It has the current commands, file templates, workflow and the next free project number. Do not rebuild the steps from this summary; read the guide, and `infra/docs/DECISIONS.md` for the reasons.
 
-**Service mapping:**
-| Service | Usage |
-|---------|-------|
-| EC2 | NestJS backend runtime |
-| RDS | PostgreSQL (production DB) |
-| S3 | File uploads, static assets |
-| CloudFront | CDN for S3 + Next.js static |
-| Lambda | Isolated serverless tasks only (cron jobs, webhooks, one-off triggers) — not part of core backend |
-| Cognito | User pool, token issuance |
-| API Gateway | Lambda HTTP trigger (when Lambda is used) |
+## Shape
 
----
+- Request path: Cloudflare (DNS, TLS, WAF) → Cloudflare Tunnel → nginx on 127.0.0.1:80 → the app on 127.0.0.1. The server has no inbound ports; SSH goes through Cloudflare Access (`ssh platform`).
+- Every project has a permanent two-digit number NN: API port `30NN`, web `40NN`, extra process `50NN`, Redis DB `NN`. The project name (lowercase letters and digits) names its Unix user, its Postgres database and `/srv/<project>`. PM2 apps are `<project>-api`, `<project>-web`.
+- Hostnames: API on `api.<domain>`, site on `www.<domain>` and/or the apex.
+- PostgreSQL 18 (PostGIS on request) and Redis run on the same server, localhost only. `max_connections` (100) is shared by every project; keep Prisma pools small.
+- Media: Cloudflare R2, served from `media.<domain>`. Browsers upload with a presigned **PUT** that signs the content type and size (R2 has no presigned POST). Use an R2 token scoped to the project's bucket, and a bucket CORS rule that allows only the site's origins.
+- Sign-in: Firebase Authentication through the backend (REST, no browser SDK), or the project's own accounts when it already holds the password hashes. The backend issues the app's JWT either way.
+- Email: MailBaby SMTP from the project's own domain, DKIM-signed by the app.
+- Monitoring: Grafana Cloud (server, Postgres, Redis, uptime checks) and healthchecks.io (nightly backup). Alerts go to email and Telegram.
+- Backups: a nightly `pg_dump` of every database, encrypted with `age`, kept in R2. Each deploy also dumps the database before it migrates.
 
-## Nginx Config (NestJS on EC2)
+## Repository side
 
-```nginx
-server {
-    listen 80;
-    server_name api.yourdomain.com;
+Details and templates are in NEW-PROJECT.md:
 
-    location / {
-        proxy_pass http://localhost:3001;
-        proxy_http_version 1.1;
-        proxy_set_header Upgrade $http_upgrade;      # WebSocket support
-        proxy_set_header Connection 'upgrade';
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_cache_bypass $http_upgrade;
-    }
-}
-```
+- `platform/platform.json`, `platform/ecosystem.config.cjs` and `platform/build.sh`.
+- Health endpoints that return the release: the API's health route and the web's `/healthz`. The deploy waits for both.
+- Secrets: `<app>/.env.production`, encrypted with dotenvx and committed. `.env.keys` is never committed; it lives on the Mac (`~/.config/platform/dotenvx/<project>/`), on the server and in the offline backup. Public `NEXT_PUBLIC_*` values sit unencrypted in `.env`.
+- `.github/workflows/deploy.yml` runs CI, then calls the shared `Sevketcan/infra/.github/workflows/deploy.yml@main`.
 
-For HTTPS, use Certbot: `certbot --nginx -d api.yourdomain.com`
+## Deploy
 
----
+Push to `main` → CI → GitHub Actions builds the artifact → it is shipped through Cloudflare Access → `platform-release` on the server:
 
-## PM2 Ecosystem
+1. decrypts the env;
+2. dumps the database and runs pending migrations;
+3. switches `current` and reloads PM2;
+4. waits for the health endpoints, and rolls back if they fail.
 
-```javascript
-// ecosystem.config.js (in backend/)
-module.exports = {
-  apps: [{
-    name: 'api',
-    script: 'dist/main.js',
-    instances: 'max',        // cluster mode — one per CPU core
-    exec_mode: 'cluster',
-    env: {
-      NODE_ENV: 'production',
-      PORT: 3001,
-    },
-    error_file: './logs/err.log',
-    out_file: './logs/out.log',
-    merge_logs: true,
-  }],
-};
-```
+Write migrations additively; they are not rolled back. Never change files on the server; reading logs and status there is fine.
 
-**Deploy commands:**
-```bash
-npm run build
-pm2 startOrRestart ecosystem.config.js --env production
-pm2 save
-```
+## Limits to design around
 
----
-
-## GitHub Actions CI/CD
-
-```yaml
-# .github/workflows/deploy.yml
-name: Deploy
-
-on:
-  push:
-    branches: [main]
-
-jobs:
-  deploy-backend:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
-      - name: Install & Build
-        working-directory: backend
-        run: |
-          npm ci
-          npm run build
-
-      - name: Deploy to EC2
-        uses: appleboy/ssh-action@v1
-        with:
-          host: ${{ secrets.EC2_HOST }}
-          username: ubuntu
-          key: ${{ secrets.EC2_SSH_KEY }}
-          script: |
-            cd /app/backend
-            git pull origin main
-            npm ci --omit=dev
-            npm run build
-            npx prisma migrate deploy
-            pm2 restart ecosystem.config.js --env production
-
-  deploy-frontend:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Deploy to Vercel
-        uses: amondnet/vercel-action@v25
-        with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-          working-directory: frontend
-          vercel-args: '--prod'
-```
-
-**Required GitHub Secrets:**
-- `EC2_HOST`, `EC2_SSH_KEY`
-- `VERCEL_TOKEN`, `VERCEL_ORG_ID`, `VERCEL_PROJECT_ID`
-
----
-
-## S3 File Upload Pattern
-
-```typescript
-// backend: use AWS SDK v3
-import { S3Client, PutObjectCommand } from '@aws-sdk/client-s3';
-import { getSignedUrl } from '@aws-sdk/s3-request-presigner';
-
-// Generate presigned URL → frontend uploads directly to S3 (no backend bottleneck)
-async getUploadUrl(key: string, contentType: string) {
-  const command = new PutObjectCommand({
-    Bucket: process.env.AWS_S3_BUCKET,
-    Key: key,
-    ContentType: contentType,
-  });
-  return getSignedUrl(this.s3, command, { expiresIn: 300 });
-}
-```
-
-Frontend calls `GET /api/v1/upload-url`, gets presigned URL, PUTs file directly.
-
----
-
-## Deployment Checklist
-
-- [ ] `prisma migrate deploy` run before app restart
-- [ ] `.env` updated on EC2
-- [ ] PM2 restarted with `startOrRestart` (not `start`)
-- [ ] Nginx config reloaded if changed: `nginx -s reload`
-- [ ] S3 bucket CORS configured for frontend domain
-- [ ] Cognito callback URLs updated for new domain
+- Cloudflare drops a request after about 100 s. Move longer work to the background: start it, store its status, and announce the end on a socket with polling as a fallback. Travela's itinerary generation is the example.
+- Each API runs as one PM2 process (fork mode). An in-process background job dies on deploy, so mark it interrupted when its status is read, or use a queue.
+- The whole server has 8 GB of RAM for all projects. Real-time UDP game servers do not belong here, because Cloudflare and the Tunnel carry no UDP.

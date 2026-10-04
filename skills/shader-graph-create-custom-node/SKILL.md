@@ -1,6 +1,6 @@
 ---
 name: shader-graph-create-custom-node
-description: "Generates custom Shader Graph nodes from HLSL code. Use when the user wants to create a new Shader Graph node or make existing HLSL code work as a reflected function node."
+description: "Create Unity Shader Graph reflected function nodes from HLSL using the bundled node-generation and compatibility examples."
 ---
 # Generating a custom Shader Graph node
 

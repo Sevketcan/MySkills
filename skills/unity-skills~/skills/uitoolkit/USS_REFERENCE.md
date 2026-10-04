@@ -6,7 +6,7 @@ type: reference
 
 # UI Toolkit USS Reference
 
-Load this file when you need deeper USS design material, reusable layout/component patterns, or a full end-to-end example. The main `SKILL.md` keeps only routing rules and guardrails.
+Load this file when you need deeper USS design material, reusable layout/component patterns, or a full end-to-end example. The main `GUIDE.md` keeps only routing rules and guardrails.
 
 ## Design Tokens
 

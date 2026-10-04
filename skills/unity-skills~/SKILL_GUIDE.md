@@ -1,7 +1,3 @@
----
-name: unity-skills-guide
-description: Guidance mode for unity-skills. Teach manual Unity Editor steps instead of calling REST skills. Use when /health reports a surfaceProfile other than full (or the legacy guideMode:true), or when the user wants simple one-off Editor actions (create one object, tweak one color, add one component, etc.) that are faster done by hand than through automation. The root SKILL.md routes here for manual work.
----
 
 # Unity Skills — Guidance Mode
 
@@ -20,7 +16,7 @@ A refused call answers `SURFACE_EXCLUDED`. For a skill hidden by name or categor
 
 Use this rule for anything not explicitly listed in the task boundary table:
 
-**If the user can finish it in the Editor with ≤3 clicks/drags → document guidance; if it needs traversal, search, batch, exact numeric values, or consistency across many objects → automation.**
+**Follow the requested interaction: explain manual steps when the user asks how; perform authorized operations when the user asks you to do them and the server profile permits them. A small operation does not by itself change an automation request into guidance.**
 
 | Guidance (do not call REST) | Automation (fall back to SKILL.md) |
 |---|---|
@@ -42,10 +38,10 @@ Present steps in this order and format:
 
 Route common topics to the corresponding manual advisories:
 
-- Creating and organizing GameObjects / hierarchy / basic transforms → [`skills/manual-gameobject/SKILL.md`](skills/manual-gameobject/SKILL.md)
-- Adding and configuring components in the Inspector → [`skills/manual-component/SKILL.md`](skills/manual-component/SKILL.md)
-- Creating and editing materials / changing colors → [`skills/manual-material/SKILL.md`](skills/manual-material/SKILL.md)
-- Navigating scenes, saving, and simple scene operations → [`skills/manual-scene/SKILL.md`](skills/manual-scene/SKILL.md)
+- Creating and organizing GameObjects / hierarchy / basic transforms → [`skills/manual-gameobject/GUIDE.md`](skills/manual-gameobject/GUIDE.md)
+- Adding and configuring components in the Inspector → [`skills/manual-component/GUIDE.md`](skills/manual-component/GUIDE.md)
+- Creating and editing materials / changing colors → [`skills/manual-material/GUIDE.md`](skills/manual-material/GUIDE.md)
+- Navigating scenes, saving, and simple scene operations → [`skills/manual-scene/GUIDE.md`](skills/manual-scene/GUIDE.md)
 
 Read-only skills such as `scene_get_hierarchy` may be used to help explain what is already in the scene. Under the default Approval operating mode, even read-only skills can require a grant before they execute; mention this if you invoke one.
 

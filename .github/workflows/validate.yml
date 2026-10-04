@@ -31,7 +31,7 @@ jobs:
           bash -n scripts/auto-sync.sh
           bash -n scripts/install-macos-autosync.sh
           bash -n scripts/uninstall-macos-autosync.sh
-          python -m py_compile scripts/build_manifest.py scripts/validate_collection.py skills/game-balance-lab/scripts/balance_lab.py
+          python -m py_compile scripts/build_manifest.py scripts/validate_collection.py scripts/configure-skill-sources.py scripts/benchmark-skills.py scripts/apply-project-profile.py skills/fullstack-dev/scripts/apply_project_profile.py skills/blender-mcp/scripts/export_selected_glb.py skills/game-balance-lab/scripts/balance_lab.py
       - name: Test bidirectional synchronization
         run: python -m unittest discover -s tests -v
       - name: Test idempotent installation

@@ -1,6 +1,6 @@
 ---
 name: threejs-debug-profiler
-description: "Debug and profile Three.js browser games: blank canvases, render and runtime bugs, asset and audio loading, animation, resize, mobile input, plus performance profiling of draw calls, triangles, textures, memory, shader and post-processing cost, and bundle size."
+description: "Diagnose Three.js rendering, physics, input and frame-time defects using the bundled browser inspectors and debugging references."
 ---
 
 # Three.js Debug Profiler

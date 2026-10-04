@@ -1,6 +1,6 @@
 ---
 name: generate-editor-search-query
-description: Generates Unity Search / Quick Search queries and opens the Unity Search window for read-only Unity Editor asset or scene-object lookup requests. Always use when the user asks to find, search, show, locate, filter, look up, query, or list concrete assets or scene objects in the current project or scene, even if Unity Search is not named. Covers materials, textures, prefabs, scenes, scripts, shaders, GameObjects, components, Lights, Cameras, UI objects, labels, paths, references, selected or named assets, and asset types. Also use when the user explicitly mentions Unity Search, Quick Search, Search window, open Search, or asks what Unity Search query to use. Do not use for general project overview, project structure, folder-purpose summaries, gameplay/system explanations, how-to programming questions, web search, repository text search, build logs, package installation, menu or settings search, modifying results, or non-Unity filesystem search unless the user explicitly asks to use Unity Search.
+description: "Write Unity Search/Quick Search query syntax or open its Search window when that interface is requested. Use bundled query patterns and Editor execution snippets."
 ---
 
 Translate natural-language Unity Editor search requests into useful Unity Search queries, explain them briefly, and open the Unity Search window with the query when appropriate.
@@ -9,7 +9,7 @@ Translate natural-language Unity Editor search requests into useful Unity Search
 
 If the prompt explicitly says Unity Search, Quick Search, Search window, open Search, or asks for a Unity Search query, handle the search request with this skill even when the target belongs to another domain such as lighting, UI, physics, audio, or animation.
 
-For requests such as "find", "search", "locate", "list", "filter", "look up", "where is", "which assets use", or "what references" concrete Unity assets or scene objects:
+When Unity Search is the requested interface for a concrete asset or scene lookup:
 
 1. Determine whether the request is primarily about project assets, scene objects, or both.
 2. Build one concise Unity Search query.
@@ -32,7 +32,7 @@ Scope read-only Unity Search / Quick Search queries to:
 - path, label, type, filename, keyword, and reference-oriented asset searches
 - selected or named assets when the name/path is available from the conversation or attachment
 
-Do not install packages, run menu commands, edit assets, modify scenes, search external documentation, search repository text, inspect build logs, delete results, fix search results, or perform dependency graph analysis. If the user asks to act on results, first open Search or provide the query, then ask for confirmation before any separate modifying skill or workflow.
+Do not install packages, run menu commands, edit assets, modify scenes, search external documentation, search repository text, inspect build logs, delete results, fix search results, or perform dependency graph analysis. If the user asks to act on results, continue with the authorized operation using the appropriate Editor tools; ask only if an essential target or destructive scope remains ambiguous.
 
 ## References
 

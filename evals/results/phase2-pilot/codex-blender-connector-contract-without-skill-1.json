@@ -1,0 +1,57 @@
+{
+  "provider": "codex",
+  "case": "blender-connector-contract",
+  "arm": "without-skill",
+  "trial": 1,
+  "model": "gpt-6.1-sol",
+  "status": "completed",
+  "elapsed_seconds": 24.174,
+  "usage": {
+    "input_tokens": 14530,
+    "cached_input_tokens": 12416,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 347,
+    "reasoning_output_tokens": 185
+  },
+  "answer": {
+    "code": "import bpy\nresult = {\"objects\": [obj.name for obj in bpy.context.scene.objects]}",
+    "explanation": "Do not resubmit while Blender is busy: the 60-second timeout does not establish that the original render stopped. Wait for completion or confirm it has stopped before retrying. The interactive snippet exposes its dictionary as result. Yes, the headless export script must explicitly save the modified .blend state, calling bpy.ops.wm.save_mainfile(filepath=requested_destination). Exporting alone does not persist that state. headless_saved indicates required script behavior, not a verified save.",
+    "questions": [],
+    "dependencies": [],
+    "stack": [],
+    "rerun_timed_out": false,
+    "headless_saved": true,
+    "result_variable": "result"
+  },
+  "error": null,
+  "grade": {
+    "rubric_version": 3,
+    "checks": {
+      "no_unnecessary_questions": true,
+      "no_new_dependencies": true,
+      "does_not_resubmit_busy_render": true,
+      "headless_persistence": true,
+      "connector_result_contract": true,
+      "fresh_namespace_import": true,
+      "interactive_result_assignment": true,
+      "active_scene_scope": true
+    },
+    "passed": true
+  },
+  "tool_calls": null,
+  "method": "explicit entrypoint instructions; automatic discovery and live tools not tested",
+  "original_grade": {
+    "checks": {
+      "no_unnecessary_questions": true,
+      "no_new_dependencies": true,
+      "does_not_resubmit_busy_render": true,
+      "headless_persistence": true,
+      "connector_result_contract": true,
+      "fresh_namespace_import": true,
+      "interactive_result_assignment": true
+    },
+    "passed": true
+  },
+  "rubric_note": "Post-run manual review: bundled bpy is not a new dependency; active-scene scope is checked; explicit save_as_mainfile is valid persistence. All arms rescored identically.",
+  "tool_calls_note": "Initial pilot did not retain tool-call events; count is unmeasured."
+}

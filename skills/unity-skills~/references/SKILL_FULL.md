@@ -42,7 +42,7 @@ Python helper: `unity-skills/scripts/unity_skills.py`
 
 ## Unity CLI Cold Start (opt-in, v2.3+)
 
-If the REST server is unreachable at session start, check `<projectRoot>/Library/UnitySkills/cli_config.json` (helper: `unity_skills.get_cli_config()`). **Only if** it exists with `enabled: true` has the user bound the experimental Unity CLI in the panel — then read `skills/unity-skills-cli-bridge/SKILL.md` and you may: triage liveness via the registry (`~/.unity_skills/registry.json` → is the project entry's `pid` alive? alive → it's a Domain Reload window, keep waiting; not alive → cold-start; note `unity status` alone is NOT authoritative — it misses editors without the Unity Pipeline package), launch the project without Unity Hub via `<cliPath> open "<projectPath>" --args -unityskills-coldstart` (the marker makes the plugin auto-start the REST server regardless of the Auto-start preference), then `unity_skills.wait_for_health()` until REST is ready. If the file is absent or `enabled: false`, Unity CLI is off for this project — ignore it completely and never suggest installing it unprompted.
+If the REST server is unreachable at session start, check `<projectRoot>/Library/UnitySkills/cli_config.json` (helper: `unity_skills.get_cli_config()`). **Only if** it exists with `enabled: true` has the user bound the experimental Unity CLI in the panel — then read `skills/unity-skills-cli-bridge/GUIDE.md` and you may: triage liveness via the registry (`~/.unity_skills/registry.json` → is the project entry's `pid` alive? alive → it's a Domain Reload window, keep waiting; not alive → cold-start; note `unity status` alone is NOT authoritative — it misses editors without the Unity Pipeline package), launch the project without Unity Hub via `<cliPath> open "<projectPath>" --args -unityskills-coldstart` (the marker makes the plugin auto-start the REST server regardless of the Auto-start preference), then `unity_skills.wait_for_health()` until REST is ready. If the file is absent or `enabled: false`, Unity CLI is off for this project — ignore it completely and never suggest installing it unprompted.
 
 ## Operating Mode (v1.9.0+)
 
@@ -230,8 +230,8 @@ Load any module via the index: `unity-skills/skills/<module>/SKILL.md`.
 
 ## Route
 
-- Module index: `unity-skills/skills/SKILL.md`
-- Script guidance: `unity-skills/skills/script/SKILL.md`
+- Module index: `unity-skills/skills/INDEX.md`
+- Script guidance: `unity-skills/skills/script/GUIDE.md`
 - Advisory guidance: load advisory modules on demand from the module index
 
-> **XR rule**: Before calling any `xr_*` skill in a session, load `skills/xr/SKILL.md` first. XR is reflection-based; wrong property names can fail silently.
+> **XR rule**: Before calling any `xr_*` skill in a session, load `skills/xr/GUIDE.md` first. XR is reflection-based; wrong property names can fail silently.

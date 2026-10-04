@@ -1,0 +1,71 @@
+{
+  "provider": "claude",
+  "case": "blender-connector-contract",
+  "arm": "without-skill",
+  "trial": 1,
+  "model": "claude-opus-4-6[1m]",
+  "status": "completed",
+  "elapsed_seconds": 55.057,
+  "usage": {
+    "input_tokens": 2774,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 576,
+    "output_tokens": 2333,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 0,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "answer": {
+    "code": "# --- Interactive: blender_execute_python snippet returning scene object names as a dict ---\nimport bpy\n\nscene_objects = {obj.name: obj.type for obj in bpy.context.scene.objects}\nscene_objects  # trailing expression -> returned by blender_execute_python\n\n# --- Headless CLI export job: persist to the EXPLICITLY requested destination ---\n# Do NOT call save_mainfile() (it overwrites the currently loaded source .blend\n# and raises if the file was never saved). Instead:\n# bpy.ops.wm.save_as_mainfile(filepath=\"/explicit/destination/output.blend\")",
+    "dependencies": [],
+    "explanation": "1) Timed-out render: Do NOT resubmit. rerun_timed_out = false. The 60s timeout is only the MCP call deadline; Blender reporting \"busy\" means the render is still actively executing. Submitting the same render again would enqueue a duplicate/overlapping job, risking double GPU/CPU memory usage, output file clobbering, or a corrupted/cancelled result. The correct sequence is: poll the busy status (or check the render result) until Blender is idle, and only if the original render truly died should you cancel/reset and then resubmit.\n\n2) Interactive snippet: The minimal blender_execute_python code builds a dictionary named scene_objects mapping each object name in bpy.context.scene.objects to its type (keys guarantee uniqueness of names, satisfying the dict requirement), and the trailing expression returns it. result_variable = \"scene_objects\".\n\n3) Headless CLI export: headless_saved = true \u2014 persistence is mandatory because the job modified the .blend state and was told to write to an explicit destination. However, it must NOT call save_mainfile(): that API saves in place to the currently loaded file path (overwriting the source .blend, and erroring if the data was never saved to disk). The correct call is bpy.ops.wm.save_as_mainfile(filepath=<explicit destination>), which persists the modified state exactly where requested while leaving the source file untouched.",
+    "headless_saved": true,
+    "questions": [],
+    "rerun_timed_out": false,
+    "result_variable": "scene_objects",
+    "stack": [
+      "Blender",
+      "Blender MCP",
+      "bpy (Python API)"
+    ]
+  },
+  "error": null,
+  "grade": {
+    "rubric_version": 3,
+    "checks": {
+      "no_unnecessary_questions": true,
+      "no_new_dependencies": true,
+      "does_not_resubmit_busy_render": true,
+      "headless_persistence": true,
+      "connector_result_contract": false,
+      "fresh_namespace_import": true,
+      "interactive_result_assignment": false,
+      "active_scene_scope": true
+    },
+    "passed": false
+  },
+  "tool_calls": 0,
+  "method": "explicit entrypoint instructions; automatic discovery and live tools not tested",
+  "original_grade": {
+    "checks": {
+      "no_unnecessary_questions": true,
+      "no_new_dependencies": true,
+      "does_not_resubmit_busy_render": true,
+      "headless_persistence": true,
+      "connector_result_contract": false,
+      "fresh_namespace_import": true,
+      "interactive_result_assignment": false
+    },
+    "passed": false
+  },
+  "rubric_note": "Post-run manual review: bundled bpy is not a new dependency; active-scene scope is checked; explicit save_as_mainfile is valid persistence. All arms rescored identically."
+}

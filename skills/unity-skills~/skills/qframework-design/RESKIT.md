@@ -1,6 +1,6 @@
 # ResKit
 
-Sub-doc of [qframework-design](./SKILL.md). Resource management: AssetBundle-first, reference-counted loading, simulate mode for dev iteration.
+Sub-doc of [qframework-design](./GUIDE.md). Resource management: AssetBundle-first, reference-counted loading, simulate mode for dev iteration.
 
 ## 推荐用 AssetBundle，不是 Resources
 

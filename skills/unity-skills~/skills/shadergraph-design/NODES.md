@@ -6,7 +6,7 @@ type: reference
 
 # Supported Nodes
 
-Sub-doc of [shadergraph-design](./SKILL.md). Only recommend recipes that stay inside this set if you expect the current skills to execute them.
+Sub-doc of [shadergraph-design](./GUIDE.md). Only recommend recipes that stay inside this set if you expect the current skills to execute them.
 
 ## Editable Subset
 

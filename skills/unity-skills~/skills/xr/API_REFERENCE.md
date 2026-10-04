@@ -6,7 +6,7 @@ type: reference
 
 # XR API Reference
 
-Load this file when you need the detailed workflows, verified XRI property names, or event/property tables. The main `SKILL.md` keeps only routing and critical guardrails.
+Load this file when you need the detailed workflows, verified XRI property names, or event/property tables. The main `GUIDE.md` keeps only routing and critical guardrails.
 
 ## Workflow 1: XR Rig Setup
 

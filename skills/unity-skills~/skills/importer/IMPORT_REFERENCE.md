@@ -6,7 +6,7 @@ type: reference
 
 # Importer Reference
 
-Load this file when you need extended importer/search helpers, platform override details, or importer-side best-practice examples. The main `SKILL.md` keeps only routing and the most common setting decisions.
+Load this file when you need extended importer/search helpers, platform override details, or importer-side best-practice examples. The main `GUIDE.md` keeps only routing and the most common setting decisions.
 
 ## Efficient Configuration Example
 

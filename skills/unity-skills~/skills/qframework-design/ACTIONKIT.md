@@ -1,6 +1,6 @@
 # ActionKit, SingletonKit, AudioKit & ScreenTransition
 
-Sub-doc of [qframework-design](./SKILL.md). ActionKit is QFramework's time-sequenced action system (composite + command + builder pattern); SingletonKit is the singleton toolbox it commonly pairs with; AudioKit and ScreenTransition are built on top of ActionKit.
+Sub-doc of [qframework-design](./GUIDE.md). ActionKit is QFramework's time-sequenced action system (composite + command + builder pattern); SingletonKit is the singleton toolbox it commonly pairs with; AudioKit and ScreenTransition are built on top of ActionKit.
 
 ## ActionKit：链式动作组合
 

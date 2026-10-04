@@ -1,6 +1,6 @@
 ---
 name: sprite-segment-3x3grid
-description: Analyze Sprite textures and output a 3x3 grid representation based on color matching. Segments a Sprite into a 3x3 grid, identifies the majority color of the center cell, and outputs a text pattern showing which cells match the center color. Use when analyzing sprite patterns, documenting sprite structure, or describing sprite color distribution.
+description: "Analyze Unity sprite color patterns as a 3x3 text grid relative to the center cell, for sprite documentation or RuleTile neighbor mapping. This is analysis, not sprite slicing."
 ---
 # Sprite Color Grid Analysis
 

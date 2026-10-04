@@ -192,6 +192,20 @@ install_target() {
     mkdir -p "$target_skills"
   fi
 
+  # These former entry points are now optional references inside gdd-studio.
+  # Preserve old copies outside the discovered skills directory before upgrading.
+  for retired_name in game-feel game-ui-ux input-systems procedural-gen save-systems; do
+    retired_path="$target_skills/$retired_name"
+    [ -e "$retired_path" ] || continue
+    if [ "$DRY_RUN" -eq 1 ]; then
+      printf 'would archive %s (now a reference)\n' "$retired_name"
+    else
+      mkdir -p "$backup_root"
+      mv "$retired_path" "$backup_root/$retired_name"
+      printf 'archived   %s (now a reference)\n' "$retired_name"
+    fi
+  done
+
   for source_path in "$SOURCE_SKILLS"/*; do
     [ -d "$source_path" ] || continue
     [ -f "$source_path/SKILL.md" ] || continue

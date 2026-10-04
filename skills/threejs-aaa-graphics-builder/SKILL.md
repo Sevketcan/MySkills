@@ -1,6 +1,6 @@
 ---
 name: threejs-aaa-graphics-builder
-description: "Upgrade Three.js games from prototype visuals to premium browser graphics: art-direction critique, procedural model building, material and texture libraries, world prop kits, shaders, VFX, lighting and render pipeline, LOD and instancing, render budgets, and a 10-category visual scorecard. Use when screenshots still look basic or the user asks for premium, AAA, high-fidelity, showcase, or less-basic graphics."
+description: "Improve Three.js game graphics using the bundled visual scorecard, authored model recipes, shader cookbook and render budgets. Match the requested art direction and scope."
 ---
 
 # Three.js AAA Graphics Builder
@@ -16,7 +16,7 @@ Own the production graphics pass: turn basic screenshots into authored, high-den
 | `references/technical-art.md` | render budgets, material kits, VFX systems, instancing/LOD, imported asset cleanup, anything that could affect browser performance |
 | `references/shader-cookbook.md` | custom shaders, `onBeforeCompile`, skies, or post-processing; use recipes as tested starting points and verify them against the project's Three.js version |
 
-For a broad "still looks basic" or premium pass, read all four before implementing. A narrow graphics edit loads only its relevant references and checks; the requested style and scope override recipe defaults.
+Read the matching reference when needed; a broad polish request does not require loading every cookbook. A narrow graphics edit loads only its relevant references and checks; the requested style and scope override recipe defaults.
 
 ## Core rule
 
@@ -38,7 +38,7 @@ Glow does not make primitives look AAA. Build authored forms first, then materia
 
 When external generation is in scope, run `threejs-game-director/scripts/probe_asset_credentials.sh` before assuming anything about keys. No probe or paid submission is needed for explicitly procedural art.
 
-With keys set, generated assets belong on the hero surfaces — player, character, creature, boss, vehicle, ship, building, weapon, signature prop, hero environment piece — and on high-value 2D: skies, backgrounds, texture and trim references, decals, faction marks, icons, GUI and title art, image-to-3D inputs. Respect explicit procedural-only art or external-generation restrictions. Procedural Three.js handles repeated props, kits, collision proxies, VFX geometry, and instanced volume.
+When external generation fits the requested scope and art direction, generated assets can serve the hero surfaces — player, character, creature, boss, vehicle, ship, building, weapon, signature prop, hero environment piece — and on high-value 2D: skies, backgrounds, texture and trim references, decals, faction marks, icons, GUI and title art, image-to-3D inputs. Respect explicit procedural-only art or external-generation restrictions. Procedural Three.js handles repeated props, kits, collision proxies, VFX geometry, and instanced volume.
 
 Use the director's `references/asset-recovery.md`: recover transient failures and accepted tasks before fallback. Missing keys, exhausted credits, or exhausted bounded recovery permit a local replacement with the remaining quality gap reported. A single timeout is not evidence that generation is unavailable.
 

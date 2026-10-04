@@ -1,6 +1,6 @@
 ---
 name: dream-loop
-description: Build a game or app from a description so that a live screenshot matches a generated rendering. Use when the user says "dream loop" or asks for something built to a very high level of graphical fidelity.
+description: "Run the Dream Loop workflow when the user requests that iterative game/app production process, including its checkpoints and visual review."
 license: MIT
 ---
 

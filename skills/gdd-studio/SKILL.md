@@ -1,6 +1,6 @@
 ---
 name: gdd-studio
-description: Collaboratively develop, structure, write, and review game concepts and game design documents. Use for game ideation, design pillars, core loops, system maps, mechanic specifications, economy/balance analysis, scope decisions, and GDD consistency reviews. Do not use merely to implement an already-approved design in code.
+description: "Develop or review game concepts and game design documents using the personal decision protocol and document templates. Includes optional engine-neutral mechanic cookbooks."
 ---
 
 # GDD Studio
@@ -53,6 +53,10 @@ Draft in conversation first unless the user explicitly requests immediate file c
 - Put attractive but unvalidated features in a parking lot instead of expanding the MVP.
 - For Unity implementation feasibility, consult the relevant Unity advisory skill only after the design question is clear.
 - When balance depends on formulas, probability, compounding, economy flows, progression curves, or repeated random outcomes, use `game-balance-lab` to calculate or simulate the provisional design before approval.
+
+## Optional implementation cookbooks
+
+[Engine-neutral index](references/engine-neutral/INDEX.md) retains examples for game feel, UI, input, saves and procedural generation. Consult a matching recipe when useful; general implementation does not require invoking a design-document workflow.
 
 ## Completion
 

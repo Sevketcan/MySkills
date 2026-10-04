@@ -18,6 +18,9 @@ import uuid
 import yaml
 
 SKIP_CLAUDE = {'fullstack-dev', 'unity-skills~'}
+POLICY = json.loads((Path(__file__).resolve().parents[1] / 'retired-skills.json').read_text())
+RETIRED_PACKAGES = set(POLICY['packages'])
+RETIRED_ENTRYPOINTS = set(POLICY['entrypoints'])
 EXCLUDED = {'.system', '.git', 'evals', '__pycache__', '.DS_Store', '.env', '.env.local'}
 SECRET = re.compile(rb'(?<![A-Za-z0-9_-])(?:gh[opusr]_[A-Za-z0-9_]{20,}|github_pat_[A-Za-z0-9_]{20,}|sk-[A-Za-z0-9_-]{20,}|AKIA[0-9A-Z]{16}|BEGIN (RSA|OPENSSH|EC|DSA) PRIVATE KEY)')
 
@@ -91,6 +94,8 @@ def scan(root, claude, aliases):
         if package.is_symlink():
             raise ValueError(f'Symlinked package is unsupported: {package}')
         name = aliases.get(package.name, package.name) if claude else package.name
+        if name in RETIRED_PACKAGES:
+            continue
         for file in package.rglob('*'):
             relative = file.relative_to(package)
             if ignored(relative) or not file.is_file():
@@ -100,6 +105,8 @@ def scan(root, claude, aliases):
             if claude and (name in SKIP_CLAUDE or 'agents' in relative.parts):
                 continue
             key = (Path(name) / relative).as_posix()
+            if key in RETIRED_ENTRYPOINTS:
+                continue
             if key in result:
                 raise ValueError(f'Package alias collision: {key}')
             raw = file.read_bytes()
@@ -155,6 +162,7 @@ def synchronize(repo, codex, claude, state, bootstrap=False, dry_run=False):
         validator = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(validator)
         validator.ROOT, validator.SKILLS_ROOT = Path(tmp), proposed
+        validator.REVIEW_FILE = repo.parent / 'skill-reviews.json'
         if validator.main():
             raise ValueError('Proposed skill collection failed validation; no files were changed')
     writes = []

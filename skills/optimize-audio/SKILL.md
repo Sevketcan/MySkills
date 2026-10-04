@@ -1,6 +1,6 @@
 ---
 name: optimize-audio
-description: Optimizes Unity 6 audio memory, CPU cost, and playback quality through correct import settings and mixer configuration. Use when the user wants to reduce audio memory usage, choose the right Load Type for short clips versus music versus ambient beds, configure platform-appropriate sample rates and codecs, force 3D audio to mono, or reduce AudioMixer CPU cost from deep group trees or effects running on silent paths.
+description: "Diagnose Unity audio import, memory and playback performance using platform-specific examples and measured project constraints."
 ---
 ## Critical Rules
 

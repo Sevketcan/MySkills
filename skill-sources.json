@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "canonical": "personal",
+  "plugin": "unity",
+  "duplicate_packages": [
+    "2d-pixel-perfect",
+    "audio-setup-mixers",
+    "build-live-game",
+    "generate-editor-search-query",
+    "implement-in-app-purchases",
+    "levelplay-unity-integration",
+    "localization",
+    "manage-sprite-atlas",
+    "migrate-birp-to-urp",
+    "new-unity-project",
+    "optimize-audio",
+    "optimize-text-mesh-pro",
+    "optimize-web",
+    "physics-3d-collision",
+    "setup-multiplayer-services",
+    "setup-vivox-voice-chat",
+    "shader-graph-create-custom-node",
+    "sprite-editor",
+    "sprite-segment-3x3grid",
+    "tilemap-palette-create",
+    "tilemap-ruletile-createempty",
+    "tilemap-ruletile-createfromsegment",
+    "unity-cli",
+    "unity-package-management",
+    "validate-urp-render-graph-renderer-feature"
+  ]
+}

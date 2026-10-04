@@ -1,6 +1,6 @@
 ---
 name: game-balance-lab
-description: Model, calculate, simulate, and review quantitative game balance. Use for game economies, trading markets, progression curves, RNG/drop systems, difficulty pacing, dominant strategies, Monte Carlo analysis, confidence intervals, and parameter tuning. Do not use for purely qualitative concept ideation or visual design.
+description: "Calculate or simulate game economies, probability, progression and balance using bundled analysis scripts and explicit hypotheses."
 ---
 
 # Game Balance Lab

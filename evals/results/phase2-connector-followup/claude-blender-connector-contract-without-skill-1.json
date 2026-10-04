@@ -1,0 +1,78 @@
+{
+  "provider": "claude",
+  "case": "blender-connector-contract",
+  "arm": "without-skill",
+  "trial": 1,
+  "model": "claude-opus-4-6[1m]",
+  "status": "completed",
+  "elapsed_seconds": 44.551,
+  "usage": {
+    "input_tokens": 1917,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 576,
+    "output_tokens": 1491,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 0,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "answer": {
+    "code": "import bpy\n\nresult = {\n    \"objects\": [obj.name for obj in bpy.context.scene.objects]\n}",
+    "dependencies": [
+      "bpy"
+    ],
+    "explanation": "1) Re-submitting the timed-out render: No. Blender still reports busy, which means the original render job is still running \u2014 a timeout on the MCP call only means the client stopped waiting, not that the job died. Submitting the same render again would queue a duplicate operation on top of the running one (doubling GPU/CPU load, potentially colliding in the render session, and producing a second unnecessary output). The correct action is to poll the busy/status state until Blender reports idle, then re-submit only if the original render demonstrably failed or never produced a result. Hence rerun_timed_out = false.\n\n2) Interactive snippet: the minimal blender_execute_python code iterates bpy.context.scene.objects (so it reflects the active scene, not all library data) and stores the names in a dictionary under the variable `result`, i.e. {\"objects\": [...]}. This follows the Blender MCP convention where the executed snippet assigns its answer to a well-known result variable that the tool returns to the caller.\n\n3) Headless CLI export persisting to an explicitly requested destination: the script should NOT call save_mainfile. save_mainfile() overwrites the .blend at its current/original filepath (the last opened or saved location) \u2014 it cannot target the explicitly requested destination and would silently clobber the source scene file, which is destructive in a headless automation context. To persist the modified state to a specific path, the script must use bpy.ops.wm.save_as_mainfile(filepath=DESTINATION, check_existing=True) (optionally with copy=True to keep the in-memory session untouched, or compress/relative_remap as needed); for exporting specific datablocks, bpy.data.libraries.write(...) is the alternative. Hence headless_saved = false, meaning save_mainfile is rejected in favor of save_as_mainfile to the requested path.",
+    "headless_saved": false,
+    "questions": [],
+    "rerun_timed_out": false,
+    "result_variable": "result",
+    "stack": [
+      "Blender",
+      "Blender MCP (blender_execute_python)",
+      "Python 3 (bpy runtime)"
+    ]
+  },
+  "error": null,
+  "grade": {
+    "rubric_version": 3,
+    "checks": {
+      "no_unnecessary_questions": true,
+      "no_new_dependencies": true,
+      "does_not_resubmit_busy_render": true,
+      "headless_persistence": true,
+      "connector_result_contract": true,
+      "fresh_namespace_import": true,
+      "interactive_result_assignment": true,
+      "active_scene_scope": true
+    },
+    "passed": true
+  },
+  "tool_calls": 0,
+  "cost_usd": 0.047147999999999995,
+  "prompt_sha256": "3ecf2154bfccbc1696a9ece4cbac7cfb405aea3bb61a5d932b43771093d828c2",
+  "skill_sha256": null,
+  "method": "explicit entrypoint instructions; automatic discovery and live tools not tested",
+  "original_grade": {
+    "rubric_version": 2,
+    "checks": {
+      "no_unnecessary_questions": true,
+      "no_new_dependencies": false,
+      "does_not_resubmit_busy_render": true,
+      "headless_persistence": false,
+      "connector_result_contract": true,
+      "fresh_namespace_import": true,
+      "interactive_result_assignment": true,
+      "active_scene_scope": true
+    },
+    "passed": false
+  },
+  "rubric_note": "Post-run manual review: bundled bpy is not a new dependency; active-scene scope is checked; explicit save_as_mainfile is valid persistence. All arms rescored identically."
+}

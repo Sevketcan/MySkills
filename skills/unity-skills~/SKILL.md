@@ -1,6 +1,6 @@
 ---
 name: unity-skills
-description: Automate the Unity Editor through a local REST API — create and edit scripts, build scenes and prefabs, manage assets/materials/lighting, run tests, and drive hundreds of Editor operations across modules. Use when the user wants to actually operate the Unity Editor from chat — create or modify GameObjects/scripts/scenes/assets, batch-edit, or run Editor automation — in any language. Not needed for conceptual Unity Q&A that touches no Editor state — read the matching advisory doc under skills/ instead. 当用户要从对话里实际操作 Unity 编辑器（创建/修改/批量编辑/运行测试）时使用，任何语言均可触发；纯概念问答无需本协议。
+description: "Operate the local Unity Skills REST server: discover schemas, respect operating modes and surface exclusions, batch calls and verify writes. Route to module guides only as needed."
 ---
 
 # Unity Skills
@@ -45,7 +45,7 @@ Module docs and the scoped schema are complements: schema has exact signatures; 
 
 ## Execute: batch, dryRun gate, anti-hallucination rules
 
-**`POST /skills/batch`** — up to 50 steps per call (`{"steps":[{"skill","args"}],"continueOnError":false}`; `?mode=dryRun` validates every step): the largest round-trip saving available → [batch](skills/batch/SKILL.md).
+**`POST /skills/batch`** — up to 50 steps per call (`{"steps":[{"skill","args"}],"continueOnError":false}`; `?mode=dryRun` validates every step): the largest round-trip saving available → [batch](skills/batch/GUIDE.md).
 
 Before executing any skill whose exact parameters you don't already hold, dryRun it: `POST /skill/<name>?mode=dryRun`. Iterate until `valid: true`, then execute without `?mode=dryRun`. `valid: true` means the four `validation` error buckets are empty — `warnings` never block, and target existence is never checked. The top-level `authorization` (`{allowed, blockedBy, currentMode, allowlisted, hint}`, plus `surfaceProfile` on a `SURFACE_EXCLUDED` block) previews interception: `blockedBy` is `MODE_RESTRICTED`, `MODE_FORBIDDEN`, `SURFACE_EXCLUDED`, or null when the call would run — settle grants and exclusions there, not on the real call.
 
@@ -71,7 +71,7 @@ Calling a hidden skill returns **`SURFACE_EXCLUDED`**, and the response names th
 
 ## Module routing
 
-Every skill is named `module_verb`, so the prefix is the routing key. `GET /skills/recommend?intent=...` ranks candidates, or read the index — all 80 modules with mode labels, incl. docs-only ones (`manual-*`, `*-design`, `unity-skills-cli-bridge`) that define no REST skills → [module index](skills/SKILL.md).
+Every skill is named `module_verb`, so the prefix is the routing key. `GET /skills/recommend?intent=...` ranks candidates, or read the index — all 80 modules with mode labels, incl. docs-only ones (`manual-*`, `*-design`, `unity-skills-cli-bridge`) that define no REST skills → [module index](skills/INDEX.md).
 
 ## Error codes quick reference
 
@@ -86,6 +86,6 @@ Every skill is named `module_verb`, so the prefix is the routing key. `GET /skil
 
 Compilation status, events, analytics → [observability](references/protocol-observability.md). Unity CLI cold start (opt-in, v2.3+) → [unity-cli](references/protocol-unity-cli.md).
 
-Current snapshot: `805` REST skills, `56` source files, `54` categories, `82` module documentation directories (`54` REST/module docs + `28` advisory docs), Unity `2022.3+`, default timeout `15 minutes`.
+Use live schema and health responses for current counts, versions and timeout defaults.
 
-Python helper: `unity-skills/scripts/unity_skills.py`
+Python helper: `scripts/unity_skills.py`

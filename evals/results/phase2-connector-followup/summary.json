@@ -1,0 +1,19 @@
+{
+  "method": "Isolated entrypoint instruction comparison; rubric v3 rescoring after manual review.",
+  "records": 2,
+  "completed": 2,
+  "groups": [
+    {
+      "provider": "claude",
+      "arm": "without-skill",
+      "completed": 1,
+      "passed": 1
+    },
+    {
+      "provider": "claude",
+      "arm": "with-skill",
+      "completed": 1,
+      "passed": 1
+    }
+  ]
+}

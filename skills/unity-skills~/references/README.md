@@ -11,7 +11,7 @@ These are the sunk detail of the root `../SKILL.md`, not background reading. Ope
 | `protocol-error-codes.md` | You got an `errorCode` the root doc's quick table doesn't cover, or you are writing your own client and need the full code / `retryStrategy` list. |
 | `protocol-operating-mode.md` | You hit `MODE_RESTRICTED` / `MODE_FORBIDDEN`, or need the grant protocol, the mode table, or the Allowlist rules. |
 | `protocol-observability.md` | You need to close the loop after a mutation — compilation status, the `GET /events` long-poll, analytics. |
-| `protocol-unity-cli.md` | The user opted into Unity CLI cold start and you must launch a closed Editor. Per-command detail lives in `../skills/unity-skills-cli-bridge/SKILL.md`. |
+| `protocol-unity-cli.md` | The user opted into Unity CLI cold start and you must launch a closed Editor. Per-command detail lives in `../skills/unity-skills-cli-bridge/GUIDE.md`. |
 
 `../SKILL.md` stays small by living off these four; treat them as its chapters.
 

@@ -1,6 +1,6 @@
 ---
 name: tilemap-ruletile-createfromsegment
-description: "Use when the user wants tiles that auto-tile (autotile) as they paint, wants a RuleTile built from existing terrain or edge sprites, or asks to make sprites 'tile correctly' or 'connect properly'. Also converts sprite-segment-3x3grid output patterns into Unity RuleTile TilingRules: 3x3 grid text patterns (X, ., *) become TilingRule neighbor configurations, mapping '.' to 'This' rules and 'X' to 'DontCare', sorted by specificity (more 'This' rules first). Use when creating RuleTiles from sprite analysis or defining tile neighbor rules programmatically. Sprites must be provided as input."
+description: "Create Unity RuleTile neighbor rules from supplied terrain/edge sprites or sprite-segment-3x3grid text patterns using the bundled mapping examples."
 ---
 
 # Tilemap RuleTile Create From Segment

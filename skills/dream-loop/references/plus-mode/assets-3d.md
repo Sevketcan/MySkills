@@ -1,6 +1,6 @@
 ## How to get 3D Assets
 
-Work through these steps one by one, top to bottom, to determine how to source assets. Do not assume procedural assets are sufficient or take shortcuts because of time/quota pressure or your best judgment.
+Choose the asset source that fits the requested visual target, constraints and existing assets. These are options, not a mandatory sequence.
 
 DO NOT use Blender for modeling. It is too slow/expensive.
 
@@ -12,15 +12,15 @@ If unallowed or you can't find the model you need, move on to 2.
 
 ### 2. Use an image-to-3D model
 
-The recommendation is fal.ai. Check your environment for a Fal API key. If present, use it.
+When external generation is in scope, the bundled Fal helper is an available integration. A configured key alone does not determine the asset source.
 
-For Fal requests, read [fal.md](fal.md) and use the bundled batch helper. Use Fal’s HTTP API or SDK through the shell. Only report Fal as unavailable after an actual request fails and reasonable recovery fails, or credentials/access are absent.
+For Fal requests, read [Fal integration](../fal.md) and use the bundled batch helper. Use Fal’s HTTP API or SDK through the shell. Only report Fal as unavailable after an actual request fails and reasonable recovery fails, or credentials/access are absent.
 
-This does not count as "downloading assets". You are allowed to do this, even if the user says not to download internet assets (that refers to 1 above, not this).
+User restrictions on external assets or services also apply to generated assets. Do not reinterpret a restriction as permission for a different provider.
 
-Start with the two verified endpoint/input recipes in [fal.md](fal.md), using its offline check and batch commands. The default model roles are:
-- A strong model (like tripo3d/h3.1/image-to-3d or newer equivalent) - around $0.30/asset. Use this for large assets or key, important ones like characters, buildings, scenery, greenery.
-- A smaller model (like fal-ai/trellis or newer equivalent) - around $0.02/asset. Use this for things like small environmental/decorative objects, etc.
+Start with the two verified endpoint/input recipes in [Fal integration](../fal.md), using its offline check and batch commands. The default model roles are:
+- A strong model (like tripo3d/h3.1/image-to-3d or newer equivalent); check current provider pricing before a submission. Use this for large assets or key, important ones like characters, buildings, scenery, greenery.
+- A smaller model (like fal-ai/trellis or newer equivalent); check current provider pricing before a submission. Use this for things like small environmental/decorative objects, etc.
 
 Use these for any major assets. For things like rocks, tiles, etc., you'll need some judgment. If it is detailed, image-to-3D is a good fit. If not, subsequent steps may be better. Depending on the target image you'll need to make a call.
 

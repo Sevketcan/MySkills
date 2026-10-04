@@ -1,6 +1,6 @@
 # CodeGenKit & UIKit
 
-Sub-doc of [qframework-design](./SKILL.md). Covers code generation (ViewController + Bind) and the UI panel/element workflow built on top of it.
+Sub-doc of [qframework-design](./GUIDE.md). Covers code generation (ViewController + Bind) and the UI panel/element workflow built on top of it.
 
 ## CodeGenKit：两阶段生成
 

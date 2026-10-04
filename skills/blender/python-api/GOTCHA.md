@@ -1,6 +1,6 @@
 # Blender Python API Essentials — Gotchas
 
-Recurring failure modes when relying on the Blender Python API Essentials reference, and what to do instead. Read alongside `SKILL.md`.
+Recurring failure modes when relying on the Blender Python API Essentials reference, and what to do instead. Read alongside `GUIDE.md`.
 
 - Blender's API and UI change across versions; verify version-sensitive operators, enum values, and defaults against the actual Blender build in use.
 - `bpy` runs single-threaded against a live `bpy.context` / `bpy.data`; operator behavior depends on mode (Object/Edit/Pose), the active object, and selection — confirm context before relying on an operator.

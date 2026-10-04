@@ -1,6 +1,6 @@
 ---
 name: threejs-3d-generator
-description: "Generate, texture, rig, animate, stylize, convert, and download 3D assets for Three.js games via the Tripo API. Use for text-to-3D, image-to-3D, game-ready GLB/FBX, characters, creatures, buildings, props, weapons, terrain, auto-rigging, animation retargeting, model texturing, voxel/LEGO stylization, and low-poly conversion. Pair with threejs-image-generator for concept and texture references first."
+description: "Generate or convert Three.js 3D assets with the bundled provider scripts, async job recovery, import diagnostics, rigs and animation workflows."
 ---
 
 # Three.js 3D Generator

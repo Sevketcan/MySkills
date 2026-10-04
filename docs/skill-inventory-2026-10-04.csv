@@ -1,0 +1,138 @@
+name,previous_path,current_path,decision,previous_description_chars,current_description_chars
+2d-pixel-perfect,skills/2d-pixel-perfect/SKILL.md,skills/2d-pixel-perfect/SKILL.md,retained; trigger scoped,133,150
+audio-setup-mixers,skills/audio-setup-mixers/SKILL.md,skills/audio-setup-mixers/SKILL.md,retained; trigger scoped,417,181
+blender,skills/blender/SKILL.md,skills/blender/SKILL.md,retained; trigger scoped,389,171
+actions-fcurves,skills/blender/actions-fcurves/SKILL.md,skills/blender/actions-fcurves/GUIDE.md,module reference; no independent discovery,204,0
+addons-panels,skills/blender/addons-panels/SKILL.md,skills/blender/addons-panels/GUIDE.md,module reference; no independent discovery,189,0
+cameras-lights,skills/blender/cameras-lights/SKILL.md,skills/blender/cameras-lights/GUIDE.md,module reference; no independent discovery,196,0
+linked-libraries,skills/blender/linked-libraries/SKILL.md,skills/blender/linked-libraries/GUIDE.md,module reference; no independent discovery,222,0
+material-nodes,skills/blender/material-nodes/SKILL.md,skills/blender/material-nodes/GUIDE.md,module reference; no independent discovery,209,0
+python-api,skills/blender/python-api/SKILL.md,skills/blender/python-api/GUIDE.md,module reference; no independent discovery,266,0
+blender-mcp,skills/blender-mcp/SKILL.md,skills/blender-mcp/SKILL.md,retained; trigger scoped,440,145
+build-live-game,skills/build-live-game/SKILL.md,skills/build-live-game/SKILL.md,retained; trigger scoped,641,97
+dream-loop,skills/dream-loop/SKILL.md,skills/dream-loop/SKILL.md,retained; trigger scoped,203,139
+fullstack-dev,skills/fullstack-dev/SKILL.md,skills/fullstack-dev/SKILL.md,retained; trigger scoped,1005,207
+game-balance-lab,skills/game-balance-lab/SKILL.md,skills/game-balance-lab/SKILL.md,retained; trigger scoped,319,130
+game-feel,skills/game-feel/SKILL.md,skills/gdd-studio/references/engine-neutral/game-feel/GUIDE.md,optional cookbook reference,493,0
+game-ui-ux,skills/game-ui-ux/SKILL.md,skills/gdd-studio/references/engine-neutral/game-ui-ux/GUIDE.md,optional cookbook reference,542,0
+gdd-studio,skills/gdd-studio/SKILL.md,skills/gdd-studio/SKILL.md,retained; trigger scoped,322,171
+generate-editor-search-query,skills/generate-editor-search-query/SKILL.md,skills/generate-editor-search-query/SKILL.md,retained; trigger scoped,1009,162
+implement-in-app-purchases,skills/implement-in-app-purchases/SKILL.md,skills/implement-in-app-purchases/SKILL.md,retained; trigger scoped,927,138
+input-systems,skills/input-systems/SKILL.md,skills/gdd-studio/references/engine-neutral/input-systems/GUIDE.md,optional cookbook reference,426,0
+levelplay-unity-integration,skills/levelplay-unity-integration/SKILL.md,skills/levelplay-unity-integration/SKILL.md,retained; trigger scoped,967,137
+localization,skills/localization/SKILL.md,skills/localization/SKILL.md,retained; trigger scoped,339,120
+manage-sprite-atlas,skills/manage-sprite-atlas/SKILL.md,skills/manage-sprite-atlas/SKILL.md,retained; trigger scoped,528,170
+migrate-birp-to-urp,skills/migrate-birp-to-urp/SKILL.md,skills/migrate-birp-to-urp/SKILL.md,retained; trigger scoped,550,125
+new-unity-project,skills/new-unity-project/SKILL.md,skills/new-unity-project/SKILL.md,retained; trigger scoped,604,93
+optimize-audio,skills/optimize-audio/SKILL.md,skills/optimize-audio/SKILL.md,retained; trigger scoped,418,127
+optimize-text-mesh-pro,skills/optimize-text-mesh-pro/SKILL.md,skills/optimize-text-mesh-pro/SKILL.md,retained; trigger scoped,698,107
+optimize-web,skills/optimize-web/SKILL.md,skills/optimize-web/SKILL.md,retained; trigger scoped,394,132
+physics-3d-collision,skills/physics-3d-collision/SKILL.md,skills/physics-3d-collision/SKILL.md,retained; trigger scoped,640,125
+playwright,skills/playwright/SKILL.md,skills/playwright/SKILL.md,retained; trigger scoped,209,209
+procedural-gen,skills/procedural-gen/SKILL.md,skills/gdd-studio/references/engine-neutral/procedural-gen/GUIDE.md,optional cookbook reference,378,0
+save-systems,skills/save-systems/SKILL.md,skills/gdd-studio/references/engine-neutral/save-systems/GUIDE.md,optional cookbook reference,336,0
+setup-multiplayer-services,skills/setup-multiplayer-services/SKILL.md,skills/setup-multiplayer-services/SKILL.md,retained; trigger scoped,499,114
+setup-vivox-voice-chat,skills/setup-vivox-voice-chat/SKILL.md,skills/setup-vivox-voice-chat/SKILL.md,retained; trigger scoped,968,108
+shader-graph-create-custom-node,skills/shader-graph-create-custom-node/SKILL.md,skills/shader-graph-create-custom-node/SKILL.md,retained; trigger scoped,171,122
+sprite-editor,skills/sprite-editor/SKILL.md,skills/sprite-editor/SKILL.md,retained; trigger scoped,294,113
+sprite-segment-3x3grid,skills/sprite-segment-3x3grid/SKILL.md,skills/sprite-segment-3x3grid/SKILL.md,retained; trigger scoped,348,176
+threejs-3d-generator,skills/threejs-3d-generator/SKILL.md,skills/threejs-3d-generator/SKILL.md,retained; trigger scoped,402,143
+threejs-aaa-graphics-builder,skills/threejs-aaa-graphics-builder/SKILL.md,skills/threejs-aaa-graphics-builder/SKILL.md,retained; trigger scoped,412,171
+threejs-audio-generator,skills/threejs-audio-generator/SKILL.md,skills/threejs-audio-generator/SKILL.md,retained; trigger scoped,322,122
+threejs-debug-profiler,skills/threejs-debug-profiler/SKILL.md,skills/threejs-debug-profiler/SKILL.md,retained; trigger scoped,261,129
+threejs-game-director,skills/threejs-game-director/SKILL.md,skills/threejs-game-director/SKILL.md,retained; trigger scoped,358,173
+threejs-game-ui-designer,skills/threejs-game-ui-designer/SKILL.md,skills/threejs-game-ui-designer/SKILL.md,retained; trigger scoped,190,134
+threejs-gameplay-systems,skills/threejs-gameplay-systems/SKILL.md,skills/threejs-gameplay-systems/SKILL.md,retained; trigger scoped,380,117
+threejs-image-generator,skills/threejs-image-generator/SKILL.md,skills/threejs-image-generator/SKILL.md,retained; trigger scoped,325,126
+threejs-qa-release,skills/threejs-qa-release/SKILL.md,skills/threejs-qa-release/SKILL.md,retained; trigger scoped,300,103
+tilemap-palette-create,skills/tilemap-palette-create/SKILL.md,skills/tilemap-palette-create/SKILL.md,retained; trigger scoped,211,98
+tilemap-ruletile-createempty,skills/tilemap-ruletile-createempty/SKILL.md,skills/tilemap-ruletile-createempty/SKILL.md,retained; trigger scoped,383,166
+tilemap-ruletile-createfromsegment,skills/tilemap-ruletile-createfromsegment/SKILL.md,skills/tilemap-ruletile-createfromsegment/SKILL.md,retained; trigger scoped,592,147
+unity-cli,skills/unity-cli/SKILL.md,skills/unity-cli/SKILL.md,retained; trigger scoped,647,213
+unity-mcp-orchestrator,skills/unity-mcp-skill/SKILL.md,skills/unity-mcp-skill/SKILL.md,retained; trigger scoped,350,144
+unity-package-management,skills/unity-package-management/SKILL.md,skills/unity-package-management/SKILL.md,retained; trigger scoped,536,183
+unity-skills,skills/unity-skills~/SKILL.md,skills/unity-skills~/SKILL.md,retained; trigger scoped,570,179
+unity-skills-index,skills/unity-skills~/skills/SKILL.md,skills/unity-skills~/skills/INDEX.md,module reference; no independent discovery,139,0
+unity-addressables,skills/unity-skills~/skills/addressables/SKILL.md,skills/unity-skills~/skills/addressables/GUIDE.md,module reference; no independent discovery,107,0
+unity-addressables-design,skills/unity-skills~/skills/addressables-design/SKILL.md,skills/unity-skills~/skills/addressables-design/GUIDE.md,module reference; no independent discovery,64,0
+unity-adr,skills/unity-skills~/skills/adr/SKILL.md,skills/unity-skills~/skills/adr/GUIDE.md,module reference; no independent discovery,56,0
+unity-animator,skills/unity-skills~/skills/animator/SKILL.md,skills/unity-skills~/skills/animator/GUIDE.md,module reference; no independent discovery,60,0
+unity-architecture,skills/unity-skills~/skills/architecture/SKILL.md,skills/unity-skills~/skills/architecture/GUIDE.md,module reference; no independent discovery,48,0
+unity-asmdef,skills/unity-skills~/skills/asmdef/SKILL.md,skills/unity-skills~/skills/asmdef/GUIDE.md,module reference; no independent discovery,45,0
+unity-asset,skills/unity-skills~/skills/asset/SKILL.md,skills/unity-skills~/skills/asset/GUIDE.md,module reference; no independent discovery,37,0
+unity-async,skills/unity-skills~/skills/async/SKILL.md,skills/unity-skills~/skills/async/GUIDE.md,module reference; no independent discovery,44,0
+unity-batch,skills/unity-skills~/skills/batch/SKILL.md,skills/unity-skills~/skills/batch/GUIDE.md,module reference; no independent discovery,41,0
+unity-behavior,skills/unity-skills~/skills/behavior/SKILL.md,skills/unity-skills~/skills/behavior/GUIDE.md,module reference; no independent discovery,61,0
+unity-blueprints,skills/unity-skills~/skills/blueprints/SKILL.md,skills/unity-skills~/skills/blueprints/GUIDE.md,module reference; no independent discovery,57,0
+unity-bookmark,skills/unity-skills~/skills/bookmark/SKILL.md,skills/unity-skills~/skills/bookmark/GUIDE.md,module reference; no independent discovery,48,0
+unity-camera,skills/unity-skills~/skills/camera/SKILL.md,skills/unity-skills~/skills/camera/GUIDE.md,module reference; no independent discovery,41,0
+unity-cinemachine,skills/unity-skills~/skills/cinemachine/SKILL.md,skills/unity-skills~/skills/cinemachine/GUIDE.md,module reference; no independent discovery,34,0
+unity-cleaner,skills/unity-skills~/skills/cleaner/SKILL.md,skills/unity-skills~/skills/cleaner/GUIDE.md,module reference; no independent discovery,34,0
+unity-component,skills/unity-skills~/skills/component/SKILL.md,skills/unity-skills~/skills/component/GUIDE.md,module reference; no independent discovery,28,0
+unity-console,skills/unity-skills~/skills/console/SKILL.md,skills/unity-skills~/skills/console/GUIDE.md,module reference; no independent discovery,42,0
+unity-debug,skills/unity-skills~/skills/debug/SKILL.md,skills/unity-skills~/skills/debug/GUIDE.md,module reference; no independent discovery,44,0
+unity-decal,skills/unity-skills~/skills/decal/SKILL.md,skills/unity-skills~/skills/decal/GUIDE.md,module reference; no independent discovery,41,0
+unity-dotween,skills/unity-skills~/skills/dotween/SKILL.md,skills/unity-skills~/skills/dotween/GUIDE.md,module reference; no independent discovery,40,0
+unity-dotween-design,skills/unity-skills~/skills/dotween-design/SKILL.md,skills/unity-skills~/skills/dotween-design/GUIDE.md,module reference; no independent discovery,48,0
+unity-editor,skills/unity-skills~/skills/editor/SKILL.md,skills/unity-skills~/skills/editor/GUIDE.md,module reference; no independent discovery,42,0
+unity-event,skills/unity-skills~/skills/event/SKILL.md,skills/unity-skills~/skills/event/GUIDE.md,module reference; no independent discovery,51,0
+unity-gameobject,skills/unity-skills~/skills/gameobject/SKILL.md,skills/unity-skills~/skills/gameobject/GUIDE.md,module reference; no independent discovery,33,0
+unity-graphics,skills/unity-skills~/skills/graphics/SKILL.md,skills/unity-skills~/skills/graphics/GUIDE.md,module reference; no independent discovery,56,0
+unity-history,skills/unity-skills~/skills/history/SKILL.md,skills/unity-skills~/skills/history/GUIDE.md,module reference; no independent discovery,51,0
+unity-hybridclr,skills/unity-skills~/skills/hybridclr/SKILL.md,skills/unity-skills~/skills/hybridclr/GUIDE.md,module reference; no independent discovery,41,0
+unity-importer,skills/unity-skills~/skills/importer/SKILL.md,skills/unity-skills~/skills/importer/GUIDE.md,module reference; no independent discovery,31,0
+unity-inspector,skills/unity-skills~/skills/inspector/SKILL.md,skills/unity-skills~/skills/inspector/GUIDE.md,module reference; no independent discovery,38,0
+unity-light,skills/unity-skills~/skills/light/SKILL.md,skills/unity-skills~/skills/light/GUIDE.md,module reference; no independent discovery,33,0
+unity-manual-component,skills/unity-skills~/skills/manual-component/SKILL.md,skills/unity-skills~/skills/manual-component/GUIDE.md,module reference; no independent discovery,157,0
+unity-manual-gameobject,skills/unity-skills~/skills/manual-gameobject/SKILL.md,skills/unity-skills~/skills/manual-gameobject/GUIDE.md,module reference; no independent discovery,161,0
+unity-manual-material,skills/unity-skills~/skills/manual-material/SKILL.md,skills/unity-skills~/skills/manual-material/GUIDE.md,module reference; no independent discovery,146,0
+unity-manual-scene,skills/unity-skills~/skills/manual-scene/SKILL.md,skills/unity-skills~/skills/manual-scene/GUIDE.md,module reference; no independent discovery,131,0
+unity-material,skills/unity-skills~/skills/material/SKILL.md,skills/unity-skills~/skills/material/GUIDE.md,module reference; no independent discovery,60,0
+unity-navmesh,skills/unity-skills~/skills/navmesh/SKILL.md,skills/unity-skills~/skills/navmesh/GUIDE.md,module reference; no independent discovery,28,0
+unity-netcode,skills/unity-skills~/skills/netcode/SKILL.md,skills/unity-skills~/skills/netcode/GUIDE.md,module reference; no independent discovery,52,0
+unity-netcode-design,skills/unity-skills~/skills/netcode-design/SKILL.md,skills/unity-skills~/skills/netcode-design/GUIDE.md,module reference; no independent discovery,60,0
+unity-optimization,skills/unity-skills~/skills/optimization/SKILL.md,skills/unity-skills~/skills/optimization/GUIDE.md,module reference; no independent discovery,34,0
+unity-package,skills/unity-skills~/skills/package/SKILL.md,skills/unity-skills~/skills/package/GUIDE.md,module reference; no independent discovery,43,0
+unity-patterns,skills/unity-skills~/skills/patterns/SKILL.md,skills/unity-skills~/skills/patterns/GUIDE.md,module reference; no independent discovery,40,0
+unity-perception,skills/unity-skills~/skills/perception/SKILL.md,skills/unity-skills~/skills/perception/GUIDE.md,module reference; no independent discovery,59,0
+unity-performance,skills/unity-skills~/skills/performance/SKILL.md,skills/unity-skills~/skills/performance/GUIDE.md,module reference; no independent discovery,37,0
+unity-physics,skills/unity-skills~/skills/physics/SKILL.md,skills/unity-skills~/skills/physics/GUIDE.md,module reference; no independent discovery,47,0
+unity-pico-design,skills/unity-skills~/skills/pico-design/SKILL.md,skills/unity-skills~/skills/pico-design/GUIDE.md,module reference; no independent discovery,135,0
+unity-postprocess,skills/unity-skills~/skills/postprocess/SKILL.md,skills/unity-skills~/skills/postprocess/GUIDE.md,module reference; no independent discovery,48,0
+unity-prefab,skills/unity-skills~/skills/prefab/SKILL.md,skills/unity-skills~/skills/prefab/GUIDE.md,module reference; no independent discovery,27,0
+unity-primetween,skills/unity-skills~/skills/primetween/SKILL.md,skills/unity-skills~/skills/primetween/GUIDE.md,module reference; no independent discovery,58,0
+unity-primetween-design,skills/unity-skills~/skills/primetween-design/SKILL.md,skills/unity-skills~/skills/primetween-design/GUIDE.md,module reference; no independent discovery,49,0
+unity-probuilder,skills/unity-skills~/skills/probuilder/SKILL.md,skills/unity-skills~/skills/probuilder/GUIDE.md,module reference; no independent discovery,50,0
+unity-profiler,skills/unity-skills~/skills/profiler/SKILL.md,skills/unity-skills~/skills/profiler/GUIDE.md,module reference; no independent discovery,53,0
+unity-project,skills/unity-skills~/skills/project/SKILL.md,skills/unity-skills~/skills/project/GUIDE.md,module reference; no independent discovery,45,0
+unity-project-scout,skills/unity-skills~/skills/project-scout/SKILL.md,skills/unity-skills~/skills/project-scout/GUIDE.md,module reference; no independent discovery,50,0
+unity-qframework,skills/unity-skills~/skills/qframework/SKILL.md,skills/unity-skills~/skills/qframework/GUIDE.md,module reference; no independent discovery,853,0
+unity-qframework-design,skills/unity-skills~/skills/qframework-design/SKILL.md,skills/unity-skills~/skills/qframework-design/GUIDE.md,module reference; no independent discovery,398,0
+unity-sample,skills/unity-skills~/skills/sample/SKILL.md,skills/unity-skills~/skills/sample/GUIDE.md,module reference; no independent discovery,51,0
+unity-scene,skills/unity-skills~/skills/scene/SKILL.md,skills/unity-skills~/skills/scene/GUIDE.md,module reference; no independent discovery,19,0
+unity-scene-contracts,skills/unity-skills~/skills/scene-contracts/SKILL.md,skills/unity-skills~/skills/scene-contracts/GUIDE.md,module reference; no independent discovery,43,0
+unity-script,skills/unity-skills~/skills/script/SKILL.md,skills/unity-skills~/skills/script/GUIDE.md,module reference; no independent discovery,35,0
+unity-script-roles,skills/unity-skills~/skills/script-roles/SKILL.md,skills/unity-skills~/skills/script-roles/GUIDE.md,module reference; no independent discovery,38,0
+unity-scriptableobject,skills/unity-skills~/skills/scriptableobject/SKILL.md,skills/unity-skills~/skills/scriptableobject/GUIDE.md,module reference; no independent discovery,30,0
+unity-scriptdesign,skills/unity-skills~/skills/scriptdesign/SKILL.md,skills/unity-skills~/skills/scriptdesign/GUIDE.md,module reference; no independent discovery,39,0
+unity-shader,skills/unity-skills~/skills/shader/SKILL.md,skills/unity-skills~/skills/shader/GUIDE.md,module reference; no independent discovery,35,0
+unity-shadergraph,skills/unity-skills~/skills/shadergraph/SKILL.md,skills/unity-skills~/skills/shadergraph/GUIDE.md,module reference; no independent discovery,38,0
+unity-shadergraph-design,skills/unity-skills~/skills/shadergraph-design/SKILL.md,skills/unity-skills~/skills/shadergraph-design/GUIDE.md,module reference; no independent discovery,58,0
+unity-smart,skills/unity-skills~/skills/smart/SKILL.md,skills/unity-skills~/skills/smart/GUIDE.md,module reference; no independent discovery,53,0
+unity-terrain,skills/unity-skills~/skills/terrain/SKILL.md,skills/unity-skills~/skills/terrain/GUIDE.md,module reference; no independent discovery,24,0
+unity-test,skills/unity-skills~/skills/test/SKILL.md,skills/unity-skills~/skills/test/GUIDE.md,module reference; no independent discovery,47,0
+unity-testability,skills/unity-skills~/skills/testability/SKILL.md,skills/unity-skills~/skills/testability/GUIDE.md,module reference; no independent discovery,27,0
+unity-timeline,skills/unity-skills~/skills/timeline/SKILL.md,skills/unity-skills~/skills/timeline/GUIDE.md,module reference; no independent discovery,37,0
+unity-ui,skills/unity-skills~/skills/ui/SKILL.md,skills/unity-skills~/skills/ui/GUIDE.md,module reference; no independent discovery,37,0
+unity-uitoolkit,skills/unity-skills~/skills/uitoolkit/SKILL.md,skills/unity-skills~/skills/uitoolkit/GUIDE.md,module reference; no independent discovery,33,0
+unity-unitask-design,skills/unity-skills~/skills/unitask-design/SKILL.md,skills/unity-skills~/skills/unitask-design/GUIDE.md,module reference; no independent discovery,47,0
+unity-skills-cli-bridge,skills/unity-skills~/skills/unity-skills-cli-bridge/SKILL.md,skills/unity-skills~/skills/unity-skills-cli-bridge/GUIDE.md,module reference; no independent discovery,273,0
+unity-urp,skills/unity-skills~/skills/urp/SKILL.md,skills/unity-skills~/skills/urp/GUIDE.md,module reference; no independent discovery,42,0
+unity-validation,skills/unity-skills~/skills/validation/SKILL.md,skills/unity-skills~/skills/validation/GUIDE.md,module reference; no independent discovery,46,0
+unity-volume,skills/unity-skills~/skills/volume/SKILL.md,skills/unity-skills~/skills/volume/GUIDE.md,module reference; no independent discovery,34,0
+unity-workflow,skills/unity-skills~/skills/workflow/SKILL.md,skills/unity-skills~/skills/workflow/GUIDE.md,module reference; no independent discovery,46,0
+unity-xr,skills/unity-skills~/skills/xr/SKILL.md,skills/unity-skills~/skills/xr/GUIDE.md,module reference; no independent discovery,45,0
+unity-yaml-editing,skills/unity-skills~/skills/yaml-editing/SKILL.md,skills/unity-skills~/skills/yaml-editing/GUIDE.md,module reference; no independent discovery,55,0
+unity-yooasset,skills/unity-skills~/skills/yooasset/SKILL.md,skills/unity-skills~/skills/yooasset/GUIDE.md,module reference; no independent discovery,46,0
+unity-yooasset-design,skills/unity-skills~/skills/yooasset-design/SKILL.md,skills/unity-skills~/skills/yooasset-design/GUIDE.md,module reference; no independent discovery,49,0
+validate-urp-render-graph-renderer-feature,skills/validate-urp-render-graph-renderer-feature/SKILL.md,skills/validate-urp-render-graph-renderer-feature/SKILL.md,retained; trigger scoped,283,120

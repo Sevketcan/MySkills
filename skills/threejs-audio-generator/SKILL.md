@@ -1,6 +1,6 @@
 ---
 name: threejs-audio-generator
-description: "Generate, convert, clean, and integrate audio for Three.js browser games with ElevenLabs: sound effects, looping ambience, UI sounds, impact/weapon/vehicle audio, creature and boss stingers, announcer and dialogue TTS, voice conversion from a scratch performance, voice cleanup, audio manifests, and Web Audio integration."
+description: "Generate and prepare game audio using the bundled provider scripts, job lifecycle and Three.js audio integration workflow."
 ---
 
 # Three.js Audio Generator

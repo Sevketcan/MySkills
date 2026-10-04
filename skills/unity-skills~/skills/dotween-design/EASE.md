@@ -6,7 +6,7 @@ type: reference
 
 # DOTween Easing
 
-Sub-doc of [dotween-design](./SKILL.md). Covers the `Ease` enum and every way to apply easing.
+Sub-doc of [dotween-design](./GUIDE.md). Covers the `Ease` enum and every way to apply easing.
 
 ## The `Ease` enum — full list
 

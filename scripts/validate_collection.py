@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import json
 import re
 import sys
 from pathlib import Path
@@ -17,6 +18,7 @@ NAME_PATTERN = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 # Claude Code truncates skill metadata beyond this length, so a longer
 # description would be silently cut when the collection is installed there.
 DESCRIPTION_LIMIT = 1024
+REVIEW_FILE = None
 
 
 def frontmatter(path: Path) -> dict:
@@ -62,6 +64,20 @@ def main() -> int:
                 )
         except (OSError, UnicodeError, yaml.YAMLError, ValueError) as exc:
             errors.append(f"{relative}: {exc}")
+
+    review_file = REVIEW_FILE or ROOT / "skill-reviews.json"
+    if review_file.exists():
+        review = json.loads(review_file.read_text())
+        existing = set(review.get("previously_reviewed", []))
+        for name in names:
+            if name in existing:
+                continue
+            decision = review.get("reviews", {}).get(name, {})
+            if decision.get("reason") not in {"tool-contract", "project-preference", "observed-failure"}:
+                errors.append(f"{name}: new entry point needs a concrete reason in skill-reviews.json")
+            for field in ("evidence", "positive_trigger", "negative_trigger", "validation"):
+                if not isinstance(decision.get(field), str) or len(decision[field].strip()) < 8:
+                    errors.append(f"{name}: new entry point needs {field} in skill-reviews.json")
 
     package_count = 0
     for path in sorted(SKILLS_ROOT.iterdir()):

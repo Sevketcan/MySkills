@@ -6,7 +6,7 @@ type: reference
 
 # ProBuilder Modeling Reference
 
-Load this file when you need deeper spatial design heuristics, detailed furniture decomposition, or extended modeling examples. The main `SKILL.md` keeps only routing and key skill summaries.
+Load this file when you need deeper spatial design heuristics, detailed furniture decomposition, or extended modeling examples. The main `GUIDE.md` keeps only routing and key skill summaries.
 
 ## Shape Creation Example
 

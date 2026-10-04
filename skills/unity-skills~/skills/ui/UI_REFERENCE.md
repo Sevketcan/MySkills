@@ -6,7 +6,7 @@ type: reference
 
 # UGUI Reference
 
-Load this file when you need fuller UGUI examples, extended element/property details, or a longer menu-building workflow. The main `SKILL.md` keeps only routing and core summaries.
+Load this file when you need fuller UGUI examples, extended element/property details, or a longer menu-building workflow. The main `GUIDE.md` keeps only routing and core summaries.
 
 ## Efficient Menu Example
 

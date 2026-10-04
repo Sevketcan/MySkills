@@ -46,6 +46,16 @@ rsync_args=(
   --exclude '*.key'
   --exclude '*credentials*'
 )
+# Retired entry points must not reappear when exporting an older installation.
+while IFS= read -r retired_path; do
+  rsync_args+=(--exclude "/$retired_path")
+done < <(python3 - "$REPOSITORY_ROOT/retired-skills.json" <<'POLICY'
+import json, sys
+p = json.load(open(sys.argv[1]))
+for path in p['packages'] + p['entrypoints']:
+    print(path)
+POLICY
+)
 if [ "$DRY_RUN" -eq 1 ]; then
   rsync_args+=(--dry-run --itemize-changes)
 fi
