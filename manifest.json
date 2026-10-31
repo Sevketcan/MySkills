@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "package_count": 43,
-  "skill_count": 43,
+  "package_count": 47,
+  "skill_count": 47,
   "packages": [
     {
       "directory": "2d-pixel-perfect",
@@ -114,6 +114,17 @@
       ]
     },
     {
+      "directory": "girisim-pazarlama",
+      "entrypoint": "skills/girisim-pazarlama/SKILL.md",
+      "skill_count": 1,
+      "skills": [
+        {
+          "name": "girisim-pazarlama",
+          "path": "skills/girisim-pazarlama/SKILL.md"
+        }
+      ]
+    },
+    {
       "directory": "implement-in-app-purchases",
       "entrypoint": "skills/implement-in-app-purchases/SKILL.md",
       "skill_count": 1,
@@ -165,6 +176,17 @@
         {
           "name": "migrate-birp-to-urp",
           "path": "skills/migrate-birp-to-urp/SKILL.md"
+        }
+      ]
+    },
+    {
+      "directory": "mobil-yayin-buyume",
+      "entrypoint": "skills/mobil-yayin-buyume/SKILL.md",
+      "skill_count": 1,
+      "skills": [
+        {
+          "name": "mobil-yayin-buyume",
+          "path": "skills/mobil-yayin-buyume/SKILL.md"
         }
       ]
     },
@@ -231,6 +253,17 @@
         {
           "name": "playwright",
           "path": "skills/playwright/SKILL.md"
+        }
+      ]
+    },
+    {
+      "directory": "seo-ai-arama",
+      "entrypoint": "skills/seo-ai-arama/SKILL.md",
+      "skill_count": 1,
+      "skills": [
+        {
+          "name": "seo-ai-arama",
+          "path": "skills/seo-ai-arama/SKILL.md"
         }
       ]
     },
@@ -473,6 +506,17 @@
         {
           "name": "validate-urp-render-graph-renderer-feature",
           "path": "skills/validate-urp-render-graph-renderer-feature/SKILL.md"
+        }
+      ]
+    },
+    {
+      "directory": "video-icerik-uretimi",
+      "entrypoint": "skills/video-icerik-uretimi/SKILL.md",
+      "skill_count": 1,
+      "skills": [
+        {
+          "name": "video-icerik-uretimi",
+          "path": "skills/video-icerik-uretimi/SKILL.md"
         }
       ]
     }

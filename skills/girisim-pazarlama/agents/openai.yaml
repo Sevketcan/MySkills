@@ -1,0 +1,4 @@
+interface:
+  display_name: "Startup Marketing"
+  short_description: "Channel choice, buying-intent replies, offer checks and seller tooling"
+  default_prompt: "Use $girisim-pazarlama to choose the next acquisition channel for this product."

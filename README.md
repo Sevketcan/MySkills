@@ -4,7 +4,7 @@ Portable skill collection maintained for the `Sevketcan` setup, installable into
 
 ## Skill layout after the October 2026 review
 
-The personal collection has **43 packages and 43 discoverable entry points**, down from 48 packages and 137 entry points. Unity and Blender module documents are `GUIDE.md` references routed through their parent skill, rather than independent skills. Five general game-programming cookbooks now live under `skills/gdd-studio/references/engine-neutral/`.
+The personal collection has **47 packages and 47 discoverable entry points**: the 43 kept by the review, down from 48 packages and 137 entry points, plus four growth skills added on 2026-10-31 (`seo-ai-arama`, `mobil-yayin-buyume`, `girisim-pazarlama`, `video-icerik-uretimi`). Their routers and workflows are in English; each keeps a Turkish evidence table in `references/kurallar.md`. Unity and Blender module documents are `GUIDE.md` references routed through their parent skill, rather than independent skills. Five general game-programming cookbooks now live under `skills/gdd-studio/references/engine-neutral/`.
 
 See [the audit](docs/skill-audit-2026-10-04.md) for decisions, measured inventory changes and remaining plugin overlaps. The reduction measures catalog size, not an established improvement in model task performance.
 

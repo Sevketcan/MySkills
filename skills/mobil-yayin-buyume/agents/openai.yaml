@@ -1,0 +1,4 @@
+interface:
+  display_name: "Mobile Release and Growth"
+  short_description: "App Store review readiness, paywalls, ASO and app acquisition"
+  default_prompt: "Use $mobil-yayin-buyume to check this app for rejection risks before I submit it."

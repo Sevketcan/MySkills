@@ -45,5 +45,34 @@
     "unity-skills",
     "validate-urp-render-graph-renderer-feature"
   ],
-  "reviews": {}
+  "reviews": {
+    "seo-ai-arama": {
+      "reason": "project-preference",
+      "evidence": "bozukluk'un büyüme darboğazı Google'ın dizine alması; skill önce projenin docs/BUYUME.md ve karar belgelerini, sonra Search Console verisini okuyor. Kurallar Twitter Notes'taki 51 SEO notundan kanıt düzeyiyle derlendi (references/kurallar.md).",
+      "positive_trigger": "bozukluk'ta dizine alınmayan ürün sayfalarının nedenini Search Console verisiyle bul.",
+      "negative_trigger": "Bu Next.js sayfasına meta etiketini nasıl eklerim?",
+      "validation": "Gerçek bir sitede dört teşhis sorusu veriyle yanıtlanıyor, en fazla 5 ölçülebilir eylem çıkıyor, onaysız noindex/yönlendirme/silme önerilmiyor."
+    },
+    "mobil-yayin-buyume": {
+      "reason": "project-preference",
+      "evidence": "Twitter Notes'taki 35 Mobil Geliştirme notundan derlenen 29 kurallık playbook (references/kurallar.md); uygulama notları sahibin Flutter + RevenueCat + Firebase yığınına göre yazıldı ve skill önce projenin kendi belgelerini okuyor.",
+      "positive_trigger": "Bu Flutter uygulamasını göndermeden önce App Store red risklerine göre kontrol et.",
+      "negative_trigger": "Uygulamam için bir TikTok reklam videosu hazırla (video-icerik-uretimi).",
+      "validation": "Bir Flutter projesinde yayın öncesi kontrol modunda her madde dosya yolu, ekran ya da App Store Connect alanıyla kanıtlanıyor; bilinmeyen maddeler tahmin edilmeden 'unknown' işaretleniyor."
+    },
+    "girisim-pazarlama": {
+      "reason": "project-preference",
+      "evidence": "Sahibin kanıt düzeyli pazarlama bilgi bankası (Twitter Notes: kurallar.md G1-G21/E1-E10, kaynak sayıları ve tanıtım işaretleri). Skill önce projenin büyüme belgelerini (docs/BUYUME.md, docs/DECISIONS.md) okuyor, aşamayı tahmin etmeden soruyor, mesajları sadece taslak olarak hazırlıyor; reklam bütçesi, fiyat, toplu mağaza değişikliği ve yayın onaya bağlı.",
+      "positive_trigger": "Bu ürün için sıradaki edinim kanalını seç ve Reddit'te satın alma niyeti taşıyan gönderilere yanıt taslakları hazırla.",
+      "negative_trigger": "Bu sayfa neden Google'da dizine alınmıyor, Search Console verisiyle bak (seo-ai-arama).",
+      "validation": "docs/BUYUME.md olan gerçek bir projede aynı kanal planı isteği skill açık ve kapalı çalıştırılıyor: skill açıkken ajan önce proje belgelerini okuyor, aşamayı soruyor, reklamdan önce teklif kontrolünü yapıyor, kanal / 4 haftalık ölçüt tablosunu veriyor ve hiçbir şey göndermiyor."
+    },
+    "video-icerik-uretimi": {
+      "reason": "project-preference",
+      "evidence": "Sahibin bilgi bankasından (Twitter Notes, YouTube & İçerik ve Video Araçları playbook'ları) üretildi, kanıt tablosu references/kurallar.md'de. Ücretli üretimden önce maliyet onayı, varsayılan gizli yükleme, DM otomasyonu onayı ve gerçek ürün varlığı uydurmama sahibin tercihleri.",
+      "positive_trigger": "Uygulamamın yeni özelliği için gerçek ekranlardan 45 saniyelik bir Reels senaryosu ve App Store önizleme klibi hazırla.",
+      "negative_trigger": "TikTok Spark Ads bütçemi ve ROAS eşiğimi belirle (mobil-yayin-buyume).",
+      "validation": "Gerçek bir ürün videosunda skill açık ve kapalı karşılaştırılıyor: maliyet onayı render'dan önce soruluyor mu, eksik varlıkta duruyor mu, çıktıda ölçülen, tahmin ve öneri ayrılıyor mu."
+    }
+  }
 }

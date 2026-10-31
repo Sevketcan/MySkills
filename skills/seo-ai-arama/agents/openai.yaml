@@ -1,0 +1,4 @@
+interface:
+  display_name: "SEO and AI Search"
+  short_description: "Search Console driven SEO, indexing and AI-search visibility"
+  default_prompt: "Use $seo-ai-arama to find what is holding back this site's search traffic."
