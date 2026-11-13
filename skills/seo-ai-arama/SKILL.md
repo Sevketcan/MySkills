@@ -28,7 +28,7 @@ Use only the mode the request needs:
 1. **Strategy**: which keyword patterns make money and which page types Google ranks for them. Read [strategy.md](references/strategy.md).
 2. **Page decision and rewrite**: optimise an existing page or create a new one, write the brief, publish safely. Read [page-workflow.md](references/page-workflow.md).
 3. **Search Console analysis**: question and long-tail queries, the weekly review, "my rankings dropped". Read [search-console.md](references/search-console.md).
-4. **Indexing and crawl**: pages are live but missing from Google, or indexed pages lag far behind supply. Read [indexing.md](references/indexing.md).
+4. **Indexing, crawl and audits**: pages are live but missing from Google, indexed pages lag far behind supply, or an agent audits pages. Read [indexing.md](references/indexing.md).
 5. **AI search**: being cited or recommended in AI Overviews, AI Mode, ChatGPT or Perplexity. Read [ai-search.md](references/ai-search.md).
 
 When the problem is unclear:
@@ -47,7 +47,7 @@ When the problem is unclear:
 ## Guardrails
 
 - **No invention:** never make up volumes, rankings or outcomes. Cite each finding's source (URL, report, date) and mark missing data as missing (K24).
-- **Approval:** noindex, URL or structure changes, redirects, deletions and merges need the user's approval. Never delegate these decisions to a model score (K8).
+- **Approval:** noindex, URL or structure changes, redirects, deletions, merges, `robots.txt` or CDN bot rules and the Search Console AI-features setting need the user's approval. Never delegate these decisions to a model score (K8, K33, K34).
 - **Diff gate:** before publishing, list everything present in the old version and missing from the new one (K8).
 - **Post-publish check:** verify with a script (status 200, canonical, in sitemap, at least one internal link) instead of trusting your own report (K25).
 - **No scraping:** don't scrape Google results with your own scripts; use Search Console, official APIs or web search.
@@ -71,4 +71,4 @@ End each session with:
 - changes made, listed separately from proposals;
 - decisions waiting for the user.
 
-The (Kn) markers point to [kurallar.md](references/kurallar.md) (Turkish), which lists each rule's sources and evidence level. It is compiled from the owner's research notes in Twitter Notes (taslak v0.4).
+The (Kn) markers point to [kurallar.md](references/kurallar.md) (Turkish), which lists each rule's sources and evidence level. It is compiled from the owner's research notes in Twitter Notes (taslak v0.7).

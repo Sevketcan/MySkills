@@ -1,68 +1,115 @@
 # Kurallar ve kaynakları
 
 > Bu dosya iki playbook'tan üretilir: `Bilgi Bankası/YouTube & İçerik/00 YouTube & İçerik.md` (YT) ve `Bilgi Bankası/Video Araçları/00 Video Araçları.md` (VA). Elle düzenleme; playbook'ları güncelle, sonra bu dosyayı yenile.
-> ★ = en az 2 bağımsız kaynak. ★★ = 4 ve üstü. ★ (küme) = kaynaklar sadece 0xwhrrari ve beamnxw; bağımsızlıkları şüpheli, orta güven. Kaynak id'leri X yer işareti id'leridir.
-> Bağımsızlık: Adam_DelDuca'nın 4 kaydı tek kaynak; TubeLabHQ Adam_DelDuca ile aynı küme sayıldı. Hiçbir kural "denendi" değil.
-> **Tanıtım (`tanitim: true`):** Adam_DelDuca (4 not), TubeLabHQ, ShaunYoung_YT, ErnestoSOFTWARE, natiakourdadze (2112913968670892052), AndyL5cc, WiroAI. ★ sayımı tanıtımı ayırmıyor; bütün kaynakları tanıtım olan kurallar işaretli.
-> **Denetim (2026-10-26):** kural 5, 7, 27 ve 31'in Kanıt sütunu düzeltildi ve playbook'lara (YT 5, 7, 18; VA 13) taşındı.
+> **Üretim (2026-11-13, skill v0.5):** YT 38 kayıt / 37 not (bu turda 9 yeni), VA 45 kayıt / 44 not (bu turda 20 yeni kayıt, 19 yeni not). Kural numaraları playbook'larla birebir aynı: YTn = YouTube & İçerik kuralı n, VAn = Video Araçları kuralı n. Gövdedeki (YTn) ve (VAn) işaretleri bu numaralardır. Kural, Kanıt ve Kaynaklar metinleri playbook'lardan aynen alındı; kaynaklara X yer işareti id'leri eklendi.
+> ★ = en az 2 bağımsız kaynak. ★★ = 4 ve üstü. "★ (küme)" = kaynaklar sadece 0xwhrrari ve beamnxw; bağımsızlıkları şüpheli. 2026-11-13 itibarıyla kümeye tek başına dayanan sadece VA1'in "ürün gerçeklerini film kararlarından ayır" alt cümlesi. Kaynak id'leri X yer işareti id'leridir; bir notun id'si ilk geçtiği yerde yazılır. "(VA)" ya da "(YT)" = kaynak notu öbür klasörde.
+> **Bağımsızlık:** Adam_DelDuca'nın 6 kaydı tek kaynak; TubeLabHQ Adam_DelDuca ile aynı küme. youtubersinn'in iki notu tek kaynak ve Adam_DelDuca kümesinden bağımsız sayılmadı. vibeeval'in kayıtları tek kaynak. VengeonsP ChatSEO ailesinden; kuralları söyleyen Arthur (@ZalidanTV), ikisi tek kaynak. MoritzSchauer, declauding (oaustegard) ve errenozgur'un Türkçe aktarımı tek zincir. Aykutuces'in YT ve VA'daki bütün kayıtları (motionforge dahil) tek kaynak. leodavincs3 ve sarpstar tek kaynak ("leodavincs3/sarpstar": kalem, cinecode, Kurgu). liyue_ai'nin iki thread'i tek kaynak. 0xwhrrari ve beamnxw tek küme. Repo paylaşan hesaplarda (bakigulai, theozguratillay, GeekCatX) kural kaynağı repo README'si ("sahibi/repo"). Alıntılanan kişi ancak notta kuralı kendisi söylüyorsa kaynak sayılır. Hiçbir kural "denendi" değil; YT5'in sahne karesi komutu sadece sentetik bir videoda denendi.
+> **Tanıtım (`tanitim: true`):** YT: Adam_DelDuca (6 not), TubeLabHQ (2 not), ShaunYoung_YT, ErnestoSOFTWARE, natiakourdadze, DevenSeenath'in politika videosu (2047110994506465331; AVD notu 2114009023611797965 tanıtım değil), Scenario_gg (Content Engine). VA: AndyL5cc (hypit), WiroAI, MengTo (Fil), Scenario_gg (Kinetic Film), sunra_ai, HyperFrames_ (HeyGen), trymirage (Tesseract), Avenoxai (sponsorlu video). ★ sayımı tanıtımı ayırmıyor; bütün kaynakları tanıtım olan kurallar Kanıt sütununda işaretli.
+> **Denetim (2026-10-26):** YT 5, 7, 18 ve VA 13'ün Kanıt sütunu düzeltildi ve playbook'lara taşındı (v0.3'te K5, K7, K31, K27).
+> **Güncelleme (2026-11-01):** Numaralama K1-K33'ten YT/VA öneklerine geçti. Yeni: YT 21-26, VA 14-19.
+> **Güncelleme (2026-11-13):** YT: 5'in metni kurgu iskeletini de kapsıyor (★★ aynı; iskelet kısmı ★), 8 ve 9'a youtubersinn eklendi (★ aynı); yeni 27-30. VA: 1-9, 11-16 ve 18'e kaynak eklendi; 1, 3, 4, 5, 6, 7, 8, 9, 12, 13, 16 ve 18 ★★'ya çıktı (11 ve 15 zaten ★★); 2 ve 6'nın onarım kısmı kümeden ★'a çıktı; yeni 20-23. Gövdedeki kodla video motor tablosu VA20 ve VA21'den; araç adları örnek, hiçbiri denenmedi (VA kategori sayfasındaki karşılaştırma tablosu README'lerden).
 
-## Senaryo ve kanca
-| # | Kural | Kanıt | Kaynaklar | Playbook |
-|---|---|---|---|---|
-| 1 | İlk 2-3 saniyede kanca: kimin neyi kaybedebileceği belli olsun; "Selam, bu videoda…" ile açma. | ★ | vibeeval (2113736879476555939), TubeLabHQ (2112891684677935149), 0xwhrrari (2112166940081004693) | YT 1 |
-| 2 | Kanca bir merak boşluğu açar, cevabı videonun içine erteler (tek soru, iddialı cümle, önce-sonra görüntü). | ★ | vibeeval, TubeLabHQ, ShaunYoung_YT (2111528539447087353) | YT 2 |
-| 3 | 45-60 sn'de 2-3 döngü: risk → büyük soru → ters köşe → yeniden kanca; ters köşe başta söylenenle çelişmez. | tek kaynak (vaka) | vibeeval | YT 3 |
-| 4 | Açılışı altı kalıptan seç: soğuk açılış, ham görüntü, "sen" bakışı, nesneyi göster, iddialı cümle, kişisel itiraf. | tek kaynak (tanıtım) | TubeLabHQ | YT 4 |
-| 5 | Senaryoyu outlier videoların ya da en uzun yayındaki reklamların transkript yapısından türet; yapıyı al, içeriği kendin üret. | ★★ (0xwhrrari/beamnxw tek küme sayılınca 4 küme; 3'ü tanıtım) | Adam_DelDuca (2113229912844689713) / TubeLabHQ, ErnestoSOFTWARE (2111878898552102934), 0xwhrrari, beamnxw (2113275303808160226), AndyL5cc (2109133876702703805) | YT 5 |
-| 6 | Claude'un ilk taslağı başlangıçtır; kanca ve olgusal iddiaları yayından önce insan kontrol eder. | ★ | vibeeval, tom_doerr (2036587518196396354), 0xwhrrari | YT 6 |
+## YouTube & İçerik (YT)
 
-## Niş ve konu
-| # | Kural | Kanıt | Kaynaklar | Playbook |
-|---|---|---|---|---|
-| 7 | Nişi doğrula: küçük kanallarda outlier izlenme, RPM ~5$+, 100 fikir, yüz gerekmiyor. | ★ (eşikler tek kaynak; iki kaynak da tanıtım) | Adam_DelDuca (2113261707325792669), ShaunYoung_YT | YT 7 |
-| 8 | Konuyu talep sinyalinden çek: çok yorumlu Reddit soruları, trend ve outlier videolar, Google Trends. | ★ | Adam_DelDuca (2112899336887476512), tom_doerr | YT 8 |
-| 9 | Tutan formatı seri yap ve bırakma. | ★★ | Adam_DelDuca, ShaunYoung_YT, jacobrodri_ (2112980072684458180), ozcnkrtn (2038548032602419646) | YT 9 |
+### Senaryo ve kanca
+| # | Kural | Kanıt | Kaynaklar |
+|---|---|---|---|
+| YT1 | İlk 2-3 saniyede kanca kur: izleyici kimin neyi kaybedebileceğini görsün. "Selam arkadaşlar, bu videoda…" ile açma. | ★ | vibeeval (2113736879476555939), TubeLabHQ (2112891684677935149), 0xwhrrari (VA, 2112166940081004693) |
+| YT2 | Kanca bir merak boşluğu açar ve cevabı videonun içine erteler: tek soru, iddialı cümle ya da önce-sonra görüntü. | ★ | vibeeval, TubeLabHQ, ShaunYoung_YT (2111528539447087353) |
+| YT3 | 45-60 saniyelik videoda 2-3 merak döngüsü kur (risk → büyük soru → ters köşe → yeniden kanca); ters köşe başta söylenenle çelişmesin. | tek kaynak (vaka) | vibeeval |
+| YT4 | Açılışı altı kalıptan seç: soğuk açılış, ham görüntü, "sen" bakışı, nesneyi göster, iddialı cümle, kişisel itiraf. | tek kaynak (tanıtım) | TubeLabHQ |
+| YT5 | Senaryoyu sıfırdan yazma: tutan (outlier) videoların ya da en uzun yayındaki reklamların transkript yapısını Claude'a çözdür, kendi konunda yeniden yazdır. Kurgu iskeletini de çıkar: sahne değişimlerinden kare al, görsel modele çekim tipi, ekran yazısı ve değişim tablosu yaptır. Yapıyı al, içeriği kendin üret. | ★★ (0xwhrrari/beamnxw tek küme sayılınca 7 küme; 4'ü tanıtım). Kurgu iskeleti kısmı ★ (vibeeval, Scenario_gg; biri tanıtım) | Adam_DelDuca (2113229912844689713) / TubeLabHQ, ErnestoSOFTWARE (2111878898552102934), 0xwhrrari ve beamnxw (VA, 2113275303808160226), AndyL5cc/hypit (VA, 2109133876702703805), VengeonsP (2115486340544397367; Arthur/ZalidanTV aktarımı: tutan yabancı videoların transkriptleri senaryo skill'ine giriyor), vibeeval (2117886061305008223; sahne kareleri, yt-dlp + ffmpeg), Scenario_gg (2118387681197457494; vuruş vuruş harita, tanıtım) |
+| YT6 | Claude'un ilk taslağı başlangıçtır: kendi örneğini ve rakamını ekle; kanca ve olgusal iddiaları yayından önce bir insan kontrol etsin. | ★ | vibeeval, tom_doerr (2036587518196396354; youtube-shorts-pipeline README), 0xwhrrari (VA) |
+| YT21 | 45-60 saniyelik senaryoyu 9 parçalık iskeletle kur: hook 1-2, kilitleme bölgesi 2-4, body block 3-5 (en az iki, her biri bariz olmayan fikir + destek), aralarda 1 cümlelik rehook, sonda 1 cümlelik CTA (yoksa 1-2 cümle kapanış). Hook'tan sonraki kilitleme bölgesi izlemeye değeceğine ikna eder: kanıt, dönüşüm, karşıtlık, sihirli kutu, itiraz ya da iddiayı büyütmek. | tek kaynak (görüş) | vibeeval (2. makale, 2114426740739084605) |
+| YT22 | Kısa videoyu gereğinden uzatma; Shorts'ta ortalama izlenme süresi videonun neredeyse tamamı olmalı (20 sn → ~21, 32 → ~33, 40 → ~39, 60 → ~47). Altında kalıyorsan kısalt ya da girişi sıkılaştır. | ★ (rakamlar tek kaynak, iddia) | vibeeval ("45-60 sn, gerekmedikçe uzatma"), DevenSeenath (2114009023611797965; AVD tablosu) |
+| YT27 | Claude'a yazdırılan senaryo, açıklama ve gönderiyi yayından önce ayrı bir geçişte LLM yazı tiklerinden ayıkla: önce reddedip sonra açıklamak, önem ilan etmek, paragrafı özlü sözle kapatmak, kopuk kısa cümle ritmi, süslü benzetme, hasır adam. Ayıklarken yeni rakam, isim ya da alıntı ekletme; bilinçli seçilmiş vurguyu (kanca) koru. | tek kaynak (görüş) | MoritzSchauer (2120049961920295069; declauding, oaustegard; errenozgur'un Türkçe aktarımı aynı zincir) |
 
-## Üretim hattı
-| # | Kural | Kanıt | Kaynaklar | Playbook |
-|---|---|---|---|---|
-| 10 | Hattı tek işli, ayrı çalıştırılabilir adımlara böl: konu → senaryo → ses → görsel → kurgu → yayın. | ★★ | wjsidiss (2082524786198970514), tom_doerr, Aykutuces (2076690210482532804), Adam_DelDuca (2112861480185897207) | YT 10 |
-| 11 | Altyazıyı metinden üret ve sesle hizala (paragraf süresine oranla ya da kelime düzeyinde). | ★ | wjsidiss, tom_doerr, AndyL5cc | YT 11 |
-| 12 | Explainer ve belgesel için Edge TTS yeterli; çalışan sürümü sabitle. | ★ | wjsidiss, tom_doerr | YT 12 |
-| 13 | Büyük ffmpeg işlerini kademeli birleştir; katmanlı seste `amix=normalize=0`. | tek kaynak (vaka) | wjsidiss | YT 13 |
-| 14 | Görseli açık arşivden al; Wikimedia'da 1-2 kelimelik sorgu ve istekler arası bekleme. | tek kaynak (vaka) | wjsidiss | YT 14 |
+### Niş ve konu
+| # | Kural | Kanıt | Kaynaklar |
+|---|---|---|---|
+| YT7 | Nişe girmeden doğrula: küçük kanallar outlier izlenme alıyor mu (talep > arz), RPM 5$ üstü mü, en az 100 video fikri çıkıyor mu, yüz gerekmeden anlatılabiliyor mu. | ★ (eşik rakamları tek kaynak; iki kaynak da tanıtım) | Adam_DelDuca (2113261707325792669), ShaunYoung_YT ("merak var, arama yok") |
+| YT8 | Konuyu gerçek talep sinyalinden çek: çok yorumlu Reddit soruları, trend ve outlier videolar, Google Trends. Outlier'ı abone sayısına değil kanalın kendi ortalamasına göre ölç; adayı AI getirir, konuyu insan seçer. | ★ (ölçüm ve elle seçim kısmı tek kaynak) | Adam_DelDuca (2112899336887476512), tom_doerr (pipeline'ın konu keşfi), VengeonsP (Arthur: outlier takvimi, elle seçim), youtubersinn (2120224639108415577, 2119159122188968149; vidIQ'da "what if" aramaları, r/personalfinance; Adam_DelDuca'dan bağımsız sayılmadı) |
+| YT9 | Tutan bir format bulunca onu seri yap ve bırakma. | ★★ | Adam_DelDuca, ShaunYoung_YT, jacobrodri_ (2112980072684458180; Cantina), ozcnkrtn (VA, 2038548032602419646), atakantech (2115505374858183078; aynı animasyon tarzı, başka ürüne de taşındı), youtubersinn ("What if you…" kanalı, 48 video; bağımsızlığı belirsiz) |
+| YT28 | Format kaynağını başka dildeki pazarda ara: orada tutmaya başlayan formatı kendi dilinde yeniden üret (yerel bir üreticiyi kopyalamadan). Yapıyı al, içeriği kendin üret (kural 5). | ★ (görüş + vaka) | runthistown5416 (2120967609323774066; "globalde her gün yeni format çıkıyor, Türkçeye ya da başka dillere çevirin"), VengeonsP (Arthur fikirleri sadece yabancı pazardan alıyor) |
 
-## Kodla motion ve launch videosu
-| # | Kural | Kanıt | Kaynaklar | Playbook |
-|---|---|---|---|---|
-| 15 | Vibe prompt değil yönetmen brief'i; ürün gerçeklerini film kararlarından ayır. | ★ (küme) | 0xwhrrari, beamnxw | VA 1 |
-| 16 | Gerçek ürün ekranı, logo ya da metrik uydurtma; eksik varlıkta ajan durur ve sorar. | ★ (küme) | 0xwhrrari, beamnxw | VA 2 |
-| 17 | Referansa tek görev ver, ondan ölçülebilir kararlar çıkar; konusunu, logosunu, metnini kopyalama. | ★ | 0xwhrrari, beamnxw, AndyL5cc | VA 3 |
-| 18 | Çekim listesiyle yaz: giriş durumu, çıkış durumu, amaç; üretken video promptunda da çekim, diyalog, ses, kamera katmanları. | ★ | 0xwhrrari, beamnxw, ozcnkrtn | VA 4 |
-| 19 | Zamanı kare numarasına bağla; deterministik, seekable render, seed'li rastgelelik. | ★ (küme) | 0xwhrrari, beamnxw | VA 5 |
-| 20 | Export'tan önce still/contact sheet; kusuru kare numarası, kanıt ve yerel düzeltmeyle onar. | ★ (küme) | 0xwhrrari, beamnxw | VA 6 |
-| 21 | Ses olayları görüntüyle aynı zaman çizelgesinde. | ★ (küme) | 0xwhrrari, beamnxw | VA 7 |
-| 22 | Uzun ajan koşularına onay kapıları; ajan geri dönülmez marka kararı vermez. | ★ (küme) | 0xwhrrari, beamnxw | VA 8 |
-| 23 | Kararları dosyada tut ki sonraki video aynı tabandan başlasın. | ★ (küme) | 0xwhrrari, beamnxw | VA 9 |
-| 24 | 16:9 ve 9:16 ayrı kompozisyon; kırparak türetme. | tek kaynak | 0xwhrrari | VA 10 |
+### Üretim hattı
+| # | Kural | Kanıt | Kaynaklar |
+|---|---|---|---|
+| YT10 | Hattı tek işli adımlara böl: konu → senaryo → ses → görsel → kurgu → yayın. Her adım ayrı script ya da araç, tek tek yeniden çalıştırılabilir. | ★★ | wjsidiss (2082524786198970514), tom_doerr, Aykutuces (2076690210482532804), Adam_DelDuca (2112861480185897207), atakantech (7 adım), VengeonsP (adım başına skill) |
+| YT11 | Altyazıyı elindeki metinden üret ve sesle hizala: paragraf başına ses + süreye oranla dağıtma ya da kelime düzeyinde hizalama. | ★★ | wjsidiss, tom_doerr, AndyL5cc/hypit (VA), atakantech (ElevenLabs kelime zamanları) |
+| YT12 | Explainer ve belgesel anlatımı için Edge TTS ücretsiz ve yeterli; çalışan `edge-tts` sürümünü sabitle. | ★ | wjsidiss, tom_doerr |
+| YT13 | Büyük ffmpeg işlerini kademeli birleştir (klip → 8'li grup → final); katmanlı seste `amix=normalize=0` kullan. | tek kaynak (vaka) | wjsidiss |
+| YT14 | Görseli telifsiz açık arşivden al; Wikimedia'da 1-2 kelimelik sorgu, istekler arası bekleme. | tek kaynak (vaka) | wjsidiss |
+| YT23 | Senaryo skill'ini kanal başına ayrı tut ve kayıttan öğret: Claude senaryoyu gerçekte söylenenle karşılaştırsın, aynı düzeltme 3-4 kez tekrarlanınca skill güncellensin. Kurguyu transkript (ör. WhisperX) üzerine kur. | tek kaynak (vaka) | VengeonsP (Arthur/ZalidanTV aktarımı) |
+| YT25 | Basit çizgi ya da çöp adam animasyonunu hazır görsel yerine kodla ürettir (Claude Code'a yazdırılan program ya da Remotion), sonra kareleri videoya çevir (Playwright + FFmpeg). Onay adımında kare değil kısa, düşük çözünürlüklü hareketli önizleme bak. | ★ (önizleme kısmı solotechdev konuşmasındaki yanıtlardan, tek kaynak) | atakantech, solotechdev (2114576045869527201) |
+| YT29 | Kendi sesinle ya da yüzünle çekiyorsan bütçeyi önce sese ver: telefona takılan alıcılı kablosuz yaka mikrofonu (sıradan Bluetooth mikrofon değil, sesi 8-16 kHz'e düşürüyor), göğüste ağzın bir karış altında, yankısız oda (halı, perde, kitaplık), sessiz odada gürültü engelleme kapalı. AI ses onarımına güvenme. Işıkta tek yumuşak kaynak (LED + softbox, 45°, göz hizasının biraz üstü), tavan lambası kapalı. Çekimden önce 10 saniyelik deneme kaydını kulaklıkla dinle. | tek kaynak (görüş) | sercansolmaz (2116850648259997846; ses mühendisi olduğunu söylüyor) |
 
-## AI ile görsel ve video
-| # | Kural | Kanıt | Kaynaklar | Playbook |
-|---|---|---|---|---|
-| 25 | Ürün/UI/tipografi için kodla motion; fotogerçek insan ve karakter için üretken video ya da 3D. | ★ | 0xwhrrari, KinGao476942 (2112729924943634602), beamnxw | VA 11 |
-| 26 | Karakter tekrar edecekse önce kimliği kilitle (karakter kartı, referans kimlik), sonra sahne üret. | ★ | leo_xiaolei (2102674531655770534), Aykutuces | VA 12 |
-| 27 | Viral ya da reklam yapısını çoğaltırken zamanlamayı kelimeye bağla, parçaları değiştirerek varyant üret. | tek kaynak (iddia, tanıtım) | AndyL5cc | VA 13 |
+### Paketleme ve dağıtım
+| # | Kural | Kanıt | Kaynaklar |
+|---|---|---|---|
+| YT15 | Başlığı ve thumbnail'i tahmin etme, ölç: 5-6 aday üret, skorlat ya da A/B testle. | ★ | wjsidiss, Adam_DelDuca, VengeonsP (Arthur: video başına otomatik 3 aday; birden fazla aday üretmeyi destekliyor, test etmeyi söylemiyor) |
+| YT16 | Thumbnail hikayeyi tıklamadan anlatsın (önce → sonra); 8 dakika civarı hem izlenip bitirilir hem ara reklam alır. | tek kaynak (vaka, tanıtım) | ShaunYoung_YT |
+| YT17 | Açıklama: anahtar kelime ilk 2 satırda, 300+ kelime, zaman damgalı bölümler, en fazla 3 hashtag. | tek kaynak | wjsidiss |
+| YT18 | Yorumu lead'e çevir: açıklamada "X yaz, linki göndereyim" CTA'sı ve otomatik DM. | ★ (natiakourdadze ve Adam_DelDuca tanıtım) | natiakourdadze (2112913968670892052), Adam_DelDuca, atakantech ("KOMUT yaz" → komut DM'de) |
+| YT19 | Tek ham konuşan kafa çekiminden ayrı 9:16 ve 16:9 kesimler çıkar; sessizlik kesme ve kelime kelime altyazı ajana. | tek kaynak (vaka, tanıtım) | ErnestoSOFTWARE |
+| YT20 | Reklam kreatifini kazanan reklamlardan türet: Meta Ad Library'de en uzun süredir yayında olanları çöz, yapısıyla kendi ürününü üret. | ★ | ErnestoSOFTWARE, 1tunademir (VA, 2113343805365596459), AndyL5cc/hypit (VA) |
+| YT24 | Affiliate kanalında nişi satış başına komisyona göre seç (aynı emekle birkaç sent ya da 50$+); affiliate çağrısını videonun ilk üçte birine koy. Aboneler büyük ölçüde başka konuyla geldiyse "aboneleri bilgilendir"i kapat. | tek kaynak (vaka) | VengeonsP (Arthur/ZalidanTV aktarımı) |
+| YT26 | Yayından sonra veriyi oku ve sonraki videoya taşı: retention eğrisinde izleyicinin düştüğü yer (Claude'a okut, o bölümü sonraki senaryoda düzelt), ortalama izlenme süresi, takip etmeyenlerden gelen pay, kayıt ve paylaşım. | ★ (her kaynak farklı bir metriği söylüyor; Adam_DelDuca tanıtım) | Adam_DelDuca (2115760578027204764; retention eğrisi), atakantech (takip etmeyen payı, kayıt, paylaşım), DevenSeenath (AVD hedefi) |
+| YT30 | Başlığı tutan başlık kalıplarından türet: nişindeki outlier videoların başlıklarını boşluklu kalıba çevir ([X], But I Don't Waste Your Time; What Happens to Your [X] When You [Y]), kendi konuna uyarla, adayları test et (kural 15). Seri formatta tek bir kalıp tekrar edilebilir; izleyiciyi özne yapan kalıp ("What if you…?") okuyanı senaryonun içine koyar. | tek küme sayıldı (tanıtım; iddia) | TubeLabHQ (2119811648558866841; 50 formül, TubeLab MCP; tanıtım), youtubersinn ("What if you…" kanalı; Adam_DelDuca kümesinden bağımsızlığı belirsiz) |
 
-## Paketleme, dağıtım ve reklam
-| # | Kural | Kanıt | Kaynaklar | Playbook |
-|---|---|---|---|---|
-| 28 | Başlık ve thumbnail'i ölç: 5-6 aday, skor ya da A/B. | ★ | wjsidiss, Adam_DelDuca | YT 15 |
-| 29 | Thumbnail hikayeyi tıklamadan anlatsın (önce → sonra). | tek kaynak (vaka, tanıtım) | ShaunYoung_YT | YT 16 |
-| 30 | YouTube açıklaması: anahtar kelime ilk 2 satırda, zaman damgaları, en fazla 3 hashtag. | tek kaynak | wjsidiss | YT 17 |
-| 31 | Yorumu lead'e çevir: anahtar kelimeli CTA + otomatik DM. | ★ (iki kaynak da tanıtım) | natiakourdadze (2112913968670892052), Adam_DelDuca | YT 18 |
-| 32 | Tek ham konuşan kafa çekiminden ayrı 9:16 ve 16:9 kesimler. | tek kaynak (vaka, tanıtım) | ErnestoSOFTWARE | YT 19 |
-| 33 | Reklam kreatifini Ad Library'de en uzun yayında kalan reklamların yapısından türet. | ★ | ErnestoSOFTWARE, 1tunademir (2113343805365596459), AndyL5cc | YT 20 |
+## Video Araçları (VA)
+
+### Brief ve referans
+| # | Kural | Kanıt | Kaynaklar |
+|---|---|---|---|
+| VA1 | Vibe prompt değil yönetmen brief'i ver: tek cümlelik fikir (ya da olay), kitle, süre, formatlar, gerçek varlıklar, kaçınılacak klişeler. Eksik olanı ajan sorsun (süre, format, görünüm, ses); brief'i tek cümleyle geri söylesin. Ürün gerçeklerini film kararlarından ayır. | ★★ (ana cümle); "ürün gerçeklerini ayır" ★ (küme) | 0xwhrrari, beamnxw, Aykutuces/motionforge (2117645782937444431; brief'i geri söyle, sadece eksiği sor; 10 dilde klişe yasak listesi), leodavincs3/sarpstar (2118006090088517853; cinecode soru paneli), liyue_ai (2118917181148934409; önce olayı tek cümleyle yaz) |
+| VA2 | Gerçek ürün ekranı, logo ya da metrik uydurtma. Eksik varlık bir engeldir: ajan durup sorar. Metindeki doğrulanması gereken iddiaları ayrı listele; maket ekran, örnek veri ve yapay zekâ sunucu kullanılırsa belirt. | ★ | 0xwhrrari, beamnxw, Aykutuces/motionforge (iddia listesi, açıklama kuralı) |
+| VA3 | Referansa tek bir görev ver ve ondan ölçülebilir kararlar çıkar (palet, tipografi, tempo, hareket, kare numaraları, çekim süreleri, BPM, geçişler); konusunu, logosunu, metnini, görüntüsünü kopyalama. Yapıyı al, parçaları kendininkiyle değiştir. | ★★ (2'si tanıtım) | 0xwhrrari, beamnxw, AndyL5cc/hypit, edenfunf/ReelMimic (2119703432688746984; README: teknik öğrenilir, varlık kullanılmaz), HyperFrames_ (2118049784548495490; `/reverse-any-video`) |
+| VA4 | Çekim listesiyle yaz: her çekimin giriş durumu, çıkış durumu ve amacı olsun; süresi, çekim ölçeği, kamera hareketi ve ekran metni yazılı olsun. Üretken video promptunda da stil, karakter, mekan, çekim sırası, diyalog, ters köşe, ses ve kamera ayrı katman. Tek çekime çok eylem sıkıştırma (30 sn ≈ 9 çekim). | ★★ | 0xwhrrari, beamnxw, ozcnkrtn, alex_prompter (2118373033413132706; 8-12 çekim, çekim başına ≤8 kelime), liyue_ai (saniye aralığı + ölçek + kamera + içerik), GeekCatX (2120217746554458595; 3×3 storyboard, ölçek yayı), leodavincs3/sarpstar (cinecode vuruş planı) |
+
+### Render ve inceleme
+| # | Kural | Kanıt | Kaynaklar |
+|---|---|---|---|
+| VA5 | Zamanı kare numarasına bağla; render deterministik ve seekable olsun (gizli saat yok, rastgelelik seed'li). Tarayıcı sahneleri gerçek zamanlı kaydedilmez, kare kare yakalanır; `requestAnimationFrame` döngüsü, CSS geçişi ve duvar saati seekable değildir. Zamanı önce saniyeyle yaz, sonra kareye çevir. | ★★ (1 tanıtım) | 0xwhrrari, beamnxw, gnipbao/FrameVelo (2117263301935841618; sadece seekable sayfalar), leodavincs3/sarpstar (2116923663739969599; kalem ve cinecode: headless Chrome'da kare kare, seed'li), HyperFrames_ (deterministik MP4) |
+| VA6 | Tam export'tan önce still, contact sheet ya da önizleme incele (telefon boyutunda okunurluk, güvenli alan, gerçek varlık, ilk 2 saniyede kanca). Kusuru kare numarası + kanıt + yerel düzeltmeyle onar, sadece etkilenen kareleri ya da sahneyi yeniden render et. Revizyon notunu zaman kodu + sahne/katman + piksel işaretiyle ver; global saniyeye değil sahneye bağla (sahne uzarsa sonraki notlar kaymasın). | ★★ (onarım kısmı ★: küme, Kurgu, ReelMimic; "sahneye bağla" kısmı tek kaynak: Kurgu ve yanıtı) | 0xwhrrari, beamnxw, alex_prompter/video-use (2115132880791958004; önce önizleme, sonra final), silvanrec/ffmpeg-skill (2114678426254946686; `look` contact sheet), Aykutuces/motionforge (contact sheet QA), calesthio/OpenMontage (2118176658377130019; storyboard + contact sheet onayı), leodavincs3/sarpstar (cinecode iki anahtar sahne still'i; Kurgu (2119333468895088935) piksel notu ve sahne bazlı `rerender`), edenfunf/ReelMimic (önce/sonra ekran görüntülü düzeltme) |
+| VA7 | Ses ve görüntü tek zaman çizelgesinde: efekt sesi olayın karesine (tık basışa, whoosh logonun çıktığı kareye), kesim müziğin vuruşuna. Sahne olay listesi (ör. `olaylar.json`) sesi sürsün. | ★★ (1 tanıtım) | 0xwhrrari, beamnxw, Aykutuces (2115117992728015094), Scenario_gg (2115809258105115074), leodavincs3/sarpstar (kalem `olaylar.json`, Tone.js) |
+| VA8 | Uzun ajan koşularına onay kapıları koy: varlık ve referans → stil rehberi ve shot list (ya da metin, kesim planı) → still'ler → kaba kurgu → kusur onarımı → teslim. Ajan geri dönülmez marka kararı vermez. Ücretli adımlara bütçe tavanı ve harcama onayı: her ücretli çağrıdan önce ne üretileceği ve tahmini maliyet; anahtarlar sadece ortam değişkeninden. | ★★ (bütçe kısmı ★★: wjsidiss, MengTo, motionforge, OpenMontage, storymotion; 1 tanıtım) | 0xwhrrari, beamnxw, alex_prompter/video-use (kesim planı onayı), wjsidiss/OTOPİLOT (2114312676281065728; metin onayı), Aykutuces/motionforge (kuru çalıştırma + onay), calesthio/OpenMontage (sabit kapılar; 10 $ tavan, 0,50 $ üstü onay), leodavincs3/sarpstar (cinecode film kipi ~6-8 onay), edenfunf/ReelMimic (plan onayı), vibeeval/storymotion (2117196701484077411; ücretli istek başına onay), MengTo (2114769742682886477; bütçe ve harcama onayı) |
+| VA9 | Kararları dosyada tut (brief, stil rehberi, shot list, kesim listesi, kaynak ve görünüm dosyası, lisans listesi, incelemeler); sonraki video ve her düzeltme aynı tabandan başlasın ("4. kesimi geri al" tek satır). | ★★ (1 tanıtım) | 0xwhrrari, beamnxw, alex_prompter/video-use (`cuts.txt`, `project.md`), MengTo (2114769742682886477; `Source.md`, `Look.md`), leodavincs3/sarpstar (cinecode `STATE.md`, `SCRIPT.md`, `LICENSES.csv`; Kurgu `project.json`, `NOTLAR.md`), levelsio (2116959423117857026; JSON kesim listesi), Aykutuces/motionforge (`brand.json`) |
+| VA10 | Tasarlanmış motion'da 16:9 ve 9:16 ayrı kompozisyondur; dikeyi kırparak türetme. Kamera çekiminde kırpma olur ama merkezden değil, yüze (ya da gösterilen ekrana) göre çerçevele. | ilk cümle tek kaynak; ikinci cümle ★ | ilk cümle: 0xwhrrari; ikinci cümle: alex_prompter/video-use, silvanrec/ffmpeg-skill |
+| VA15 | Render'dan sonra ölç, ajanın "bitti"sine güvenme: süre, ses yüksekliği, akışlar, platform şartları ve her kesim sınırı yeniden ölçülsün; ayrı bir eleştirmen (alt ajan, işi görmemiş temiz bağlamlı ajan ya da kör jüri) sınırlı turla baksın. Açık kusur varsa teslim yok. Ajan sesi duymaz: son kurguyu bir kez kulaklıkla dinle. | ★★ (2'si tanıtım; dinleme kısmı ★: video-use, The_Alex) | silvanrec/ffmpeg-skill, alex_prompter/video-use, The_Alex/DaVinci skill'leri (2113389624441926143), Scenario_gg (durağan kare ≤%40, bekleme ≤0,6 sn), MengTo (kör jüri 8/10), Aykutuces/motionforge (taşan yazı, okuma süresi, ses, dudak kayması, temiz bağlamlı eleştirmen), calesthio/OpenMontage (ffprobe, kare, ses, altyazı kontrolü), edenfunf/ReelMimic (her çekimi başka ajan inceler), leodavincs3/sarpstar (cinecode QA, -14 LUFS) |
+
+### Konuşmalı kurgu ve altyazı
+| # | Kural | Kanıt | Kaynaklar |
+|---|---|---|---|
+| VA16 | Konuşmalı çekimi transkriptten kes: kelime düzeyinde zaman damgası, kelime ortasından kesme yok, her kesime kısa ses geçişi (~30 ms); kareye sadece karar anında (belirsiz duraklama, kesim kontrolü) ya da klip içeriğini anlamak için kare ızgarasından bak. Birden çok konuşmacı varsa sesi imzayla ayır. | ★★ (konuşmacı ayırma kısmı tek kaynak: levelsio) | alex_prompter/video-use, The_Alex/DaVinci skill'leri (kelime zamanı + dalga formu, kısa crossfade), silvanrec/ffmpeg-skill (dolgu silme ölçülmüş kelime zamanı ister), levelsio (mlx-whisper transkript + kare ızgarası + JSON kesim listesi; SpeechBrain ECAPA) |
+| VA17 | Altyazı kelime zamanına bağlı olsun (kelime kelime ya da karaoke). Stilini açıkça yaz (büyük/küçük harf, vurgu rengi, kelime sayısı); "benim stilimde" yetmez, varsayılanlar genel. | ★ (stil kısmı tek kaynak: alex_prompter) | alex_prompter, Aykutuces, silvanrec/ffmpeg-skill |
+
+### Ses ve lisans
+| # | Kural | Kanıt | Kaynaklar |
+|---|---|---|---|
+| VA18 | Lisansı baştan filtrele: ticari videoda efekt ve görseli CC0 ya da kamu malı ile sınırla, NC/ND'yi ele, atıf gerekenleri otomatik listele (varlık başına kaynak + lisans dosyası, belirsiz lisans işaretli). Şartı prompta ya da hatta yaz; sonradan temizleme. "Ücretsiz" stok kütüphanesi ticari kullanım izni demek değil. | ★★ | Aykutuces (Openverse CC0, Wikimedia kamu malı), wjsidiss/OTOPİLOT (NC/ND eleme, otomatik atıf), leodavincs3/sarpstar (cinecode açık arşivler, CC0 kütüphaneler, `LICENSES.csv`), edenfunf/ReelMimic (kaynak ve lisans günlüğü, belirsiz işaretli) |
+| VA19 | Seslendirmede kendi ses klonunu kullan; kişisel kancayı (ilk cümle, yüz) kendin çek, gövdeyi klon ses ve kodla sahneler taşısın. Gerçek kaydın gelince sahneleri ona yeniden oturt. | ★ (vaka; 1 tanıtım) | errenozgur (2114780064357208254), MengTo |
+
+### Araç ve model seçimi
+| # | Kural | Kanıt | Kaynaklar |
+|---|---|---|---|
+| VA11 | Ürün, UI, tipografi, veri ve kurgu için kodla motion (Remotion, HyperFrames, HTML, Canvas, SVG, three.js); fotogerçek insan, dudak senkronu ve karakter oyunculuğu için üretken video ya da 3D (Blender, Tesseract). Kodla filmde gerçekçi yakın plan yüz zayıf: stilize ya da siluet. | ★★ | 0xwhrrari, KinGao476942 (2112729924943634602; awesome listesindeki türler), beamnxw, MengTo, Scenario_gg, errenozgur, Aykutuces (2115473667337662548; Kling Avatar + Claude Code), leodavincs3/sarpstar (cinecode: yüz stilize), LufzzLiz (2116884110639861803; sunucu üretken, paket kodla), trymirage (2118054387209925032; tanıtım) |
+| VA12 | Aynı karakter birden çok sahnede görünecekse önce kimliği kilitle (karakter kartı, Soul ID gibi referans kimlik, yakın plan + üç açılı görünüm), her referans görselin neyi kilitlediğini yaz, sonra sahne üret. | ★★ | leo_xiaolei (2102674531655770534), Aykutuces (YT), AIVersePlay (2114021598248546453; video açıklaması), liyue_ai (yakın plan + üç açı, referans başına görev), GeekCatX (referans kare çapa), LufzzLiz (referansla sabitlenmiş ana çekim) |
+| VA13 | Zamanlamayı kelimeye bağla: sahne ve kesimler konuşmadaki kelimeye otursun; yeni ses kaydı gelince her şeyi gerçek kelimelere yeniden oturt. Ses onaylanınca zaman çizelgesi kilitlenir; okuma hatası varsa sadece o parçayı yeniden kaydedip yamala. (Viral ya da reklam yapısı çoğaltılırken sunucu, metin ve ürün değiştirilerek varyant üretilir: sadece hypit.) | ★★ (2'si tanıtım; varyant ve yama kısımları tek kaynak) | AndyL5cc/hypit, MengTo, Aykutuces, LufzzLiz (zaman çizelgesi sese kilitli, yerel yama) |
+| VA14 | Açık kaynak araç ve repo iddialarını repodan doğrula: OpenCut'ta MCP henüz yok; claude-video kurgu yapmıyor; OTOPİLOT README'sine göre YouTube'a otomatik yükleme yok; video-use "anahtarsız" değil (ElevenLabs); "ücretsiz" video modellerinin model lisansı koddan ayrı (CogVideoX-5B, LTX); SoulX-FlashHead Pro gerçek zaman için 2×RTX 5090 istiyor. 2026-11-13: Kurgu Remotion'ı henüz içe almıyor; FrameVelo Remotion'da hız değil CPU/bellek kazandırıyor (1,0-1,3×) ve Linux'ta render etmiyor; OpenMontage tweet'te 12, README tablosunda 11 hat; Wan 2.2'de metinden görsel modeli yok, resmî en düşük VRAM 24 GB; HyperFrames'in `/reverse-any-video`'su Pro (ücretli); storymotion'ın 91 şablonundan 84'ü "geliştirmede". | bizim gözlemimiz | robiartec (2067304606359486505), Aykutuces (YT), wjsidiss, alex_prompter, AIVersePlay (2115831767294726160), AlicanKiraz0 (2115415292264456312) notlarındaki repo kontrolleri; 2026-11-13: leodavincs3, GeekCatX, bakigulai, dayiakadijital (2120793016398971197), HyperFrames_, vibeeval notları |
+| VA20 | Kodla videoda tek motor ve hazır stil paketi jenerik görünüm üretir: motoru sahnenin içeriğine göre seç (yazı, sayaç ve bilgi kartı HyperFrames; gerçek 3D three.js; formül ve grafik Manim; parçacık ve patlama PixiJS; kendi kendine çizilen çizgi Paper.js). Vlog gibi işlerde süsü azalt, sade kes. | ★ (görüş; motor tablosu tek kaynak: kalem) | leodavincs3/sarpstar (kalem motor tablosu; cinecode "yönetmenlik katmanı"), levelsio (Remotion "her şeyi aynı ve fazla gösterişli" gösteriyor) |
+| VA21 | Motor ve araç lisansını baştan kontrol et: HyperFrames Apache 2.0; Remotion birey, en fazla 3 çalışanlı şirket ve kâr amacı gütmeyenler için ücretsiz, üstü şirket lisansı; OpenMontage AGPLv3 (değiştirip servis olarak sunarsan kaynak paylaşımı); Wan 2.2 kod ve ağırlık Apache 2.0; harita verisinde OpenStreetMap atıf ister. | tek kaynak + belge | Aykutuces/motionforge (README lisans zinciri), Remotion LICENSE ve diğer README'ler (bizim kontrolümüz) |
+
+### Üretken video ve dijital sunucu
+| # | Kural | Kanıt | Kaynaklar |
+|---|---|---|---|
+| VA22 | Üretken videoyu tekrar eden gider yapma: tutarlı bir ana çekimi bir kez üret (yüz ve ağız net, her hareketten sonra ilk sabit poza dönüş), hareket, ifade ve çekim ölçeğine göre etiketli kütüphaneye kes; yeni videoda klipleri cümleye göre seç, sadece yüzün göründüğü konuşma bölümlerine dudak senkronu uygula. Kırpma ve hız değişikliği senkrondan önce, ölçekleme ve pencere sonra. Dekupe yerine arka planı koru, kişiyi pencere ya da kart olarak yerleştir. | tek kaynak (vaka) | LufzzLiz (makale ve lanshu-infinite-stream-koubo) |
+| VA23 | Üretken görsel ve video promptunda neyin değişebileceğini ve neyin sabit kalacağını açıkça yaz: yüz, kıyafet, kişi sayısı, mekân ve büyük eşyalar sabit; poz, ifade, küçük nesne, ışık değişebilir; kamera ekseni keyfî atlanmaz, nesne yoktan var olmaz ya da kaybolmaz, hareket kare atlamaz. Var olan görseli düzenlerken "sadece belirtileni değiştir". Hareketi sırayla yaz (kim önce, kim etkilenir, nerede biter); bölüm başına tek ana eylem. Çekimler arası renk kaymasına karşı öğe başına HEX renk kartı. | ★ (hareket sırası ve renk kartı tek kaynak: liyue_ai) | liyue_ai (iki thread: 2117927837386870829, 2118917181148934409), GeekCatX (3×3 storyboard tutarlılık bölümü) |
 
 ## Özet
-- 33 kural: 3 ★★, 14 ★, 7 ★ (küme), 9 tek kaynak.
-- Bağımsız çok kaynaklı (★ ve ★★) 17 kural skill'in çekirdeği; "küme" kuralları iş akışı 5'te orta güvenle kullanılıyor.
+- 53 kural (YT 30, VA 23): 18 ★★ (YT5, YT9, YT10, YT11; VA1, VA3, VA4, VA5, VA6, VA7, VA8, VA9, VA11, VA12, VA13, VA15, VA16, VA18), 18 ★, 15 tek kaynak (YT30 tek küme, VA21 tek kaynak + belge dahil), 1 karışık (VA10: ilk cümle tek kaynak, ikinci ★), 1 gözlem (VA14). Kümeye tek başına dayanan tam kural kalmadı.
+- Bütün kaynakları tanıtım olan kurallar: YT4, YT7, YT16, YT19, YT30. VA13'ün varyant kısmı da yalnız tanıtım kaynağına dayanıyor.
+- Gövde ★★ ve ★ kurallarını iş akışı adımı olarak kullanıyor. Bu kuralların tek kaynaklı alt kısımları "consider" ya da "one starting mapping" diliyle giriyor: YT8 ölçüm ve elle seçim, YT25 önizleme, VA1 "ürün gerçeklerini ayır" (küme), VA6 notu sahneye bağlamak, VA13 yama ve varyant, VA16 konuşmacı ayırma, VA17 stil, VA20 motor tablosu, VA23 hareket sırası ve renk kartı.
+- Tek kaynaklı ve tanıtım kuralları "consider / test" diliyle giriyor: YT3, YT4, YT13, YT14, YT16, YT17, YT19, YT21, YT23, YT24, YT27, YT29, YT30, VA22. VA21 (tek kaynak + belge) korkuluk ve lisans uyarısı olarak giriyor; lisans bilgileri "LICENSE dosyasında doğrula" diliyle.
+- Gövdeye alınmayanlar: YT24'ün "aboneleri bilgilendir" kısmı, VA22'deki maliyet rakamları, VA14'teki tek tek repo bulguları (gövdede sadece "README ve kodda doğrula" ilkesi).
+- Açık: AI içerik beyanı için genel kural yok. VA2'nin açıklama cümlesi (maket ekran, örnek veri, yapay zekâ sunucu) korkuluğa girdi; toplu üretimde platform politikası hatırlatması sürüyor.

@@ -4,13 +4,13 @@ Use this to rebuild a winning ad structure with your own product and to run a UG
 
 ## Steps
 
-1. **Extract the structure** of winning ads with [reference-analysis.md](reference-analysis.md) (K33).
+1. **Extract the structure** of winning ads with [reference-analysis.md](reference-analysis.md) (YT20).
 2. **Rebuild it with your own product and real outputs.**
-   - Produce 3-5 variants by swapping parts: hook, presenter, text, product.
-   - One approach to test: tie the timing to words, so the edit holds when the text changes (K27).
+   - Tie the timing to words: scenes and cuts land on spoken words, so when the text or the voice changes, the edit is re-anchored to the new words instead of rebuilt (VA13).
+   - One approach to test for variants: produce 3-5 by swapping one part at a time (hook, presenter, text, product) (VA13).
 3. **UGC programme.**
    - The creator sends a raw draft.
-   - An editing pipeline (an agent) edits and checks it.
+   - An editing pipeline (an agent) edits and checks it; see [talking-edit.md](talking-edit.md).
    - Weekly views decide whom to continue with.
 
 ## Notes

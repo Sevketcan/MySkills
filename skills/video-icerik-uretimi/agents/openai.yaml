@@ -1,4 +1,4 @@
 interface:
   display_name: "Video Content Production"
-  short_description: "Short-form scripts, faceless pipelines, launch clips and AI video"
+  short_description: "Short-form scripts, faceless pipelines, talking-head edits, launch clips and AI video"
   default_prompt: "Use $video-icerik-uretimi to plan and script a short video for this product."

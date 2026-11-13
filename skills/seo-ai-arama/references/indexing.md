@@ -47,6 +47,7 @@ Search Console labels below are English, with the Turkish UI label in parenthese
    - Do the canonical and the sitemap point to the same URL?
    - Does `lastmod` carry the real change date?
 5. **Measure cache delay.** If the sitemap is cached, measure how long a new URL takes to appear in it. Even minutes matter on a fast-publishing site.
+6. **Check that the sitemap still updates.** A generated sitemap can stop updating without any error. After each publish, or in a daily check, confirm that the newest indexable pages appear in the live sitemap (K25).
 
 ## Question 3: are internal links and crawl budget sufficient? (K20, K21)
 
@@ -61,16 +62,18 @@ Search Console labels below are English, with the Turkish UI label in parenthese
 ## Question 4: how and how fast are new pages published? (K11, K17, K19)
 
 1. **Production mode:**
-   - Hand-written or template service and blog pages: publish slowly and steadily. The sources say at most one a day, never dozens in one day and then nothing.
+   - Hand-written or template service and blog pages: publish slowly and steadily. Consider at most one a day, and never dozens in one day and then nothing.
    - Catalogs generated from a database: the limit is an indexing criterion, not a page count.
+   - New domain: the first weeks are a test. Open with a few complete pages carrying real data and keep thin or bulk pages out of the index until they meet the criterion (K35).
 2. **Is the indexing criterion in code?** Use the template below. A page that fails the criterion is either `noindex, follow` or left out of the sitemap, and enters automatically once it qualifies.
 3. **Does every page have a differentiator?** A page where only a name or city changes counts as a near-duplicate of something Google already knows and may not be indexed (K19).
+   - Entity and pattern pages (one per place, store or tool variant) need data specific to that entity. Deep combinations (region × amount) are the usual "Discovered – currently not indexed" cases; open them only when they meet the criterion (K31).
 4. **How are new URLs discovered?**
    - Do they enter the sitemap immediately?
    - Do they get links from hub pages ("newly added", categories)?
-   - Is IndexNow used for Bing and Yandex? Only one source supports this.
+   - For Bing and Yandex, consider IndexNow.
    - For Google, the sitemap and internal links are what count. The Google Indexing API is not for product or article pages; that is our note from Google's official scope, not from the sources.
-5. **Seasonal pages:** are they live weeks before the season (K29)?
+5. **Seasonal pages:** are they live weeks before the season, and linked from the home page and the strongest pages (K29)?
 
 ### Indexing criterion template
 
@@ -109,6 +112,16 @@ These are Google's own published estimates, not guarantees. They add up along th
 | Recover from a core update | 3-6 months | 6 months to 1 year, sometimes the next update |
 
 A page change cannot show any effect until the page is recrawled. Check the last crawl date in URL Inspection before judging.
+
+## Audit evidence (K24, K25)
+
+When an agent audits pages (status, robots, canonical, structured data, titles):
+
+1. Fetch each page fresh and copy the evidence verbatim from the HTML. Never retype a tag.
+2. Verify in a separate pass: fetch the page again with a normal browser user agent, search for the quoted HTML character for character and re-check every "missing" claim. Delete what you cannot confirm and list what you deleted.
+3. Rank findings by impact: first what stops Google from discovering or indexing pages, last titles, meta and alt text. Don't get lost in the warning list (K13). Consider grouping findings by template (home, category, product, article), since a fix usually belongs in the template rather than on single pages.
+4. Consider naming the numeric limit behind every flag (for example a title length range). Such limits are warnings, not ranking thresholds.
+5. Run a repeat audit in a fresh session that has not seen the previous report. Open the old report only after the new one is finished, then compare what is fixed, new and still broken.
 
 ## Output
 

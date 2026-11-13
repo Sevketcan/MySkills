@@ -21,12 +21,12 @@ Stay in the store first, then grow. The order for every app is: pre-submission c
 
 Use only the mode the request needs:
 
-1. **Pre-submission check**: before a first submission or an update. Account deletion, store text and price, paywall honesty, category risk, screen fit, final steps. Read [pre-submission.md](references/pre-submission.md).
-2. **Rejection response**: a rejection, a repeated rejection or a terminated developer account. Read [rejection.md](references/rejection.md).
-3. **Paywall and pricing**: paywall placement, onboarding, plan set, trial, price anchors and offer tests. Read [paywall-pricing.md](references/paywall-pricing.md).
+1. **Pre-submission check**: before a first submission or an update. Account deletion, store text and price, paywall honesty, category risk, hidden features and the release binary, screen fit, a guideline scan of the code and metadata, final steps. Read [pre-submission.md](references/pre-submission.md).
+2. **Rejection response**: a rejection, a repeated rejection, the review archive or a terminated developer account. Read [rejection.md](references/rejection.md).
+3. **Paywall, onboarding and retention**: onboarding and its measurement, paywall placement, plan set, trial, price anchors, offer tests, AI credits, cancellation, refunds and win-back. Read [paywall-pricing.md](references/paywall-pricing.md).
 4. **Foldable and large screens**: iPhone Duo closed, open and rotated; adaptive navigation; paywall width. Read [foldable-screens.md](references/foldable-screens.md).
 5. **Store page (ASO)**: keywords, Custom Product Pages, screenshots, metadata kept in the repo. Read [store-page.md](references/store-page.md).
-6. **Web funnel and acquisition**: web checkout, organic and paid acquisition, measurement before ads. Read [web-funnel-acquisition.md](references/web-funnel-acquisition.md).
+6. **Distribution and acquisition**: the distribution plan, a second store and web checkout, organic content, paid acquisition, ad concepts and measurement, idea selection. Read [web-funnel-acquisition.md](references/web-funnel-acquisition.md).
 
 When the request is broad, go 1 → 3 → 5 → 6. If the app has not passed review yet, finish mode 1 before any growth work.
 
@@ -34,8 +34,8 @@ When the request is broad, go 1 → 3 → 5 → 6. If the app has not passed rev
 
 - Don't start growth work while a rejection or removal risk is still open.
 - The billed amount is the most prominent figure on the paywall; urgency and discount badges only with a real discount (K6).
-- Put the paywall at the end of onboarding and keep the later in-app paywalls (K16).
-- Plan paid acquisition from the start; organic store traffic alone rarely carries a new app (K24).
+- Start with the paywall at the end of onboarding and keep the later in-app paywalls (K16); test it against a value-first flow when the product shows a result at once (K40).
+- Plan distribution with the product from the start: paid acquisition, or a content channel built before launch. Organic store traffic alone rarely carries a new app (K24).
 - Change one variable at a time and judge it on real data.
 - Benchmark prices and case figures are references, not targets. Recompute prices, budgets and thresholds with the user's own unit economics.
 - Where a reference says "consider" or "start with", the rule is a starting assumption; confirm it with the project's own test.
@@ -44,16 +44,17 @@ When the request is broad, go 1 → 3 → 5 → 6. If the app has not passed rev
 
 - **No invention:** never make up revenue, downloads, review times or conversion rates. Don't present one app's case figures as rules.
 - **Approval:** store submission, price changes, publishing a RevenueCat offering, paywall or experiment, opening an ad budget and changing store-account settings need the user's approval.
-- **No dark patterns:** don't sell an annual plan at its weekly price, add a fake countdown or hide the billed amount.
+- **No dark patterns:** don't sell an annual plan at its weekly price, add a fake countdown, hide the billed amount or offer a reward for a rating.
 - **No copies:** don't imitate another app's icon or name, and don't put near-copies of one app on the same account.
+- **No hidden features:** don't turn on new or hidden functionality with a remote flag after approval; every remotely switched feature is in the reviewed build and the reviewer notes (K31).
 - **External payment links:** don't add an in-app link to web payment without checking Apple's current guidelines; the rules vary by region.
-- **Guideline numbers** (5.1.1(v), 3.1.2, 5.6, 4.3, 2.1, 3.2(f)) come from the sources. Check Apple's current text before quoting them.
+- **Guideline numbers** (5.1.1(v), 3.1.2, 5.6, 4.3, 2.5.19, 1.2, 3.2(f) and the others in the references) come from the sources. Check Apple's current text before quoting them.
 - **Vendor data:** benchmarks from paywall, subscription or funnel vendors describe their own customers; don't present them as independent evidence.
 - **Secrets:** never print or commit `AuthKey.p8`, the Play service-account JSON or a RevenueCat secret key.
 
 ## Boundaries
 
-- TikTok or Reels videos, ad creative variants and the App Store preview video: `video-icerik-uretimi`. This skill keeps the budget, MMP, ROAS and offer decisions.
+- TikTok or Reels videos, ad creative variants and the App Store preview video: `video-icerik-uretimi`. This skill keeps the budget, MMP, ROAS, offer, format and concept decisions.
 - Search and AI-search visibility of the app's landing or web funnel pages: `seo-ai-arama`.
 - General channel plan (Reddit, press, launch day): `girisim-pazarlama`.
 - Mobile games: the store checks apply from here; Steam timing, demo and wishlists: `indie-oyun-yayin`.
@@ -68,4 +69,4 @@ End each session with:
 - changes made, listed separately from proposals;
 - decisions waiting for the user's approval.
 
-The (Kn) markers point to [kurallar.md](references/kurallar.md) (Turkish), which lists each rule's sources and evidence level. It is compiled from the owner's research notes in Twitter Notes (taslak v0.3).
+The (Kn) markers point to [kurallar.md](references/kurallar.md) (Turkish), which lists each rule's sources and evidence level. It is compiled from the owner's research notes in Twitter Notes (taslak v0.5).

@@ -9,6 +9,7 @@ Work in the customer's own words, and let an agent that speaks as the ideal cust
    - support messages
    - store and app reviews
    - replies to the product's or founder's posts
+   - competitors' 1-2 star reviews: the only place many buyers write down, in their own words, what disappointed them (G8, G26)
 2. **Build the agent.** It acts as this customer and does not defend the brand.
 3. **Review before publishing.** Every new piece of content, ad copy and offer goes to the agent before it ships. List the objections it raises.
 4. **Refresh weekly** with new customer text.
