@@ -37,7 +37,7 @@ Search Console → Performance → Add filter → Query → Custom (regex). Sear
    - A page whose content was substantially changed, or that received new external links, in the last 60 days: "wait", don't touch it. Adding internal links to it from other pages does not count as touching it.
    - A page edited 90+ days ago from a good brief that still isn't in the top 3 is a link candidate. Most external links naturally point to the home page; for a single inner page, pace them, one or two a month with a few weeks between, rather than a burst (K14).
 4. **Judge changes** on 7 days of data, and only if the page has been recrawled since the change. Check the last crawl date in URL Inspection (K18).
-5. **Google AI features (K34).** If Search Console shows a generative AI features report, record its impressions as a separate line in the review. Check whether it reports clicks. If it shows only impressions, don't read that as zero clicks: consider estimating AI's click share by comparing two comparable periods (same length, same season, no other big change), and label the result an estimate.
+5. **Google AI features (K34).** If Search Console shows a generative AI features report, record its impressions as a separate line in the review. The report gives impressions only; clicks from AI answers are not broken out. Don't read that as zero clicks: consider estimating AI's click share by comparing two comparable periods (same length, same season, no other big change), and label the result an estimate.
 6. **Output:** at most five actions ranked by business value (not traffic). List changes made separately from proposals.
 
 ## 3. Flat traffic: refresh pages that lost clicks (K2)

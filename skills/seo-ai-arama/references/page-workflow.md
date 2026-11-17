@@ -29,6 +29,7 @@ The brief contains:
 - One H1 containing the primary keyword. Keep the title plain with the primary keyword first.
 - Phrase each heading as the reader's question and answer it in the first one or two sentences below it (K4).
 - Put a short, dated answer at the top: the claims an AI answer would quote (price, duration, feature) in one or two plain, factual and correct sentences, with the date the data refers to. No marketing language (K6).
+- **Comparison and "best" pages (K36):** include at least one row where the site loses, and say which buyer the competitor suits better. Don't rank the site first in its own "best X" list, and write the ranking criterion on the page. An AI that cites a self-praising list often recommends the competitor: the page becomes the source, the competitor the answer. If an existing self-ranked page already brings customers from Google, propose a test before rewriting it (section 1).
 - **Internal links (K20):** give the target page at least 3-5 in-context links from pages on the same topic.
   - Find candidates by crawling the site or searching `site:example.com "keyword"`, not from the sitemap: pages whose text mentions the target's topic but does not link to it.
   - Take anchor candidates from the target page's own Search Console queries (the query it ranks for, or a close variant), and link only where that phrase already occurs naturally in a sentence. Never rewrite a sentence to fit a keyword. Use one anchor for one target only.
@@ -63,7 +64,7 @@ Where the stack allows, run the same checks (title, canonical, structured data, 
 
 For "best" lists, comparisons and pages tied to a recurring season or campaign:
 
-1. Put the current year in the title, and refresh the same page every year: year, statistics, prices, screenshots (K30).
+1. Put the current year in the title, and refresh the same page every year: year, statistics, prices, screenshots (K30). Position the site honestly, as in section 3 (K36).
 2. Consider keeping the year out of the URL, so one address collects links year after year. Changing an existing URL is a redirect and needs approval (K8).
 3. Publish weeks before the season and link the page from the home page and the strongest pages (K29).
 4. State the offer (price, what is included, end date) at the top, as in section 3 (K6).

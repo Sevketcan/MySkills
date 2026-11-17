@@ -29,6 +29,7 @@ Pace follows the job: a fast kinetic cut suits a teaser; a feature demo needs ea
 - Derive every value from the frame number (in Remotion, `useCurrentFrame()`). Seed any randomness. Every frame must be renderable on its own.
 - Browser scenes are captured frame by frame, not recorded in real time; `requestAnimationFrame` loops, CSS transitions and wall-clock timers are not seekable. A real-time screen recording can do for a quick test; render the delivery frame by frame.
 - Realistic close-up faces are weak in code-drawn film: stylise them or use a silhouette, and leave photoreal people to generative video (VA11).
+- Ready-made video skills and repos: read the licence of each part, since code, docs or prompts and sample media can be licensed differently (as of November 2026, onetake is PolyForm Noncommercial and lemo-opuscar's style prompts are CC BY-NC; verify in the repo) (VA21). Used as-is, they tend to produce the same-looking film for everyone (VA20). When choosing between them, consider giving the same brief to each candidate and to the plain agent, so the tool is the only variable, and keep only the part that helps (VA24).
 
 ## 4. Narration and word timing (VA13, VA19)
 
@@ -51,7 +52,7 @@ Wait for the user's approval at each gate. The agent does not make irreversible 
 3. Three stills: opening, product result, close (for example `npx remotion still <Comp> out/x.png --frame=N`). Check them at phone size: readable text, safe area, real assets, a hook in the first 2 seconds. Motion that looks right in a still can break when it moves; consider adding a short low-resolution moving preview at this gate (YT25).
 4. Rough cut and contact sheet; partial renders for transitions (for example `--frames=90-149`).
 5. Fixes for the three biggest defects.
-6. Final check (VA15): re-measure resolution, fps, duration, loudness, streams and the platform's specs (for example with `ffprobe`), and check every cut boundary. Have a separate critic (a subagent with a clean context that hasn't seen the work, or a blind review) look at the render, with a fixed round limit. Don't deliver while a known defect is open. Ask the user to watch it at normal speed and listen once on headphones; the agent can't hear.
+6. Final check (VA15): re-measure resolution, fps, duration, loudness, streams and the platform's specs (for example with `ffprobe`), and check every cut boundary. Have a separate critic (a subagent with a clean context that hasn't seen the work, or a blind review) look at the render, with a fixed round limit. Don't deliver while a known defect is open, and don't mark anything as passed that wasn't checked. Ask the user to watch it at normal speed and listen once on headphones; the agent can't hear.
 
 ## 7. Revision loop (VA6)
 

@@ -39,5 +39,6 @@
    4. Check App Store Connect regularly; a reinstatement may not be announced by email.
 9. **Account-risk hygiene:**
    - Don't let the same guideline draw a second rejection: check the archive before each submission and remove the earlier cause inside the build first (K36, K35). Rejection history, even an old one, can be cited later as a 3.2(f) signal.
-   - Consider planning name changes and submission frequency too; rapid resubmissions and frequent renames may read the same way (K36).
+   - Consider planning name changes and submission frequency too; rapid resubmissions and frequent renames may read the same way. Consider keeping one app from the account in review at a time (K36).
+   - Treat an automated warning like a rejection: archive it and ask in writing which feature was flagged (K35). In one reported case, quietly removing a remote A/B test and resubmitting did not prevent a termination two days later (K31; the cause is the developer's guess).
    - Consider keeping the Mac, test devices, payment card and network you use for the developer account apart from other developer accounts (K37).

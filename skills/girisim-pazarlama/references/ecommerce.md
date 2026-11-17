@@ -42,6 +42,8 @@ Rely on the official text, not on a social post about it. Terms-of-use questions
 ## 5. Competitor ad creative (E7)
 
 1. Consider tagging competitors' running ads by hook, format, offer, CTA and awareness stage.
+   - Start with ads that have run for months with the same offer (G31); a long run is a candidate, not proof.
+   - For each one, also record the beat order (scene by scene) and who is on camera, so the structure can be rebuilt with the user's product.
 2. When adapting, never copy an ad verbatim, and tell the user about the brand and copyright risk.
 3. Producing variants with the user's product: `video-icerik-uretimi`.
 

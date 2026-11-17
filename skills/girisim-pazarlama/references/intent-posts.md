@@ -20,4 +20,4 @@ Find customers by intent signal, not from lists. A mass template creates no inte
 ## Guardrails
 
 - Never post or send a reply yourself.
-- No auto-reply bots, mass cold messages or the same text pasted in several places (G15). Follow each community's rules.
+- No auto-reply bots, mass cold messages, the same text pasted in several places, or the same post copied across accounts (G15). Follow each community's rules.

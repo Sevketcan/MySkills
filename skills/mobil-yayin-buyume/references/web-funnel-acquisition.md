@@ -16,30 +16,36 @@ A web funnel or web checkout lowers the store commission, but the cases behind i
 2. **Tooling:** if the project uses RevenueCat, start with Funnels + Web Billing; it is said to fit EU revenue reporting (K22).
 3. **In-app links to web payment:** the rules vary by region and are not in these sources. Don't put an external payment link in the app without checking Apple's current guidelines.
 4. **Implementation note (RevenueCat):** for an entitlement bought on the web to show up in the app, the RevenueCat app user id must equal the backend user id; link an anonymous user to an account first.
+5. **Android out-of-app sales (consider)** (K66): Google Play's Merchandising and optimization page (Play Console → Monetize with Play) can show products in Play Store search results and the store listing, send cart-abandonment reminders, sell through the Play web store and put Play Billing on external web pages. The announcement names no fee, so the gain is handing payments, refunds and chargebacks to Google, not a lower commission. Keep introductory discounts away from current subscribers with exclusion groups, and link a web purchase to the in-app account on the server. Several controls are in an early access programme; check Google's current documentation.
 
 ## Organic content
 
 1. **A showable feature (K58):** the product needs a visual feature that a short video makes clear in about a second; streaks, community or an AI chat don't stop the scroll. An agent can scan the code for features that can be shown.
 2. **Don't invent a format (K58):** find accounts in the niche that post daily and draw strong views over the last 30 days, and study their structure. Put forward the feature that fits that format naturally, and add your own angle instead of copying the template. Production: `video-icerik-uretimi`.
-3. **Organic first, then paid (K25):** find the format organically first. Put budget behind the organic videos that already hold (Spark Ads on TikTok) instead of making new ads for them. Organic views alone don't predict ad success.
-4. **Bio link (consider):** a link that opens the App Store app instead of a plain App Store link, with a visible "Open in App Store" button on the page in case the social app blocks the redirect (K45).
+3. **Organic first, then paid (K25):** find the message and format organically first; don't start paid ads before that. Put budget behind the organic videos that already hold (Spark Ads on TikTok) instead of making new ads for them. Organic views alone don't predict ad success.
+4. **Clipping campaigns (consider)** (K64): pay creators per view with a cap per video, not per video. Open with a high rate to attract creators and lower it once volume is there. Keep the brief to one page: three angles, all footage in one link, short rules (regions, what may be claimed about the product). Pay the first creators quickly and review submissions every day. Without good source footage to clip, a higher rate doesn't help. The only case behind this is an outlier from an agency selling the service; paid creator content also needs an ad disclosure.
+5. **Bio link (consider):** a link that opens the App Store app instead of a plain App Store link, with a visible "Open in App Store" button on the page in case the social app blocks the redirect (K45).
 
 ## Paid acquisition
 
-1. **Channel:** which ad network works depends on the niche; the sources report the TikTok system below working in one niche and failing in another, where Meta worked instead. Test both with a small budget before committing (K25).
-2. **Measurement:** consider setting up an MMP before running ads and connecting it to RevenueCat (K25).
+1. **Before paid (consider)** (K62): check three gates first. Price: a user is worth well above what they cost, with enough cash to wait for the payback (the ad bill is due now, a subscriber pays over 12 months; annual plans help). Ownership: someone looks at the account every day and ships new creative every week. Funnel: if paywall reach and conversion are far below your own targets, fix the funnel first. Start with Apple Search Ads (the app's name, the problem it solves, competitor keywords), then create demand on Meta. In Q4, build and test small; raise the budget in January. One source, and the funnel thresholds are one app's figures.
+2. **Channel:** which ad network works depends on the niche; the sources report the TikTok system below working in one niche and failing in another, where Meta worked instead. Test both with a small budget before committing (K25).
+3. **Measurement:** consider setting up an MMP before running ads and connecting it to RevenueCat (K25).
    - Judge campaigns on cost per paying user, not cost per trial (K43). Cost per payer = cost per trial ÷ trial-to-paid rate; show the trial-to-paid rate, cost per purchase and D7/D30 revenue next to cost per trial.
    - Don't scale up or switch off a campaign before its trial cohort matures: the trial has ended and the first renewal has passed (K43).
    - Move the optimisation event toward payment (for example Subscribe instead of Start Trial) once volume allows. Below the volume an ad set needs to leave the learning phase (reported as about 50 events a week on Meta; check Meta's current guidance), stay on a shallower event: the trial or a key action (K43).
    - Choose countries by cost per payer, not cost per install (K43).
-3. **Predicted value (K55):** when payment volume is too low to optimise on, send a predicted value before the user pays: a conversion value at trial start for Google tROAS, or value optimisation on Meta.
+4. **Predicted value (K55):** when payment volume is too low to optimise on, send a predicted value before the user pays: a conversion value at trial start for Google tROAS, or value optimisation on Meta.
    - Build the prediction from past cohorts: how onboarding answers and day-one behaviour relate to later payment. A new app doesn't have that data yet.
    - Compare it with real revenue every week; a biased prediction scales the campaign toward the wrong audience.
-4. **Creative concepts (K54):** keep targeting broad on Meta and TikTok, merge campaigns, get the variety from creative and add new concepts regularly.
+5. **Creative concepts (K54):** keep targeting broad on Meta and TikTok, merge campaigns, get the variety from creative and add new concepts regularly.
    - Consider counting concepts, not ads. One working definition: a new concept changes at least two of persona, motivation, hook, format, visual world and presenter; near-copies are removed before uploading.
    - One view scales a winning video into many variations; another warns that near-copies compete for the same people. Test how many variations of a winner to run.
-5. **Meta on iOS (consider)** (K44): before launching, compare the installs in the attribution tool with Meta's dashboard. With the iOS 14+ campaign switch on, move ad sets to AEM. Check the audience estimate before every launch; turning the switch off can silently narrow targeting to old iOS versions. Choose audiences and placements on your own cost-per-payer data. Setting names change; check Meta's current interface.
-6. **Paid (TikTok case):** the sequence from one US case (K25). The figures are that case's parameters, not rules, and the source doesn't say over which window ROAS was measured. Recompute the budget and thresholds with the user's unit economics.
+   - **Start from proven ads (consider)** (K63): in Meta Ad Library, competitor ads that have run for months and in several cuts of the same idea are likely winners. Note each one's hook, format and promise, and change one of them at a time in your own version. Look for an unused angle in the gap between what competitors promise in ads and what their users complain about in reviews (K59). A person picks the angles.
+   - **AI personas:** don't present an AI-generated person as a real user who tried the app; in the US the FTC's rules on fake reviews and testimonials can cover AI-generated ones; check the current rules for each market (K65). Use a demo, a narration or an openly fictional format instead.
+   - **Agents running the account (consider):** an agent can do the research, briefs and a daily account check, but every launch, pause and budget change waits for the user's approval (K62). On iOS, yesterday's installs are mostly not reported yet when the morning check runs; don't judge immature cohorts (K43).
+6. **Meta on iOS (consider)** (K44): before launching, compare the installs in the attribution tool with Meta's dashboard. With the iOS 14+ campaign switch on, move ad sets to AEM. Check the audience estimate before every launch; turning the switch off can silently narrow targeting to old iOS versions. Choose audiences and placements on your own cost-per-payer data. Setting names change; check Meta's current interface.
+7. **Paid (TikTok case):** the sequence from one US case (K25). The figures are that case's parameters, not rules, and the source doesn't say over which window ROAS was measured. Recompute the budget and thresholds with the user's unit economics.
    1. Use every video as a Spark Ad, not only the viral ones.
    2. One broad campaign, one country.
    3. In the case: started at $100 a day and raised it 15-20% a week.
@@ -48,7 +54,7 @@ A web funnel or web checkout lowers the store commission, but the cases behind i
 
 ## Idea stage
 
-1. **Multiply a proven pattern (K27):** small, focused apps are one portfolio path: the same feature applied to new objects, or apps for unserved keyword pockets in the same category. Similar apps on the same account carry 4.3 risk (K8).
+1. **Multiply a proven pattern (K27):** small, focused apps are one portfolio path: the same feature applied to new objects, or apps for unserved keyword pockets in the same category. Similar apps on the same account carry 4.3 risk (K8), and a fast stream of submissions can read as a 3.2(f) signal (K36); in one reported case a studio's 16 single-task apps were all removed (unverified).
 2. **Mine competitor reviews (consider)** (K59): have an agent cluster competitors' 1-2 star reviews into the five most common complaints, in the users' own words.
    - Prefer a market whose complaints are about the product (bugs, missing features). Don't count price complaints as an opening; those users will write the same review about your app.
    - Top-grossing apps usually have high ratings, so read the reviews instead of filtering by rating.

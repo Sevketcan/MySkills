@@ -8,6 +8,7 @@ Lines marked **Implementation note** are not from the sources; they show how to 
    - Account creation comes after the purchase or the first piece of work, or at the end of onboarding just before the paywall; both appear in the sources (K40). Deferring the account doesn't remove the account-deletion requirement ([pre-submission.md](pre-submission.md), section A).
 2. **Onboarding content:** if the flow has one, personalise it with a short survey or questions, show the problem and social proof, and use the loading screen to show value or ask a question (K17).
    - Consider a confirmation screen after the questions ("here is what we understood, here is how we'll help") and a paywall headline tied to the goal the user just picked (K17).
+   - On the paywall, consider placing social proof (awards, rating) right next to the price (K17; one case, not measured).
 3. **Measure onboarding screen by screen (K51):**
    - Log every screen view and every step forward as an event.
    - Build a separate funnel for the core action (the first result, the first reading, the first transaction).
@@ -36,7 +37,11 @@ Lines marked **Implementation note** are not from the sources; they show how to 
    - the paywall shows the term and what the credits are for, and the app shows the current balance;
    - subscription credits are spent first, then the credits closest to expiry;
    - users with a remaining balance get a reminder 30 and 7 days before expiry; plan how to reach anonymous accounts.
-10. **Implementation note (RevenueCat):**
+10. **AI inference cost (consider)** (K61): for a small text-based AI feature on iOS, Apple Foundation Models on Private Cloud Compute have no cloud API cost if the developer is in the App Store Small Business Program, has fewer than 2 million first-time downloads on every app, and holds the PCC entitlement. Check Apple's current page first.
+    - Daily usage limits apply and expanded access will cost a fee later; build a fallback to a paid model for the limit and for devices or regions without Apple Intelligence.
+    - If an app passes 2 million first-time downloads, the developer must migrate within 6 months. Keep the model behind one interface.
+    - **Implementation note (Flutter):** Foundation Models is a Swift framework; call it through a platform channel.
+11. **Implementation note (RevenueCat):**
     - Each variant is its own offering. The app fills the paywall from `Purchases.getOfferings()` → `offerings.current`; plans and prices are not hard-coded.
     - Run the test in RevenueCat Experiments. Read the estimated 12-month LTV in the results, then roll out the winner.
     - Every variant served after approval is at least as clear about price and terms as the paywall the reviewer saw (K31, K6). Whether a paywall tool that changes the flow without a new build falls under 2.5.19 is an open question; keep every remote change within the flow the reviewer saw.

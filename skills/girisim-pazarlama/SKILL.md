@@ -42,9 +42,10 @@ When the request is broad ("how do I get customers?"), run mode 4 first, then mo
 ## Guardrails
 
 - **Drafts only:** never send messages, replies, DMs, emails or posts on the user's behalf.
-- **No spam:** don't recommend auto-reply bots, mass cold messaging or pasting the same text in many places (G15). Follow each community's rules.
+- **No spam:** don't recommend auto-reply bots, mass cold messaging, pasting the same text in many places or copying the same post across accounts (G15). Follow each community's rules.
 - **No invention:** never make up revenue, conversion, follower or reach numbers, and don't present figures from sources as rules.
 - **Approval:** opening an ad budget, paying creators, changing prices, bulk store changes and publishing (including to MCP registries, directories and awesome-lists) need the user's approval.
+- **Ad accounts:** if an agent tool can write to an ad account, build campaigns, ad sets and ads paused. Going live, pausing and every budget or targeting change need the user's approval. The user sets write permissions and spending caps in the platform's own account rules (G37).
 - **Third-party forms and bot checks:** on directories and other third-party sites, the user signs in and submits any form behind a login or a CAPTCHA. Never solve a CAPTCHA or get around a bot check.
 - **Discounts, ratings, urgency:** don't show a source's inflated rating or discount as is, and don't write urgency ("last item", "last hours") that isn't true (G32, E12). Reference-price rules and fines for discounts vary by country; have a lawyer verify the current rule before discount claims go out.
 - **Vendor claims:** a vendor describing its own tool is marketing, not independent evidence. Say so when you rely on one.
@@ -70,4 +71,4 @@ End each session with:
 - changes made, listed separately from proposals;
 - decisions waiting for the user (budget, prices, bulk changes, publishing) and questions for an expert.
 
-The (Gn) and (En) markers point to [kurallar.md](references/kurallar.md) (Turkish), which lists each rule's sources and evidence level. It is compiled from the owner's research notes in Twitter Notes (taslak v0.5).
+The (Gn) and (En) markers point to [kurallar.md](references/kurallar.md) (Turkish), which lists each rule's sources and evidence level. It is compiled from the owner's research notes in Twitter Notes (taslak v0.6).

@@ -30,13 +30,14 @@ Lines marked **Implementation note** are not from the sources; they show how to 
 - [ ] Countdowns, "limited offer" text or discount badges appear only when there is a real discount (K6).
 - [ ] **Implementation note (Flutter):** prices are not hard-coded. `StoreProduct.priceString` and the period come from RevenueCat, so the paywall text cannot drift from the store price.
 - [ ] Every paywall variant the server can show (offerings, experiments) is at least as clear about price and terms as the one the reviewer sees (K31, K6).
+- [ ] A remote A/B test on onboarding or the paywall is described in the reviewer notes, with its variants (K31). In one reported case an undisclosed onboarding test drew an automated warning and the account was terminated two days later; the cause is the developer's guess.
 - [ ] The system rating prompt is never offered in exchange for a reward or an unlock (K52). Timing: [paywall-pricing.md](paywall-pricing.md), onboarding step 4.
 
 ## D. Category and originality risk
 
 - [ ] Check which apps in the niche were removed in the last 30 days (for example screensdesign.com/removed) (K7).
 - [ ] The icon and name don't imitate a known app; the name, subtitle and keywords carry no other company's brand or product name (5.2.1); the account has no near-copies of one app (K8, K27).
-- [ ] The binary and assets (icon, images, sounds) don't look derived from another app's template (K8).
+- [ ] The binary and assets (icon, images, sounds) don't look derived from another app's template, and apps on the same account share as few assets as possible (K8).
 - [ ] Crowded category (for example astrology or fortune-telling, dating, AI photo): before the first submission, prepare the difference evidence: a numbered list of what sets the app apart, mapped to the screens the reviewer will see, and a one-page technical summary (K34, K7). Details: [rejection.md](rejection.md), step 4.
 - [ ] AI image or video generation: non-consensual nudity and "undressing" output is blocked in the model or the provider's safety setting, not only hidden in a menu, and users have a "report" path from the result (1.2) (K32). Describe both in the reviewer notes.
 - [ ] Health, fitness or finance: the source of every displayed value (ranges, scores, doses) and the expert or institution behind it are visible inside the app (1.4.1) (K9).
@@ -45,7 +46,7 @@ Lines marked **Implementation note** are not from the sources; they show how to 
 
 - [ ] Every feature that can be switched remotely (feature flags, remote config, server-sent modes or templates) is visible in the reviewed build and described in the reviewer notes. Nothing new or hidden is turned on by a flag after approval (2.5.19) (K31).
 - [ ] A feature that drew a rejection is fixed inside the build, not switched off on the server (K31).
-- [ ] Scan the binary in the release archive, not the source, with `strings` and `nm` before uploading (K30). Look for switches that unlock paid features (test or debug keys), remote-config or eval patterns, and dynamic calls (`NSClassFromString`, `performSelector`) leaked by an unused SDK. Remove an unused SDK that leaks them.
+- [ ] Scan the binary in the release archive, not the source, with `strings` and `nm` before uploading (K30). Look for switches that unlock paid features (test or debug keys), remote-config or eval patterns, and dynamic calls (`NSClassFromString`, `performSelector`) leaked by an unused SDK. Remove an unused SDK that leaks them, and consider adding an SDK only when it is really needed (K30).
   ```
   strings YourApp.app/YourApp | grep -iE "(remote_config|eval|bypass|is_enabled)"
   nm -u YourApp.app/YourApp | grep -E "NSClassFromString|performSelector"
@@ -57,7 +58,7 @@ Lines marked **Implementation note** are not from the sources; they show how to 
 
 Steps and implementation notes: [foldable-screens.md](foldable-screens.md).
 
-- [ ] Tested closed, open and rotated (K13).
+- [ ] Tested closed, open and rotated (K13). Consider the half-open pose and the fold transition too (one source).
 - [ ] Navigation is not a custom-drawn bar, or it adapts to the width (K14).
 - [ ] Paywall: content at most ~600pt and the purchase button ~400pt, centred; on the closed screen the price and button are visible without scrolling; the close button sits in the safe area and is accessible (K15).
 
@@ -68,6 +69,8 @@ Steps and implementation notes: [foldable-screens.md](foldable-screens.md).
   - It is a static check: crashes, restore purchases and server-sent content are not covered. It doesn't replace the binary scan (section E) or walking the app (last item).
   - Check first how much of the project's language it reads (for example Dart). Installing a third-party skill is the user's call.
 - [ ] Read the review archive before every submission ([rejection.md](rejection.md), step 7): no guideline that drew an earlier rejection may come back a second time (K35, K36).
+- [ ] **One app in review (consider):** keep only one app from the account in review at a time and stagger first submissions of several apps (K36).
+- [ ] **UI audit (consider):** check the screens against what low-rated reviews actually complain about (K60). In one labelled sample of reviews rated 3 stars or lower, "it's broken" was the largest theme. Walk the core flow on a device; test sign-in and code delivery; no ad or pop-up in the middle of a task; don't move controls without reason in an update; don't put an AI feature in front of the task people came for; no stat tiles with unmeasured numbers. A code-reading skill such as `unslopovich` helps, but it doesn't replace testing the running app.
 - [ ] New subscriptions: consider adding a TestFlight screenshot that shows every plan loading to the reviewer notes; new products may fail to load during review (2.1(b)) (K33).
 - [ ] Risky category or an earlier rejection: consider booking an App Review appointment first (K10). Steps: [rejection.md](rejection.md).
 - [ ] Metadata and the build go through the CLI or the store API, with a preview first. The `.p8` key and the Play service-account JSON never enter the repo (K29).

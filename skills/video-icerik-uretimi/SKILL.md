@@ -54,7 +54,7 @@ When the request is broad:
 - **Publishing:** no upload, publishing or DM automation without the user's approval. Uploads are private by default.
 - **Licences:** filter images and sound effects by licence when searching (CC0 or public domain for commercial work, no NC/ND) and keep a source and attribution list; a "free" stock library is not a commercial licence (VA18). Before building on a motion engine, tool or open model, check its licence in the repo, for example Remotion's company-size limit or AGPL when served as a service (VA14, VA21).
 - **Labels and hooks:** don't suggest publishing ad-like UGC without a label, or building hooks on shock content.
-- **Bulk AI output:** when generating in bulk, remind the user of the platforms' policies on inauthentic and repetitive content.
+- **Bulk AI output:** when generating in bulk, remind the user of the platforms' policies on inauthentic and repetitive content; for a channel aiming at YouTube monetisation, read the current YPP text before launch (YT31). Never invent first-hand experiences to make AI content look human.
 - **Secrets:** never print or commit API keys.
 
 ## Boundaries
@@ -74,4 +74,4 @@ End each session with:
 - costs spent or estimated, and the steps waiting for approval (paid generation, upload, DM automation);
 - the next variant or test to run.
 
-The (YTn) and (VAn) markers point to [kurallar.md](references/kurallar.md) (Turkish), which lists each rule's sources and evidence level. It is compiled from the owner's research notes in Twitter Notes (taslak v0.5).
+The (YTn) and (VAn) markers point to [kurallar.md](references/kurallar.md) (Turkish), which lists each rule's sources and evidence level. It is compiled from the owner's research notes in Twitter Notes (taslak v0.6).

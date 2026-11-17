@@ -46,6 +46,7 @@ When the request is broad, go 1 → 3 → 5 → 6. If the app has not passed rev
 - **Approval:** store submission, price changes, publishing a RevenueCat offering, paywall or experiment, opening an ad budget and changing store-account settings need the user's approval.
 - **No dark patterns:** don't sell an annual plan at its weekly price, add a fake countdown, hide the billed amount or offer a reward for a rating.
 - **No copies:** don't imitate another app's icon or name, and don't put near-copies of one app on the same account.
+- **No fake testimonials:** don't present an AI-generated person as a real user who tried the app. In the US the FTC's rules on fake reviews and testimonials can cover this; check the current rules for each market (K65).
 - **No hidden features:** don't turn on new or hidden functionality with a remote flag after approval; every remotely switched feature is in the reviewed build and the reviewer notes (K31).
 - **External payment links:** don't add an in-app link to web payment without checking Apple's current guidelines; the rules vary by region.
 - **Guideline numbers** (5.1.1(v), 3.1.2, 5.6, 4.3, 2.5.19, 1.2, 3.2(f) and the others in the references) come from the sources. Check Apple's current text before quoting them.
@@ -69,4 +70,4 @@ End each session with:
 - changes made, listed separately from proposals;
 - decisions waiting for the user's approval.
 
-The (Kn) markers point to [kurallar.md](references/kurallar.md) (Turkish), which lists each rule's sources and evidence level. It is compiled from the owner's research notes in Twitter Notes (taslak v0.5).
+The (Kn) markers point to [kurallar.md](references/kurallar.md) (Turkish), which lists each rule's sources and evidence level. It is compiled from the owner's research notes in Twitter Notes (taslak v0.6).
