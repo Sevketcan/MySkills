@@ -73,6 +73,13 @@
       "positive_trigger": "Uygulamamın yeni özelliği için gerçek ekranlardan 45 saniyelik bir Reels senaryosu ve App Store önizleme klibi hazırla.",
       "negative_trigger": "TikTok Spark Ads bütçemi ve ROAS eşiğimi belirle (mobil-yayin-buyume).",
       "validation": "Gerçek bir ürün videosunda skill açık ve kapalı karşılaştırılıyor: maliyet onayı render'dan önce soruluyor mu, eksik varlıkta duruyor mu, çıktıda ölçülen, tahmin ve öneri ayrılıyor mu."
+    },
+    "ajan-is-akisi": {
+      "reason": "project-preference",
+      "evidence": "Sahibin Twitter Notes'taki Claude Code & Ajanlar playbook'undan (91 not, 35 kural: 13 ★★, 19 ★, 3 tek kaynak) üretildi; kanıt tablosu references/kurallar.md'de. Skill önce projenin AGENTS.md / CLAUDE.md dosyalarını ve kontrol komutlarını okuyor; geri alınamaz adımlar (deploy eden push, şema, ödeme, dış mesaj, silme) onaya bağlı; kişisel kurulum gövdede yok.",
+      "positive_trigger": "Bu özelliği her adımı bir kontrolle doğrulanan bir plana böl ve planı sohbeti görmemiş bir inceleyiciye denetlet.",
+      "negative_trigger": "Bu diff'teki hataları bul ve düzelt (istemcinin kod inceleme komutu).",
+      "validation": "Gerçek bir değişiklik isteği skill açık ve kapalı çalıştırılıyor: skill açıkken ajan önce kural dosyalarını ve kontrol komutlarını okuyor, her adıma bir kontrol bağlıyor, planı taze bağlamlı bir inceleyiciye veriyor, çalıştırmadığı kontrolü geçti diye raporlamıyor ve push / deploy için onay bekliyor."
     }
   }
 }

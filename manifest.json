@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "package_count": 47,
-  "skill_count": 47,
+  "package_count": 48,
+  "skill_count": 48,
   "packages": [
     {
       "directory": "2d-pixel-perfect",
@@ -11,6 +11,17 @@
         {
           "name": "2d-pixel-perfect",
           "path": "skills/2d-pixel-perfect/SKILL.md"
+        }
+      ]
+    },
+    {
+      "directory": "ajan-is-akisi",
+      "entrypoint": "skills/ajan-is-akisi/SKILL.md",
+      "skill_count": 1,
+      "skills": [
+        {
+          "name": "ajan-is-akisi",
+          "path": "skills/ajan-is-akisi/SKILL.md"
         }
       ]
     },

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Coding Agent Workflow"
+  short_description: "Proven done, plan checks, blind reviewers, rules files, skill evals and scheduled agents"
+  default_prompt: "Use $ajan-is-akisi to plan this change with a check for every step and a reviewer that has not seen our conversation."
